@@ -110,6 +110,7 @@ namespace Soccer_Final
             START.Enabled = false;
             stop.Enabled = true;
             Anotar_A.Enabled = true;
+            Anotar_B.Enabled = true;
             Goal_A.Enabled = true;
             Goal_B.Enabled = true;
 
@@ -123,6 +124,41 @@ namespace Soccer_Final
         private void Anotar_B_Click(object sender, EventArgs e)
         {
             score.Play(comboBox2.SelectedItem.ToString(), 1, textBox1.Text);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

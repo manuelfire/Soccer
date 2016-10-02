@@ -42,6 +42,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.grid = new System.Windows.Forms.DataGridView();
+            this.Equipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Jugada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Puntos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Grabar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -193,11 +200,56 @@
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 25;
             // 
+            // grid
+            // 
+            this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Equipo,
+            this.Jugada,
+            this.Puntos,
+            this.Tiempo});
+            this.grid.Location = new System.Drawing.Point(37, 285);
+            this.grid.Name = "grid";
+            this.grid.Size = new System.Drawing.Size(586, 247);
+            this.grid.TabIndex = 26;
+            // 
+            // Equipo
+            // 
+            this.Equipo.HeaderText = "Equipo";
+            this.Equipo.Name = "Equipo";
+            // 
+            // Jugada
+            // 
+            this.Jugada.HeaderText = "Jugada";
+            this.Jugada.Name = "Jugada";
+            // 
+            // Puntos
+            // 
+            this.Puntos.HeaderText = "Puntos";
+            this.Puntos.Name = "Puntos";
+            // 
+            // Tiempo
+            // 
+            this.Tiempo.HeaderText = "Tiempo";
+            this.Tiempo.Name = "Tiempo";
+            // 
+            // Grabar
+            // 
+            this.Grabar.Location = new System.Drawing.Point(528, 539);
+            this.Grabar.Name = "Grabar";
+            this.Grabar.Size = new System.Drawing.Size(75, 23);
+            this.Grabar.TabIndex = 27;
+            this.Grabar.Text = "Save";
+            this.Grabar.UseVisualStyleBackColor = true;
+            this.Grabar.Click += new System.EventHandler(this.OnExportGridToCSV);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 356);
+            this.ClientSize = new System.Drawing.Size(662, 573);
+            this.Controls.Add(this.Grabar);
+            this.Controls.Add(this.grid);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
@@ -214,6 +266,7 @@
             this.Controls.Add(this.label2);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,6 +287,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DataGridView grid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Equipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Jugada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Puntos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tiempo;
+        private System.Windows.Forms.Button Grabar;
     }
 }
 

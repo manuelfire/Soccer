@@ -39,11 +39,6 @@ namespace Soccer_Final
                 Directory.CreateDirectory("Juegos");
                 FileInfo juegoarch = score.Nuevo("Juegos\\juego.csv");
                 ruta = juegoarch.ToString();
-                StringBuilder start=new StringBuilder();
-                start.AppendLine("Equipo,Jugada,Puntuacion,Tiempo");
-                File.AppendAllText(ruta,start.ToString());
-                
-                
                 gamestarted = true;
             }
             EnableStart();
@@ -71,15 +66,15 @@ namespace Soccer_Final
         private void Goal_A_Click(object sender, EventArgs e)
         {
             score.Score(0);
-            textBox2.Text = Convert.ToString(score.GetScore(0));
-            score.Play("GOAL",0,textBox1.Text);
+            textBox2.Text = Convert.ToString(score.GetScore(0)); 
+            grid.Rows.Add("Team A","GOAL",score.GetScore(0), textBox1.Text);
         }
 
         private void Goal_B_Click(object sender, EventArgs e)
         {
             score.Score(1);
             textBox3.Text = Convert.ToString(score.GetScore(1));
-            score.Play("GOAL", 1, textBox1.Text);
+            grid.Rows.Add("Team B", "GOAL", score.GetScore(1), textBox1.Text);
         }
         public void DisableAll()
         {
@@ -117,12 +112,50 @@ namespace Soccer_Final
 
         private void Anotar_A_Click(object sender, EventArgs e)
         {
-            score.Play(comboBox1.SelectedItem.ToString(), 0, textBox1.Text);
+            
+            grid.Rows.Add("Team A",comboBox1.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
+            
         }
 
         private void Anotar_B_Click(object sender, EventArgs e)
         {
-            score.Play(comboBox2.SelectedItem.ToString(), 1, textBox1.Text);
+            
+            grid.Rows.Add("Team B", comboBox1.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
+        }
+        public void OnExportGridToCSV(object sender, System.EventArgs e)
+        {
+            // Create the CSV file to which grid data will be exported.
+            StreamWriter sw = new StreamWriter(ruta, false);
+            // First we will write the headers.
+            DataTable dt = ((DataSet)grid.DataSource).Tables[0];
+
+            int iColCount = dt.Columns.Count;
+            for (int i = 0; i < iColCount; i++)
+            {
+                sw.Write(dt.Columns[i]);
+                if (i < iColCount - 1)
+                {
+                    sw.Write(",");
+                }
+            }
+            sw.Write(sw.NewLine);
+            // Now write all the rows.
+            foreach (DataRow dr in dt.Rows)
+            {
+                for (int i = 0; i < iColCount; i++)
+                {
+                    if (!Convert.IsDBNull(dr[i]))
+                    {
+                        sw.Write(dr[i].ToString());
+                    }
+                    if (i < iColCount - 1)
+                    {
+                        sw.Write(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator);
+                    }
+                }
+                sw.Write(sw.NewLine);
+            }
+            sw.Close();
         }
     }
 

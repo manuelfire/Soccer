@@ -30,11 +30,7 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Goal_A = new System.Windows.Forms.Button();
-            this.Anotar_A = new System.Windows.Forms.Button();
             this.START = new System.Windows.Forms.Button();
-            this.Anotar_B = new System.Windows.Forms.Button();
-            this.Goal_B = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.stop = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -49,15 +45,22 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.SaqueA = new System.Windows.Forms.ComboBox();
+            this.GoalA = new System.Windows.Forms.ComboBox();
+            this.DefensaA = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.SaqueB = new System.Windows.Forms.ComboBox();
+            this.GoalB = new System.Windows.Forms.ComboBox();
+            this.DefensaB = new System.Windows.Forms.ComboBox();
+            this.GoalB_Anotar = new System.Windows.Forms.Button();
+            this.DefensaB_Anotar = new System.Windows.Forms.Button();
+            this.SaqueB_Anotar = new System.Windows.Forms.Button();
+            this.GoalA_Anotar = new System.Windows.Forms.Button();
+            this.DefensaA_Anotar = new System.Windows.Forms.Button();
+            this.SaqueA_Anotar = new System.Windows.Forms.Button();
+            this.Cargar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,27 +82,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Team B";
             // 
-            // Goal_A
-            // 
-            this.Goal_A.Location = new System.Drawing.Point(60, 259);
-            this.Goal_A.Name = "Goal_A";
-            this.Goal_A.Size = new System.Drawing.Size(75, 23);
-            this.Goal_A.TabIndex = 3;
-            this.Goal_A.Text = "Goal";
-            this.Goal_A.UseVisualStyleBackColor = true;
-            this.Goal_A.Click += new System.EventHandler(this.Goal_A_Click);
-            // 
-            // Anotar_A
-            // 
-            this.Anotar_A.AllowDrop = true;
-            this.Anotar_A.Location = new System.Drawing.Point(60, 218);
-            this.Anotar_A.Name = "Anotar_A";
-            this.Anotar_A.Size = new System.Drawing.Size(75, 23);
-            this.Anotar_A.TabIndex = 5;
-            this.Anotar_A.Text = "Anotar";
-            this.Anotar_A.UseVisualStyleBackColor = true;
-            this.Anotar_A.Click += new System.EventHandler(this.Anotar_A_Click);
-            // 
             // START
             // 
             this.START.Location = new System.Drawing.Point(283, 106);
@@ -109,26 +91,6 @@
             this.START.Text = "START";
             this.START.UseVisualStyleBackColor = true;
             this.START.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // Anotar_B
-            // 
-            this.Anotar_B.Location = new System.Drawing.Point(510, 218);
-            this.Anotar_B.Name = "Anotar_B";
-            this.Anotar_B.Size = new System.Drawing.Size(75, 23);
-            this.Anotar_B.TabIndex = 13;
-            this.Anotar_B.Text = "Anotar";
-            this.Anotar_B.UseVisualStyleBackColor = true;
-            this.Anotar_B.Click += new System.EventHandler(this.Anotar_B_Click);
-            // 
-            // Goal_B
-            // 
-            this.Goal_B.Location = new System.Drawing.Point(510, 259);
-            this.Goal_B.Name = "Goal_B";
-            this.Goal_B.Size = new System.Drawing.Size(75, 23);
-            this.Goal_B.TabIndex = 12;
-            this.Goal_B.Text = "Goal";
-            this.Goal_B.UseVisualStyleBackColor = true;
-            this.Goal_B.Click += new System.EventHandler(this.Goal_B_Click);
             // 
             // textBox1
             // 
@@ -192,9 +154,9 @@
             this.Jugada,
             this.Puntos,
             this.Tiempo});
-            this.grid.Location = new System.Drawing.Point(37, 285);
+            this.grid.Location = new System.Drawing.Point(117, 285);
             this.grid.Name = "grid";
-            this.grid.Size = new System.Drawing.Size(586, 247);
+            this.grid.Size = new System.Drawing.Size(439, 247);
             this.grid.TabIndex = 26;
             // 
             // Equipo
@@ -219,7 +181,7 @@
             // 
             // Grabar
             // 
-            this.Grabar.Location = new System.Drawing.Point(528, 539);
+            this.Grabar.Location = new System.Drawing.Point(481, 538);
             this.Grabar.Name = "Grabar";
             this.Grabar.Size = new System.Drawing.Size(75, 23);
             this.Grabar.TabIndex = 27;
@@ -254,37 +216,37 @@
             this.label6.TabIndex = 39;
             this.label6.Text = "Gol";
             // 
-            // comboBox5
+            // SaqueA
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.SaqueA.FormattingEnabled = true;
+            this.SaqueA.Items.AddRange(new object[] {
             "De centro",
             "De banda",
             "De porteria",
             "De esquina"});
-            this.comboBox5.Location = new System.Drawing.Point(36, 186);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 21);
-            this.comboBox5.TabIndex = 38;
+            this.SaqueA.Location = new System.Drawing.Point(36, 186);
+            this.SaqueA.Name = "SaqueA";
+            this.SaqueA.Size = new System.Drawing.Size(121, 21);
+            this.SaqueA.TabIndex = 38;
             // 
-            // comboBox3
+            // GoalA
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.GoalA.FormattingEnabled = true;
+            this.GoalA.Items.AddRange(new object[] {
             "Gol normal",
             "Penalti",
             "Autogol",
             "Gol Olimpico",
             "Libre directo"});
-            this.comboBox3.Location = new System.Drawing.Point(37, 108);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 37;
+            this.GoalA.Location = new System.Drawing.Point(37, 108);
+            this.GoalA.Name = "GoalA";
+            this.GoalA.Size = new System.Drawing.Size(121, 21);
+            this.GoalA.TabIndex = 37;
             // 
-            // comboBox1
+            // DefensaA
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.DefensaA.FormattingEnabled = true;
+            this.DefensaA.Items.AddRange(new object[] {
             "Robo de balon",
             "Marcaje",
             "Repliegue",
@@ -299,10 +261,10 @@
             "Anticipación",
             "Interceptación",
             "Presión"});
-            this.comboBox1.Location = new System.Drawing.Point(36, 146);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 36;
+            this.DefensaA.Location = new System.Drawing.Point(36, 146);
+            this.DefensaA.Name = "DefensaA";
+            this.DefensaA.Size = new System.Drawing.Size(121, 21);
+            this.DefensaA.TabIndex = 36;
             // 
             // label4
             // 
@@ -331,37 +293,37 @@
             this.label7.TabIndex = 45;
             this.label7.Text = "Gol";
             // 
-            // comboBox2
+            // SaqueB
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.SaqueB.FormattingEnabled = true;
+            this.SaqueB.Items.AddRange(new object[] {
             "De centro",
             "De banda",
             "De porteria",
             "De esquina"});
-            this.comboBox2.Location = new System.Drawing.Point(481, 186);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 44;
+            this.SaqueB.Location = new System.Drawing.Point(481, 186);
+            this.SaqueB.Name = "SaqueB";
+            this.SaqueB.Size = new System.Drawing.Size(121, 21);
+            this.SaqueB.TabIndex = 44;
             // 
-            // comboBox4
+            // GoalB
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.GoalB.FormattingEnabled = true;
+            this.GoalB.Items.AddRange(new object[] {
             "Gol normal",
             "Penalti",
             "Autogol",
             "Gol Olimpico",
             "Libre directo"});
-            this.comboBox4.Location = new System.Drawing.Point(482, 108);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 43;
+            this.GoalB.Location = new System.Drawing.Point(482, 108);
+            this.GoalB.Name = "GoalB";
+            this.GoalB.Size = new System.Drawing.Size(121, 21);
+            this.GoalB.TabIndex = 43;
             // 
-            // comboBox6
+            // DefensaB
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
+            this.DefensaB.FormattingEnabled = true;
+            this.DefensaB.Items.AddRange(new object[] {
             "Robo de balon",
             "Marcaje",
             "Repliegue",
@@ -376,28 +338,104 @@
             "Anticipación",
             "Interceptación",
             "Presión"});
-            this.comboBox6.Location = new System.Drawing.Point(481, 146);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 21);
-            this.comboBox6.TabIndex = 42;
+            this.DefensaB.Location = new System.Drawing.Point(481, 146);
+            this.DefensaB.Name = "DefensaB";
+            this.DefensaB.Size = new System.Drawing.Size(121, 21);
+            this.DefensaB.TabIndex = 42;
+            // 
+            // GoalB_Anotar
+            // 
+            this.GoalB_Anotar.Location = new System.Drawing.Point(401, 106);
+            this.GoalB_Anotar.Name = "GoalB_Anotar";
+            this.GoalB_Anotar.Size = new System.Drawing.Size(75, 23);
+            this.GoalB_Anotar.TabIndex = 48;
+            this.GoalB_Anotar.Text = "GOLASO";
+            this.GoalB_Anotar.UseVisualStyleBackColor = true;
+            this.GoalB_Anotar.Click += new System.EventHandler(this.GoalB_Anotar_Click);
+            // 
+            // DefensaB_Anotar
+            // 
+            this.DefensaB_Anotar.Location = new System.Drawing.Point(400, 144);
+            this.DefensaB_Anotar.Name = "DefensaB_Anotar";
+            this.DefensaB_Anotar.Size = new System.Drawing.Size(75, 23);
+            this.DefensaB_Anotar.TabIndex = 49;
+            this.DefensaB_Anotar.Text = "Anotar";
+            this.DefensaB_Anotar.UseVisualStyleBackColor = true;
+            this.DefensaB_Anotar.Click += new System.EventHandler(this.DefensaB_Anotar_Click);
+            // 
+            // SaqueB_Anotar
+            // 
+            this.SaqueB_Anotar.Location = new System.Drawing.Point(400, 186);
+            this.SaqueB_Anotar.Name = "SaqueB_Anotar";
+            this.SaqueB_Anotar.Size = new System.Drawing.Size(75, 23);
+            this.SaqueB_Anotar.TabIndex = 50;
+            this.SaqueB_Anotar.Text = "Anotar";
+            this.SaqueB_Anotar.UseVisualStyleBackColor = true;
+            this.SaqueB_Anotar.Click += new System.EventHandler(this.SaqueB_Anotar_Click);
+            // 
+            // GoalA_Anotar
+            // 
+            this.GoalA_Anotar.Location = new System.Drawing.Point(164, 106);
+            this.GoalA_Anotar.Name = "GoalA_Anotar";
+            this.GoalA_Anotar.Size = new System.Drawing.Size(75, 23);
+            this.GoalA_Anotar.TabIndex = 51;
+            this.GoalA_Anotar.Text = "GOLASO";
+            this.GoalA_Anotar.UseVisualStyleBackColor = true;
+            this.GoalA_Anotar.Click += new System.EventHandler(this.GoalA_Anotar_Click);
+            // 
+            // DefensaA_Anotar
+            // 
+            this.DefensaA_Anotar.Location = new System.Drawing.Point(163, 144);
+            this.DefensaA_Anotar.Name = "DefensaA_Anotar";
+            this.DefensaA_Anotar.Size = new System.Drawing.Size(75, 23);
+            this.DefensaA_Anotar.TabIndex = 52;
+            this.DefensaA_Anotar.Text = "Anotar";
+            this.DefensaA_Anotar.UseVisualStyleBackColor = true;
+            this.DefensaA_Anotar.Click += new System.EventHandler(this.DefensaA_Defensa_Click);
+            // 
+            // SaqueA_Anotar
+            // 
+            this.SaqueA_Anotar.Location = new System.Drawing.Point(163, 184);
+            this.SaqueA_Anotar.Name = "SaqueA_Anotar";
+            this.SaqueA_Anotar.Size = new System.Drawing.Size(75, 23);
+            this.SaqueA_Anotar.TabIndex = 53;
+            this.SaqueA_Anotar.Text = "Anotar";
+            this.SaqueA_Anotar.UseVisualStyleBackColor = true;
+            this.SaqueA_Anotar.Click += new System.EventHandler(this.SaqueA_Anotar_Click);
+            // 
+            // Cargar
+            // 
+            this.Cargar.Location = new System.Drawing.Point(117, 538);
+            this.Cargar.Name = "Cargar";
+            this.Cargar.Size = new System.Drawing.Size(75, 23);
+            this.Cargar.TabIndex = 54;
+            this.Cargar.Text = "Load";
+            this.Cargar.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 573);
+            this.Controls.Add(this.Cargar);
+            this.Controls.Add(this.SaqueA_Anotar);
+            this.Controls.Add(this.DefensaA_Anotar);
+            this.Controls.Add(this.GoalA_Anotar);
+            this.Controls.Add(this.SaqueB_Anotar);
+            this.Controls.Add(this.DefensaB_Anotar);
+            this.Controls.Add(this.GoalB_Anotar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox6);
+            this.Controls.Add(this.SaqueB);
+            this.Controls.Add(this.GoalB);
+            this.Controls.Add(this.DefensaB);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.SaqueA);
+            this.Controls.Add(this.GoalA);
+            this.Controls.Add(this.DefensaA);
             this.Controls.Add(this.Grabar);
             this.Controls.Add(this.grid);
             this.Controls.Add(this.label1);
@@ -405,11 +443,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.stop);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.Anotar_B);
-            this.Controls.Add(this.Goal_B);
             this.Controls.Add(this.START);
-            this.Controls.Add(this.Anotar_A);
-            this.Controls.Add(this.Goal_A);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "Form1";
@@ -423,11 +457,7 @@
         #endregion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button Goal_A;
-        private System.Windows.Forms.Button Anotar_A;
         private System.Windows.Forms.Button START;
-        private System.Windows.Forms.Button Anotar_B;
-        private System.Windows.Forms.Button Goal_B;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button stop;
         private System.Windows.Forms.TextBox textBox2;
@@ -442,15 +472,22 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox SaqueA;
+        private System.Windows.Forms.ComboBox GoalA;
+        private System.Windows.Forms.ComboBox DefensaA;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox SaqueB;
+        private System.Windows.Forms.ComboBox GoalB;
+        private System.Windows.Forms.ComboBox DefensaB;
+        private System.Windows.Forms.Button GoalB_Anotar;
+        private System.Windows.Forms.Button DefensaB_Anotar;
+        private System.Windows.Forms.Button SaqueB_Anotar;
+        private System.Windows.Forms.Button GoalA_Anotar;
+        private System.Windows.Forms.Button DefensaA_Anotar;
+        private System.Windows.Forms.Button SaqueA_Anotar;
+        private System.Windows.Forms.Button Cargar;
     }
 }
 

@@ -80,10 +80,12 @@ namespace Soccer_Final
         {
 
             stop.Enabled = false;
-            Anotar_A.Enabled = false;
-            Anotar_B.Enabled = false;
-            Goal_A.Enabled = false;
-            Goal_B.Enabled = false;
+            GoalA_Anotar.Enabled = false;
+            GoalB_Anotar.Enabled = false;
+            DefensaA_Anotar.Enabled = false;
+            DefensaB_Anotar.Enabled = false;
+            SaqueA_Anotar.Enabled = false;
+            SaqueB_Anotar.Enabled = false;
                
           
                
@@ -93,9 +95,13 @@ namespace Soccer_Final
         {
             START.Enabled = true;
             stop.Enabled = false;
-            Anotar_A.Enabled = false;
-            Goal_A.Enabled = false;
-            Goal_B.Enabled = false;
+            GoalA_Anotar.Enabled = false;
+            GoalB_Anotar.Enabled = false;
+            DefensaA_Anotar.Enabled = false;
+            DefensaB_Anotar.Enabled = false;
+            SaqueA_Anotar.Enabled = false;
+            SaqueB_Anotar.Enabled = false;
+
 
 
         }
@@ -104,31 +110,48 @@ namespace Soccer_Final
         {
             START.Enabled = false;
             stop.Enabled = true;
-            Anotar_A.Enabled = true;
-            Anotar_B.Enabled = true;
-            Goal_A.Enabled = true;
-            Goal_B.Enabled = true;
+            GoalA_Anotar.Enabled = true;
+            GoalB_Anotar.Enabled = true;
+            DefensaA_Anotar.Enabled = true;
+            DefensaB_Anotar.Enabled = true;
+            SaqueA_Anotar.Enabled = true;
+            SaqueB_Anotar.Enabled = true;
+
 
         }
 
         private void Anotar_A_Click(object sender, EventArgs e)
         {
             
-            grid.Rows.Add("Team A",comboBox1.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
+            grid.Rows.Add("Team A",DefensaA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
             
         }
 
         private void Anotar_B_Click(object sender, EventArgs e)
         {
             
-            grid.Rows.Add("Team B", comboBox1.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
+            grid.Rows.Add("Team B", DefensaA.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
         }
         public void OnExportGridToCSV(object sender, System.EventArgs e)
         {
-            // Create the CSV file to which grid data will be exported.
+            // Crear el CSV.
             StreamWriter sw = new StreamWriter(ruta, false);
-            // First we will write the headers.
-            DataTable dt = ((DataSet)grid.DataSource).Tables[0];
+            // Importar DataGrid A DataTable.
+            DataTable dt = new DataTable();
+            foreach (DataGridViewColumn col in grid.Columns)
+            {
+                dt.Columns.Add(col.HeaderText);
+            }
+
+            foreach (DataGridViewRow row in grid.Rows)
+            {
+                DataRow dRow = dt.NewRow();
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    dRow[cell.ColumnIndex] = cell.Value;
+                }
+                dt.Rows.Add(dRow);
+            }
 
             int iColCount = dt.Columns.Count;
             for (int i = 0; i < iColCount; i++)
@@ -140,7 +163,7 @@ namespace Soccer_Final
                 }
             }
             sw.Write(sw.NewLine);
-            // Now write all the rows.
+            // Escribir Celdas.
             foreach (DataRow dr in dt.Rows)
             {
                 for (int i = 0; i < iColCount; i++)
@@ -159,39 +182,39 @@ namespace Soccer_Final
             sw.Close();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
+        private void GoalA_Anotar_Click(object sender, EventArgs e)
+        {
+            score.Score(0);
+            textBox3.Text = Convert.ToString(score.GetScore(0));
+            grid.Rows.Add("Team A", GoalA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
         }
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        private void GoalB_Anotar_Click(object sender, EventArgs e)
         {
-
+            score.Score(1);
+            textBox3.Text = Convert.ToString(score.GetScore(1));
+            grid.Rows.Add("Team B", GoalB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
         }
 
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        private void DefensaA_Defensa_Click(object sender, EventArgs e)
         {
-
+            grid.Rows.Add("Team A", DefensaA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void DefensaB_Anotar_Click(object sender, EventArgs e)
         {
-
+            grid.Rows.Add("Team B", DefensaB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void SaqueA_Anotar_Click(object sender, EventArgs e)
         {
-
+            grid.Rows.Add("Team A", SaqueA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void SaqueB_Anotar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
+            grid.Rows.Add("Team B", SaqueB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
         }
     }
 

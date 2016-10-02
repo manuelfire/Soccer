@@ -242,6 +242,7 @@
             this.GoalA.Name = "GoalA";
             this.GoalA.Size = new System.Drawing.Size(121, 21);
             this.GoalA.TabIndex = 37;
+            this.GoalA.SelectedIndexChanged += new System.EventHandler(this.GoalA_SelectedIndexChanged);
             // 
             // DefensaA
             // 

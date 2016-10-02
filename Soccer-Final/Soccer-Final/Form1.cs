@@ -186,7 +186,7 @@ namespace Soccer_Final
         private void GoalA_Anotar_Click(object sender, EventArgs e)
         {
             score.Score(0);
-            textBox3.Text = Convert.ToString(score.GetScore(0));
+            textBox2.Text = Convert.ToString(score.GetScore(0));
             grid.Rows.Add("Team A", GoalA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
         }
 
@@ -215,6 +215,11 @@ namespace Soccer_Final
         private void SaqueB_Anotar_Click(object sender, EventArgs e)
         {
             grid.Rows.Add("Team B", SaqueB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
+        }
+
+        private void GoalA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

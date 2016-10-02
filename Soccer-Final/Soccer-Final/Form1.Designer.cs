@@ -42,16 +42,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.grid = new System.Windows.Forms.DataGridView();
+            this.Equipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Jugada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Puntos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Grabar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -74,7 +71,7 @@
             // 
             // Goal_A
             // 
-            this.Goal_A.Location = new System.Drawing.Point(60, 258);
+            this.Goal_A.Location = new System.Drawing.Point(60, 232);
             this.Goal_A.Name = "Goal_A";
             this.Goal_A.Size = new System.Drawing.Size(75, 23);
             this.Goal_A.TabIndex = 3;
@@ -85,7 +82,7 @@
             // Anotar_A
             // 
             this.Anotar_A.AllowDrop = true;
-            this.Anotar_A.Location = new System.Drawing.Point(60, 219);
+            this.Anotar_A.Location = new System.Drawing.Point(60, 191);
             this.Anotar_A.Name = "Anotar_A";
             this.Anotar_A.Size = new System.Drawing.Size(75, 23);
             this.Anotar_A.TabIndex = 5;
@@ -105,7 +102,7 @@
             // 
             // Anotar_B
             // 
-            this.Anotar_B.Location = new System.Drawing.Point(510, 219);
+            this.Anotar_B.Location = new System.Drawing.Point(510, 191);
             this.Anotar_B.Name = "Anotar_B";
             this.Anotar_B.Size = new System.Drawing.Size(75, 23);
             this.Anotar_B.TabIndex = 13;
@@ -115,7 +112,7 @@
             // 
             // Goal_B
             // 
-            this.Goal_B.Location = new System.Drawing.Point(510, 256);
+            this.Goal_B.Location = new System.Drawing.Point(510, 232);
             this.Goal_B.Name = "Goal_B";
             this.Goal_B.Size = new System.Drawing.Size(75, 23);
             this.Goal_B.TabIndex = 12;
@@ -176,182 +173,83 @@
             this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 23;
             this.label1.Text = "Tiempo";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Robo de balon",
-            "Marcaje",
-            "Repliegue",
-            "Cobertura",
-            "Permuta",
-            "Desdoblamiento",
-            "Ayudas permanentes",
-            "Vigilancia",
-            "Temporización",
-            "Entrada",
-            "Carga",
-            "Anticipación",
-            "Interceptación",
-            "Presión"});
-            this.comboBox1.Location = new System.Drawing.Point(37, 147);
+            "BOLA",
+            "ROBO",
+            "SAQUE",
+            "PENAL"});
+            this.comboBox1.Location = new System.Drawing.Point(37, 148);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 24;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Robo de balon",
-            "Marcaje",
-            "Repliegue",
-            "Cobertura",
-            "Permuta",
-            "Desdoblamiento",
-            "Ayudas permanentes",
-            "Vigilancia",
-            "Temporización",
-            "Entrada",
-            "Carga",
-            "Anticipación",
-            "Interceptación",
-            "Presión"});
-            this.comboBox2.Location = new System.Drawing.Point(488, 149);
+            "BOLA",
+            "ROBO",
+            "SAQUE",
+            "PENAL"});
+            this.comboBox2.Location = new System.Drawing.Point(488, 148);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 25;
             // 
-            // comboBox3
+            // grid
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Gol normal",
-            "Penalti",
-            "Autogol",
-            "Gol Olimpico",
-            "Libre directo"});
-            this.comboBox3.Location = new System.Drawing.Point(38, 109);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 26;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Equipo,
+            this.Jugada,
+            this.Puntos,
+            this.Tiempo});
+            this.grid.Location = new System.Drawing.Point(37, 285);
+            this.grid.Name = "grid";
+            this.grid.Size = new System.Drawing.Size(586, 247);
+            this.grid.TabIndex = 26;
             // 
-            // comboBox4
+            // Equipo
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Gol normal",
-            "Penalti",
-            "Autogol",
-            "Gol Olimpico",
-            "Libre directo"});
-            this.comboBox4.Location = new System.Drawing.Point(489, 108);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 27;
-            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            this.Equipo.HeaderText = "Equipo";
+            this.Equipo.Name = "Equipo";
             // 
-            // comboBox5
+            // Jugada
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "De centro",
-            "De banda",
-            "De porteria",
-            "De esquina"});
-            this.comboBox5.Location = new System.Drawing.Point(37, 187);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 21);
-            this.comboBox5.TabIndex = 28;
+            this.Jugada.HeaderText = "Jugada";
+            this.Jugada.Name = "Jugada";
             // 
-            // comboBox6
+            // Puntos
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
-            "De centro",
-            "De banda",
-            "De porteria",
-            "De esquina"});
-            this.comboBox6.Location = new System.Drawing.Point(488, 186);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 21);
-            this.comboBox6.TabIndex = 29;
+            this.Puntos.HeaderText = "Puntos";
+            this.Puntos.Name = "Puntos";
             // 
-            // label5
+            // Tiempo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(535, 94);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 13);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Gol";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.Tiempo.HeaderText = "Tiempo";
+            this.Tiempo.Name = "Tiempo";
             // 
-            // label6
+            // Grabar
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(84, 92);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(23, 13);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Gol";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(526, 131);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 13);
-            this.label7.TabIndex = 33;
-            this.label7.Text = "Defensa";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(74, 133);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "Defensa";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(74, 172);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 13);
-            this.label9.TabIndex = 35;
-            this.label9.Text = "Saque";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(529, 172);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 13);
-            this.label10.TabIndex = 36;
-            this.label10.Text = "Saque";
+            this.Grabar.Location = new System.Drawing.Point(528, 539);
+            this.Grabar.Name = "Grabar";
+            this.Grabar.Size = new System.Drawing.Size(75, 23);
+            this.Grabar.TabIndex = 27;
+            this.Grabar.Text = "Save";
+            this.Grabar.UseVisualStyleBackColor = true;
+            this.Grabar.Click += new System.EventHandler(this.OnExportGridToCSV);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 356);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox6);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
+            this.ClientSize = new System.Drawing.Size(662, 573);
+            this.Controls.Add(this.Grabar);
+            this.Controls.Add(this.grid);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
@@ -368,6 +266,7 @@
             this.Controls.Add(this.label2);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,16 +287,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView grid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Equipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Jugada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Puntos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tiempo;
+        private System.Windows.Forms.Button Grabar;
     }
 }
 

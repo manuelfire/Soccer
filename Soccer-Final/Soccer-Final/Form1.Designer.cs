@@ -32,9 +32,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Goal_A = new System.Windows.Forms.Button();
             this.Anotar_A = new System.Windows.Forms.Button();
-            this.ballA = new System.Windows.Forms.Button();
             this.START = new System.Windows.Forms.Button();
-            this.ballB = new System.Windows.Forms.Button();
             this.Anotar_B = new System.Windows.Forms.Button();
             this.Goal_B = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -85,15 +83,6 @@
             this.Anotar_A.UseVisualStyleBackColor = true;
             this.Anotar_A.Click += new System.EventHandler(this.Anotar_A_Click);
             // 
-            // ballA
-            // 
-            this.ballA.Location = new System.Drawing.Point(60, 106);
-            this.ballA.Name = "ballA";
-            this.ballA.Size = new System.Drawing.Size(75, 23);
-            this.ballA.TabIndex = 10;
-            this.ballA.Text = "BOLA";
-            this.ballA.UseVisualStyleBackColor = true;
-            // 
             // START
             // 
             this.START.Location = new System.Drawing.Point(283, 106);
@@ -103,15 +92,6 @@
             this.START.Text = "START";
             this.START.UseVisualStyleBackColor = true;
             this.START.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // ballB
-            // 
-            this.ballB.Location = new System.Drawing.Point(510, 106);
-            this.ballB.Name = "ballB";
-            this.ballB.Size = new System.Drawing.Size(75, 23);
-            this.ballB.TabIndex = 18;
-            this.ballB.Text = "BOLA";
-            this.ballB.UseVisualStyleBackColor = true;
             // 
             // Anotar_B
             // 
@@ -225,11 +205,9 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.stop);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.ballB);
             this.Controls.Add(this.Anotar_B);
             this.Controls.Add(this.Goal_B);
             this.Controls.Add(this.START);
-            this.Controls.Add(this.ballA);
             this.Controls.Add(this.Anotar_A);
             this.Controls.Add(this.Goal_A);
             this.Controls.Add(this.label3);
@@ -246,9 +224,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Goal_A;
         private System.Windows.Forms.Button Anotar_A;
-        private System.Windows.Forms.Button ballA;
         private System.Windows.Forms.Button START;
-        private System.Windows.Forms.Button ballB;
         private System.Windows.Forms.Button Anotar_B;
         private System.Windows.Forms.Button Goal_B;
         private System.Windows.Forms.TextBox textBox1;

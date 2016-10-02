@@ -83,8 +83,12 @@ namespace Soccer_Final
         }
         public void DisableAll()
         {
-            
 
+            stop.Enabled = false;
+            Anotar_A.Enabled = false;
+            Anotar_B.Enabled = false;
+            Goal_A.Enabled = false;
+            Goal_B.Enabled = false;
                
           
                
@@ -92,15 +96,23 @@ namespace Soccer_Final
         }
         public void DisableSTOP()
         {
-
+            START.Enabled = true;
+            stop.Enabled = false;
+            Anotar_A.Enabled = false;
+            Goal_A.Enabled = false;
+            Goal_B.Enabled = false;
 
 
         }
 
         public void EnableStart()
         {
-           
-            
+            START.Enabled = false;
+            stop.Enabled = true;
+            Anotar_A.Enabled = true;
+            Goal_A.Enabled = true;
+            Goal_B.Enabled = true;
+
         }
 
         private void Anotar_A_Click(object sender, EventArgs e)

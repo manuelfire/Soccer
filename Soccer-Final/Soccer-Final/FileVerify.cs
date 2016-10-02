@@ -27,7 +27,7 @@ namespace Soccer_Final
                     return new FileInfo(ruta);
                 }
 
-                ruta = Path.Combine(dir, fileName + "-" + i + "-" + DateTime.Now.ToString("dd-MM-yyyy") + ext);
+                ruta = Path.Combine(dir, fileName + "-" + i + "-" + DateTime.Now.ToString("dd.MM.yyyy") + ext);
             }
 
 

@@ -37,10 +37,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grid = new System.Windows.Forms.DataGridView();
-            this.Equipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Jugada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Puntos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grabar = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -61,6 +57,7 @@
             this.DefensaA_Anotar = new System.Windows.Forms.Button();
             this.SaqueA_Anotar = new System.Windows.Forms.Button();
             this.Cargar = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,6 +100,7 @@
             this.textBox1.Location = new System.Drawing.Point(262, 42);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.textBox1.Size = new System.Drawing.Size(117, 38);
             this.textBox1.TabIndex = 19;
@@ -128,6 +126,7 @@
             this.textBox2.Location = new System.Drawing.Point(60, 42);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(75, 46);
             this.textBox2.TabIndex = 21;
             this.textBox2.Text = "0";
@@ -141,6 +140,7 @@
             this.textBox3.Location = new System.Drawing.Point(510, 42);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(75, 46);
             this.textBox3.TabIndex = 22;
             this.textBox3.Text = "0";
@@ -159,35 +159,10 @@
             // grid
             // 
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Equipo,
-            this.Jugada,
-            this.Puntos,
-            this.Tiempo});
             this.grid.Location = new System.Drawing.Point(117, 285);
             this.grid.Name = "grid";
             this.grid.Size = new System.Drawing.Size(439, 247);
             this.grid.TabIndex = 26;
-            // 
-            // Equipo
-            // 
-            this.Equipo.HeaderText = "Equipo";
-            this.Equipo.Name = "Equipo";
-            // 
-            // Jugada
-            // 
-            this.Jugada.HeaderText = "Jugada";
-            this.Jugada.Name = "Jugada";
-            // 
-            // Puntos
-            // 
-            this.Puntos.HeaderText = "Puntos";
-            this.Puntos.Name = "Puntos";
-            // 
-            // Tiempo
-            // 
-            this.Tiempo.HeaderText = "Tiempo";
-            this.Tiempo.Name = "Tiempo";
             // 
             // Grabar
             // 
@@ -197,7 +172,7 @@
             this.Grabar.TabIndex = 27;
             this.Grabar.Text = "Save";
             this.Grabar.UseVisualStyleBackColor = true;
-            this.Grabar.Click += new System.EventHandler(this.OnExportGridToCSV);
+            this.Grabar.Click += new System.EventHandler(this.Grabar_Click);
             // 
             // label9
             // 
@@ -429,6 +404,11 @@
             this.Cargar.TabIndex = 54;
             this.Cargar.Text = "Load";
             this.Cargar.UseVisualStyleBackColor = true;
+            this.Cargar.Click += new System.EventHandler(this.Cargar_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -485,10 +465,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView grid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Equipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Jugada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Puntos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tiempo;
         private System.Windows.Forms.Button Grabar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -509,6 +485,7 @@
         private System.Windows.Forms.Button DefensaA_Anotar;
         private System.Windows.Forms.Button SaqueA_Anotar;
         private System.Windows.Forms.Button Cargar;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

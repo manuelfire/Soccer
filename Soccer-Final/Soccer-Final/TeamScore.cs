@@ -19,14 +19,13 @@ namespace Soccer_Final
             if(team==0)
             {
                 teamA++;
-                teamAs = teamA;
-
+              
               
             }
             if (team == 1)
             {
                 teamB++;
-                teamBs = teamB;
+                
             }
         }
         public int GetScore(int team)

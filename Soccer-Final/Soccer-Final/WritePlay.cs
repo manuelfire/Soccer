@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,27 +11,72 @@ namespace Soccer_Final
 {
    public class WritePlay : FileVerify
     {
-        public int teamAs;
-        public int teamBs;
+        
        
-        public void Play(String jugada,int team, String time)
+        public void WrPlay(DataTable dt,String ruta)
         {
-            String equipo = "";
+            // Crear el CSV.
+            StreamWriter sw = new StreamWriter(ruta, false);
+            // Importar DataGrid A DataTable.
             
            
-            StringBuilder escritor = new StringBuilder();
+
+            int iColCount = dt.Columns.Count;
+            for (int i = 0; i < iColCount; i++)
+            {
+                sw.Write(dt.Columns[i]);
+                if (i < iColCount - 1)
+                {
+                    sw.Write(",");
+                }
+            }
+            sw.Write(sw.NewLine);
+            // Escribir Celdas.
+            foreach (DataRow dr in dt.Rows)
+            {
+                for (int i = 0; i < iColCount; i++)
+                {
+                    if (!Convert.IsDBNull(dr[i]))
+                    {
+                        sw.Write(dr[i].ToString());
+                    }
+                    if (i < iColCount - 1)
+                    {
+                        sw.Write(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator);
+                    }
+                }
+                sw.Write(sw.NewLine);
+            }
+            sw.Close();
+        }
+
+        public DataTable LoadPlay(String ruta)
+        {
+            DataGridView loader = new DataGridView();
             
-            if (team == 0)
+            String[] lines=File.ReadAllLines(ruta);
+            String[] data_col = null;
+            DataTable dt = new DataTable();
+            int counter= 0;
+            foreach (string text in lines)
             {
-                equipo = "Team A";
-                escritor.AppendLine(equipo + "," + jugada + "," + Convert.ToString(teamAs) + "," + time);
+                data_col = text.Split(',');
+                if(counter==0)
+                {
+                    for(int i=0;i<=data_col.Count()-1;i++)
+                    {
+                        dt.Columns.Add(data_col[i]);
+                    }
+                    counter++;
+                }else
+                {
+                    dt.Rows.Add(data_col);
+
+                }
             }
-            if (team == 1)
-            {
-                equipo = "Team B";
-                escritor.AppendLine(equipo + "," + jugada + "," + Convert.ToString(teamBs)+","+time);
-            }
-            File.AppendAllText(rutafinal, escritor.ToString());
+
+
+            return dt;
         }
     }
 }

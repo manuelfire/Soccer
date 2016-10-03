@@ -21,13 +21,18 @@ namespace Soccer_Final
         
         public String ruta;
         bool gamestarted = false;
+        DataTable data = new DataTable();
 
         public Form1()
         {
             InitializeComponent();
             
             textBox1.Text = TimeSpan.FromMinutes(45).ToString();
-            
+            data.Columns.Add("Equipo");
+            data.Columns.Add("Jugada");
+            data.Columns.Add("Puntos");
+            data.Columns.Add("Tiempo");
+            grid.DataSource = data;
             DisableAll();
 
         }
@@ -132,56 +137,7 @@ namespace Soccer_Final
             
             grid.Rows.Add("Team B", DefensaA.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
         }
-        public void OnExportGridToCSV(object sender, System.EventArgs e)
-        {
-            // Crear el CSV.
-            StreamWriter sw = new StreamWriter(ruta, false);
-            // Importar DataGrid A DataTable.
-            DataTable dt = new DataTable();
-            foreach (DataGridViewColumn col in grid.Columns)
-            {
-                dt.Columns.Add(col.HeaderText);
-            }
-
-            foreach (DataGridViewRow row in grid.Rows)
-            {
-                DataRow dRow = dt.NewRow();
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    dRow[cell.ColumnIndex] = cell.Value;
-                }
-                dt.Rows.Add(dRow);
-            }
-
-            int iColCount = dt.Columns.Count;
-            for (int i = 0; i < iColCount; i++)
-            {
-                sw.Write(dt.Columns[i]);
-                if (i < iColCount - 1)
-                {
-                    sw.Write(",");
-                }
-            }
-            sw.Write(sw.NewLine);
-            // Escribir Celdas.
-            foreach (DataRow dr in dt.Rows)
-            {
-                for (int i = 0; i < iColCount; i++)
-                {
-                    if (!Convert.IsDBNull(dr[i]))
-                    {
-                        sw.Write(dr[i].ToString());
-                    }
-                    if (i < iColCount - 1)
-                    {
-                        sw.Write(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator);
-                    }
-                }
-                sw.Write(sw.NewLine);
-            }
-            sw.Close();
-        }
-
+        
 
         private void GoalA_Anotar_Click(object sender, EventArgs e)
         {
@@ -220,6 +176,29 @@ namespace Soccer_Final
         private void GoalA_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Grabar_Click(object sender, EventArgs e)
+        {
+            score.WrPlay(data, ruta);
+        }
+
+        private void Cargar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                string file = openFileDialog1.FileName;
+                try
+                {
+                    grid.DataSource = score.LoadPlay(file);
+                    ruta = file;
+                }
+                catch (IOException)
+                {
+                }
+            }
+            
         }
     }
 

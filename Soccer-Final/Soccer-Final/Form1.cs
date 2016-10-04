@@ -22,12 +22,14 @@ namespace Soccer_Final
         public String ruta;
         bool gamestarted = false;
         DataTable data = new DataTable();
+        string title = "Soccer Manager v1";
 
         public Form1()
         {
-            InitializeComponent();
             
+            InitializeComponent();
             textBox1.Text = TimeSpan.FromMinutes(45).ToString();
+            this.Text = title;
             data.Columns.Add("Equipo");
             data.Columns.Add("Jugada");
             data.Columns.Add("Puntos");
@@ -41,16 +43,22 @@ namespace Soccer_Final
             SaqueB.SelectedIndex = 0;
             DefensaA.SelectedIndex = 0;
             DefensaB.SelectedIndex = 0;
+          openFileDialog1.InitialDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            
+            
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            data.Rows.Clear();
             grid.DataSource = data;
             if (gamestarted == false)
             {
                 Directory.CreateDirectory("Juegos");
                 FileInfo juegoarch = score.Nuevo("Juegos\\juego.csv");
                 ruta = juegoarch.ToString();
+                this.Text = title +"-"+ juegoarch.Name.ToString();
                 gamestarted = true;
             }
             EnableStart();
@@ -63,10 +71,7 @@ namespace Soccer_Final
             
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void button16_Click(object sender, EventArgs e)
         {
@@ -79,14 +84,14 @@ namespace Soccer_Final
         {
             score.Score(0);
             textBox2.Text = Convert.ToString(score.GetScore(0)); 
-            grid.Rows.Add("Team A","GOAL",score.GetScore(0), textBox1.Text);
+           data.Rows.Add("Team A","GOAL",score.GetScore(0), textBox1.Text);
         }
 
         private void Goal_B_Click(object sender, EventArgs e)
         {
             score.Score(1);
             textBox3.Text = Convert.ToString(score.GetScore(1));
-            grid.Rows.Add("Team B", "GOAL", score.GetScore(1), textBox1.Text);
+            data.Rows.Add("Team B", "GOAL", score.GetScore(1), textBox1.Text);
         }
         public void DisableAll()
         {
@@ -98,6 +103,7 @@ namespace Soccer_Final
             DefensaB_Anotar.Enabled = false;
             SaqueA_Anotar.Enabled = false;
             SaqueB_Anotar.Enabled = false;
+            saveToolStripMenuItem.Enabled = false;
                
           
                
@@ -128,6 +134,8 @@ namespace Soccer_Final
             DefensaB_Anotar.Enabled = true;
             SaqueA_Anotar.Enabled = true;
             SaqueB_Anotar.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
+            loadToolStripMenuItem.Enabled = false;
 
 
         }
@@ -180,45 +188,41 @@ namespace Soccer_Final
             data.Rows.Add("Team B", "Saque de " + SaqueB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
         }
 
-        private void GoalA_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void Grabar_Click(object sender, EventArgs e)
         {
-            score.WrPlay(data, ruta);
+            try
+            {
+                score.WrPlay(data, ruta);
+                MessageBox.Show("Se ha guardo correctamente");
+            }
+            catch (IOException c)
+            {
+                MessageBox.Show(c.ToString());
+            }
         }
 
         private void Cargar_Click(object sender, EventArgs e)
         {
+            openFileDialog1.Title = "Cargar un Juego";
             DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
             if (result == DialogResult.OK) // Test result.
             {
                 string file = openFileDialog1.FileName;
-                try
-                {
+                
                     data = score.LoadPlay(file);
                     ruta = file;
-                    MessageBox.Show("Se ha guardo correctamente");
-                }
-                catch (Exception c)
-                {
-                    MessageBox.Show(c.ToString());
-                }
+                grid.DataSource = data;
+                this.Text = title + "-" + openFileDialog1.SafeFileName;
+
             }
             
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 
     }

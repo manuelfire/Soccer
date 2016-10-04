@@ -207,6 +207,7 @@
             // 
             // SaqueA
             // 
+            this.SaqueA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SaqueA.FormattingEnabled = true;
             this.SaqueA.Items.AddRange(new object[] {
             "De centro",
@@ -220,6 +221,7 @@
             // 
             // GoalA
             // 
+            this.GoalA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GoalA.FormattingEnabled = true;
             this.GoalA.Items.AddRange(new object[] {
             "Gol normal",
@@ -235,6 +237,7 @@
             // 
             // DefensaA
             // 
+            this.DefensaA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DefensaA.FormattingEnabled = true;
             this.DefensaA.Items.AddRange(new object[] {
             "Robo de balon",
@@ -288,6 +291,7 @@
             // 
             // SaqueB
             // 
+            this.SaqueB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SaqueB.FormattingEnabled = true;
             this.SaqueB.Items.AddRange(new object[] {
             "De centro",
@@ -301,6 +305,7 @@
             // 
             // GoalB
             // 
+            this.GoalB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GoalB.FormattingEnabled = true;
             this.GoalB.Items.AddRange(new object[] {
             "Gol normal",
@@ -315,6 +320,7 @@
             // 
             // DefensaB
             // 
+            this.DefensaB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DefensaB.FormattingEnabled = true;
             this.DefensaB.Items.AddRange(new object[] {
             "Robo de balon",
@@ -449,6 +455,7 @@
             this.Controls.Add(this.label2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

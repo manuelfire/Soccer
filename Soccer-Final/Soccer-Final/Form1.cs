@@ -34,11 +34,18 @@ namespace Soccer_Final
             data.Columns.Add("Tiempo");
             grid.DataSource = data;
             DisableAll();
-
+            
+            GoalA.SelectedIndex = 0;
+            GoalB.SelectedIndex = 0;
+            SaqueA.SelectedIndex = 0;
+            SaqueB.SelectedIndex = 0;
+            DefensaA.SelectedIndex = 0;
+            DefensaB.SelectedIndex = 0;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            grid.DataSource = data;
             if (gamestarted == false)
             {
                 Directory.CreateDirectory("Juegos");
@@ -165,12 +172,12 @@ namespace Soccer_Final
 
         private void SaqueA_Anotar_Click(object sender, EventArgs e)
         {
-            data.Rows.Add("Team A", SaqueA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
+            data.Rows.Add("Team A","Saque de "+ SaqueA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
         }
 
         private void SaqueB_Anotar_Click(object sender, EventArgs e)
         {
-            data.Rows.Add("Team B", SaqueB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
+            data.Rows.Add("Team B", "Saque de " + SaqueB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
         }
 
         private void GoalA_SelectedIndexChanged(object sender, EventArgs e)
@@ -191,14 +198,21 @@ namespace Soccer_Final
                 string file = openFileDialog1.FileName;
                 try
                 {
-                    grid.DataSource = score.LoadPlay(file);
+                    data = score.LoadPlay(file);
                     ruta = file;
+                    MessageBox.Show("Se ha guardo correctamente");
                 }
-                catch (IOException)
+                catch (Exception c)
                 {
+                    MessageBox.Show(c.ToString());
                 }
             }
             
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

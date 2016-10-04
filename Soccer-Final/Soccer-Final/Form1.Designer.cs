@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.START = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grid = new System.Windows.Forms.DataGridView();
-            this.Grabar = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,10 +56,15 @@
             this.GoalA_Anotar = new System.Windows.Forms.Button();
             this.DefensaA_Anotar = new System.Windows.Forms.Button();
             this.SaqueA_Anotar = new System.Windows.Forms.Button();
-            this.Cargar = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nosotrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -67,7 +72,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(77, 19);
+            this.label2.Location = new System.Drawing.Point(77, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 1;
@@ -77,7 +82,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(525, 19);
+            this.label3.Location = new System.Drawing.Point(525, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 2;
@@ -85,7 +90,7 @@
             // 
             // START
             // 
-            this.START.Location = new System.Drawing.Point(283, 106);
+            this.START.Location = new System.Drawing.Point(283, 139);
             this.START.Name = "START";
             this.START.Size = new System.Drawing.Size(75, 23);
             this.START.TabIndex = 11;
@@ -98,7 +103,7 @@
             this.textBox1.BackColor = System.Drawing.SystemColors.InfoText;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
             this.textBox1.ForeColor = System.Drawing.Color.DarkRed;
-            this.textBox1.Location = new System.Drawing.Point(262, 42);
+            this.textBox1.Location = new System.Drawing.Point(262, 75);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -107,11 +112,10 @@
             this.textBox1.TabIndex = 19;
             this.textBox1.Text = "00:00";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // stop
             // 
-            this.stop.Location = new System.Drawing.Point(283, 146);
+            this.stop.Location = new System.Drawing.Point(283, 179);
             this.stop.Name = "stop";
             this.stop.Size = new System.Drawing.Size(75, 23);
             this.stop.TabIndex = 20;
@@ -124,7 +128,7 @@
             this.textBox2.BackColor = System.Drawing.SystemColors.InfoText;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.textBox2.Location = new System.Drawing.Point(60, 42);
+            this.textBox2.Location = new System.Drawing.Point(60, 75);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -138,7 +142,7 @@
             this.textBox3.BackColor = System.Drawing.SystemColors.InfoText;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.textBox3.Location = new System.Drawing.Point(510, 42);
+            this.textBox3.Location = new System.Drawing.Point(510, 75);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
@@ -151,7 +155,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(299, 26);
+            this.label1.Location = new System.Drawing.Point(299, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 23;
@@ -160,27 +164,18 @@
             // grid
             // 
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grid.Location = new System.Drawing.Point(117, 285);
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
             this.grid.Size = new System.Drawing.Size(439, 247);
             this.grid.TabIndex = 26;
             // 
-            // Grabar
-            // 
-            this.Grabar.Location = new System.Drawing.Point(481, 538);
-            this.Grabar.Name = "Grabar";
-            this.Grabar.Size = new System.Drawing.Size(75, 23);
-            this.Grabar.TabIndex = 27;
-            this.Grabar.Text = "Save";
-            this.Grabar.UseVisualStyleBackColor = true;
-            this.Grabar.Click += new System.EventHandler(this.Grabar_Click);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Location = new System.Drawing.Point(73, 171);
+            this.label9.Location = new System.Drawing.Point(73, 204);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(38, 13);
             this.label9.TabIndex = 41;
@@ -190,7 +185,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Location = new System.Drawing.Point(73, 132);
+            this.label8.Location = new System.Drawing.Point(73, 165);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 13);
             this.label8.TabIndex = 40;
@@ -201,7 +196,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(88, 91);
+            this.label6.Location = new System.Drawing.Point(88, 124);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(23, 13);
             this.label6.TabIndex = 39;
@@ -216,7 +211,7 @@
             "De banda",
             "De porteria",
             "De esquina"});
-            this.SaqueA.Location = new System.Drawing.Point(36, 186);
+            this.SaqueA.Location = new System.Drawing.Point(36, 219);
             this.SaqueA.Name = "SaqueA";
             this.SaqueA.Size = new System.Drawing.Size(121, 21);
             this.SaqueA.TabIndex = 38;
@@ -231,11 +226,10 @@
             "Autogol",
             "Gol Olimpico",
             "Libre directo"});
-            this.GoalA.Location = new System.Drawing.Point(37, 108);
+            this.GoalA.Location = new System.Drawing.Point(37, 141);
             this.GoalA.Name = "GoalA";
             this.GoalA.Size = new System.Drawing.Size(121, 21);
             this.GoalA.TabIndex = 37;
-            this.GoalA.SelectedIndexChanged += new System.EventHandler(this.GoalA_SelectedIndexChanged);
             // 
             // DefensaA
             // 
@@ -256,7 +250,7 @@
             "Anticipación",
             "Interceptación",
             "Presión"});
-            this.DefensaA.Location = new System.Drawing.Point(36, 146);
+            this.DefensaA.Location = new System.Drawing.Point(36, 179);
             this.DefensaA.Name = "DefensaA";
             this.DefensaA.Size = new System.Drawing.Size(121, 21);
             this.DefensaA.TabIndex = 36;
@@ -265,7 +259,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(518, 171);
+            this.label4.Location = new System.Drawing.Point(518, 204);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 47;
@@ -275,7 +269,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(518, 132);
+            this.label5.Location = new System.Drawing.Point(518, 165);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 46;
@@ -285,7 +279,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(533, 92);
+            this.label7.Location = new System.Drawing.Point(533, 125);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(23, 13);
             this.label7.TabIndex = 45;
@@ -300,7 +294,7 @@
             "De banda",
             "De porteria",
             "De esquina"});
-            this.SaqueB.Location = new System.Drawing.Point(481, 186);
+            this.SaqueB.Location = new System.Drawing.Point(481, 219);
             this.SaqueB.Name = "SaqueB";
             this.SaqueB.Size = new System.Drawing.Size(121, 21);
             this.SaqueB.TabIndex = 44;
@@ -315,7 +309,7 @@
             "Autogol",
             "Gol Olimpico",
             "Libre directo"});
-            this.GoalB.Location = new System.Drawing.Point(482, 108);
+            this.GoalB.Location = new System.Drawing.Point(482, 141);
             this.GoalB.Name = "GoalB";
             this.GoalB.Size = new System.Drawing.Size(121, 21);
             this.GoalB.TabIndex = 43;
@@ -339,14 +333,14 @@
             "Anticipación",
             "Interceptación",
             "Presión"});
-            this.DefensaB.Location = new System.Drawing.Point(481, 146);
+            this.DefensaB.Location = new System.Drawing.Point(481, 179);
             this.DefensaB.Name = "DefensaB";
             this.DefensaB.Size = new System.Drawing.Size(121, 21);
             this.DefensaB.TabIndex = 42;
             // 
             // GoalB_Anotar
             // 
-            this.GoalB_Anotar.Location = new System.Drawing.Point(401, 106);
+            this.GoalB_Anotar.Location = new System.Drawing.Point(401, 139);
             this.GoalB_Anotar.Name = "GoalB_Anotar";
             this.GoalB_Anotar.Size = new System.Drawing.Size(75, 23);
             this.GoalB_Anotar.TabIndex = 48;
@@ -356,7 +350,7 @@
             // 
             // DefensaB_Anotar
             // 
-            this.DefensaB_Anotar.Location = new System.Drawing.Point(400, 144);
+            this.DefensaB_Anotar.Location = new System.Drawing.Point(400, 177);
             this.DefensaB_Anotar.Name = "DefensaB_Anotar";
             this.DefensaB_Anotar.Size = new System.Drawing.Size(75, 23);
             this.DefensaB_Anotar.TabIndex = 49;
@@ -366,7 +360,7 @@
             // 
             // SaqueB_Anotar
             // 
-            this.SaqueB_Anotar.Location = new System.Drawing.Point(400, 186);
+            this.SaqueB_Anotar.Location = new System.Drawing.Point(400, 219);
             this.SaqueB_Anotar.Name = "SaqueB_Anotar";
             this.SaqueB_Anotar.Size = new System.Drawing.Size(75, 23);
             this.SaqueB_Anotar.TabIndex = 50;
@@ -376,7 +370,7 @@
             // 
             // GoalA_Anotar
             // 
-            this.GoalA_Anotar.Location = new System.Drawing.Point(164, 106);
+            this.GoalA_Anotar.Location = new System.Drawing.Point(164, 139);
             this.GoalA_Anotar.Name = "GoalA_Anotar";
             this.GoalA_Anotar.Size = new System.Drawing.Size(75, 23);
             this.GoalA_Anotar.TabIndex = 51;
@@ -386,7 +380,7 @@
             // 
             // DefensaA_Anotar
             // 
-            this.DefensaA_Anotar.Location = new System.Drawing.Point(163, 144);
+            this.DefensaA_Anotar.Location = new System.Drawing.Point(163, 177);
             this.DefensaA_Anotar.Name = "DefensaA_Anotar";
             this.DefensaA_Anotar.Size = new System.Drawing.Size(75, 23);
             this.DefensaA_Anotar.TabIndex = 52;
@@ -396,7 +390,7 @@
             // 
             // SaqueA_Anotar
             // 
-            this.SaqueA_Anotar.Location = new System.Drawing.Point(163, 184);
+            this.SaqueA_Anotar.Location = new System.Drawing.Point(163, 217);
             this.SaqueA_Anotar.Name = "SaqueA_Anotar";
             this.SaqueA_Anotar.Size = new System.Drawing.Size(75, 23);
             this.SaqueA_Anotar.TabIndex = 53;
@@ -404,29 +398,58 @@
             this.SaqueA_Anotar.UseVisualStyleBackColor = true;
             this.SaqueA_Anotar.Click += new System.EventHandler(this.SaqueA_Anotar_Click);
             // 
-            // Cargar
-            // 
-            this.Cargar.Location = new System.Drawing.Point(117, 538);
-            this.Cargar.Name = "Cargar";
-            this.Cargar.Size = new System.Drawing.Size(75, 23);
-            this.Cargar.TabIndex = 54;
-            this.Cargar.Text = "Load";
-            this.Cargar.UseVisualStyleBackColor = true;
-            this.Cargar.Click += new System.EventHandler(this.Cargar_Click);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // button1
+            // menuStrip1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 285);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 55;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(662, 24);
+            this.menuStrip1.TabIndex = 55;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
+            this.loadToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.Grabar_Click);
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.Cargar_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nosotrosToolStripMenuItem});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // nosotrosToolStripMenuItem
+            // 
+            this.nosotrosToolStripMenuItem.Name = "nosotrosToolStripMenuItem";
+            this.nosotrosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nosotrosToolStripMenuItem.Text = "Nosotros";
+            this.nosotrosToolStripMenuItem.Click += new System.EventHandler(this.nosotrosToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -436,8 +459,6 @@
             this.BackgroundImage = global::Soccer_Final.Properties.Resources.gray_lines_wallpaper_1812_1907_hd_wallpapers;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(662, 573);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.Cargar);
             this.Controls.Add(this.SaqueA_Anotar);
             this.Controls.Add(this.DefensaA_Anotar);
             this.Controls.Add(this.GoalA_Anotar);
@@ -456,7 +477,6 @@
             this.Controls.Add(this.SaqueA);
             this.Controls.Add(this.GoalA);
             this.Controls.Add(this.DefensaA);
-            this.Controls.Add(this.Grabar);
             this.Controls.Add(this.grid);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox3);
@@ -466,10 +486,14 @@
             this.Controls.Add(this.START);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,7 +509,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView grid;
-        private System.Windows.Forms.Button Grabar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
@@ -504,9 +527,13 @@
         private System.Windows.Forms.Button GoalA_Anotar;
         private System.Windows.Forms.Button DefensaA_Anotar;
         private System.Windows.Forms.Button SaqueA_Anotar;
-        private System.Windows.Forms.Button Cargar;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nosotrosToolStripMenuItem;
     }
 }
 

@@ -220,9 +220,10 @@ namespace Soccer_Final
             
         }
 
-       
-
-       
+        private void nosotrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Integrantes:\n Brian Salomon  \n Christopher Curiel   \n Manuel Nuñez  ");
+        }
     }
 
     }

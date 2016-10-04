@@ -128,14 +128,14 @@ namespace Soccer_Final
         private void Anotar_A_Click(object sender, EventArgs e)
         {
             
-            grid.Rows.Add("Team A",DefensaA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
+            data.Rows.Add("Team A",DefensaA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
             
         }
 
         private void Anotar_B_Click(object sender, EventArgs e)
         {
             
-            grid.Rows.Add("Team B", DefensaA.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
+            data.Rows.Add("Team B", DefensaA.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
         }
         
 
@@ -143,34 +143,34 @@ namespace Soccer_Final
         {
             score.Score(0);
             textBox2.Text = Convert.ToString(score.GetScore(0));
-            grid.Rows.Add("Team A", GoalA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
+            data.Rows.Add("Team A", GoalA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
         }
 
         private void GoalB_Anotar_Click(object sender, EventArgs e)
         {
             score.Score(1);
             textBox3.Text = Convert.ToString(score.GetScore(1));
-            grid.Rows.Add("Team B", GoalB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
+            data.Rows.Add("Team B", GoalB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
         }
 
         private void DefensaA_Defensa_Click(object sender, EventArgs e)
         {
-            grid.Rows.Add("Team A", DefensaA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
+            data.Rows.Add("Team A", DefensaA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
         }
 
         private void DefensaB_Anotar_Click(object sender, EventArgs e)
         {
-            grid.Rows.Add("Team B", DefensaB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
+            data.Rows.Add("Team B", DefensaB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
         }
 
         private void SaqueA_Anotar_Click(object sender, EventArgs e)
         {
-            grid.Rows.Add("Team A", SaqueA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
+            data.Rows.Add("Team A", SaqueA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
         }
 
         private void SaqueB_Anotar_Click(object sender, EventArgs e)
         {
-            grid.Rows.Add("Team B", SaqueB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
+            data.Rows.Add("Team B", SaqueB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
         }
 
         private void GoalA_SelectedIndexChanged(object sender, EventArgs e)

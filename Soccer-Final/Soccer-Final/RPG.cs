@@ -264,7 +264,7 @@ namespace Soccer_Final
                         }
                         else
                         {
-                            textlog.AppendLine("El jugador " + player2.Name + "del equipo " + teams[1].getname() + " perdio el balon:" + textBox1.Text);
+                            textlog.AppendLine("El jugador " + player2.Name + " del equipo " + teams[1].getname() + " perdio el balon:" + textBox1.Text);
                             teams[1].players[comboBox2.SelectedIndex].loseball();
                             teams[0].players[comboBox1.SelectedIndex].hasbal();
                         }
@@ -273,7 +273,7 @@ namespace Soccer_Final
                     {
                        if(action.Carga(player2, player1))
                         {
-                            textlog.AppendLine("El jugador " + player2.Name + "del equipo " + teams[0].getname() + " robo el balon :" + textBox1.Text);
+                            textlog.AppendLine("El jugador " + player2.Name + "del equipo " + teams[1].getname() + " robo el balon :" + textBox1.Text);
                             log.Text = textlog.ToString();
                             ballApos += Convert.ToInt32(teams[0].players[comboBox1.SelectedIndex].Passmt * 1.5);
                         }
@@ -352,7 +352,7 @@ namespace Soccer_Final
             log.Text = textlog.ToString();
             int index=0;
             teamapic.Location = new Point(ballApos, 0);
-            teambpic.Location = new Point(ballBpos, 200);
+            teambpic.Location = new Point(ballBpos, 250);
             if (teams[0].teamhasball())
             {
                 

@@ -65,6 +65,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nosotrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -93,12 +94,15 @@
             // 
             // START
             // 
-            this.START.Location = new System.Drawing.Point(283, 139);
+            this.START.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.START.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("START.BackgroundImage")));
+            this.START.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.START.Location = new System.Drawing.Point(283, 119);
             this.START.Name = "START";
-            this.START.Size = new System.Drawing.Size(75, 23);
+            this.START.Size = new System.Drawing.Size(75, 54);
             this.START.TabIndex = 11;
             this.START.Text = "START";
-            this.START.UseVisualStyleBackColor = true;
+            this.START.UseVisualStyleBackColor = false;
             this.START.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
@@ -118,9 +122,11 @@
             // 
             // stop
             // 
+            this.stop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("stop.BackgroundImage")));
+            this.stop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.stop.Location = new System.Drawing.Point(283, 179);
             this.stop.Name = "stop";
-            this.stop.Size = new System.Drawing.Size(75, 23);
+            this.stop.Size = new System.Drawing.Size(75, 61);
             this.stop.TabIndex = 20;
             this.stop.Text = "STOP";
             this.stop.UseVisualStyleBackColor = true;
@@ -458,6 +464,17 @@
             // 
             this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged_2);
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(572, 517);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(57, 30);
+            this.button1.TabIndex = 56;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -466,6 +483,7 @@
             this.BackgroundImage = global::Soccer_Final.Properties.Resources.gray_lines_wallpaper_1812_1907_hd_wallpapers;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(662, 573);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.SaqueA_Anotar);
             this.Controls.Add(this.DefensaA_Anotar);
             this.Controls.Add(this.GoalA_Anotar);
@@ -544,6 +562,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nosotrosToolStripMenuItem;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

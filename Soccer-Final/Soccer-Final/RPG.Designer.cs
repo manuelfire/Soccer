@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RPG));
             this.teamabut = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -42,16 +43,17 @@
             this.scoreA = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.start = new System.Windows.Forms.Button();
-            this.teambpic = new System.Windows.Forms.PictureBox();
-            this.teamapic = new System.Windows.Forms.PictureBox();
-            this.soccerfield = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.teambbut = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.submitbut = new System.Windows.Forms.Button();
             this.PaseA = new System.Windows.Forms.ComboBox();
             this.PaseB = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.teambpic = new System.Windows.Forms.PictureBox();
+            this.teamapic = new System.Windows.Forms.PictureBox();
+            this.soccerfield = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.teambpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamapic)).BeginInit();
@@ -63,11 +65,12 @@
             // 
             // teamabut
             // 
+            this.teamabut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("teamabut.BackgroundImage")));
+            this.teamabut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.teamabut.Location = new System.Drawing.Point(47, 327);
             this.teamabut.Name = "teamabut";
-            this.teamabut.Size = new System.Drawing.Size(75, 23);
+            this.teamabut.Size = new System.Drawing.Size(75, 65);
             this.teamabut.TabIndex = 0;
-            this.teamabut.Text = "Set";
             this.teamabut.UseVisualStyleBackColor = true;
             this.teamabut.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -91,7 +94,7 @@
             // 
             // log
             // 
-            this.log.Location = new System.Drawing.Point(299, 525);
+            this.log.Location = new System.Drawing.Point(304, 540);
             this.log.Name = "log";
             this.log.Size = new System.Drawing.Size(439, 72);
             this.log.TabIndex = 3;
@@ -139,7 +142,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(518, 20);
+            this.label1.Location = new System.Drawing.Point(518, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 29;
@@ -178,7 +181,7 @@
             this.textBox1.BackColor = System.Drawing.SystemColors.InfoText;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
             this.textBox1.ForeColor = System.Drawing.Color.DarkRed;
-            this.textBox1.Location = new System.Drawing.Point(481, 36);
+            this.textBox1.Location = new System.Drawing.Point(486, 20);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -191,13 +194,71 @@
             // 
             // start
             // 
-            this.start.Location = new System.Drawing.Point(502, 77);
+            this.start.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("start.BackgroundImage")));
+            this.start.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.start.Location = new System.Drawing.Point(521, 58);
             this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(75, 23);
+            this.start.Size = new System.Drawing.Size(39, 42);
             this.start.TabIndex = 30;
-            this.start.Text = "Start";
             this.start.UseVisualStyleBackColor = true;
             this.start.Click += new System.EventHandler(this.start_Click);
+            // 
+            // teambbut
+            // 
+            this.teambbut.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.teambbut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("teambbut.BackgroundImage")));
+            this.teambbut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.teambbut.Location = new System.Drawing.Point(921, 327);
+            this.teambbut.Name = "teambbut";
+            this.teambbut.Size = new System.Drawing.Size(75, 65);
+            this.teambbut.TabIndex = 36;
+            this.teambbut.UseVisualStyleBackColor = false;
+            this.teambbut.Click += new System.EventHandler(this.teambbut_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // submitbut
+            // 
+            this.submitbut.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.submitbut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("submitbut.BackgroundImage")));
+            this.submitbut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.submitbut.Location = new System.Drawing.Point(502, 480);
+            this.submitbut.Name = "submitbut";
+            this.submitbut.Size = new System.Drawing.Size(75, 54);
+            this.submitbut.TabIndex = 37;
+            this.submitbut.UseVisualStyleBackColor = false;
+            this.submitbut.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // PaseA
+            // 
+            this.PaseA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PaseA.FormattingEnabled = true;
+            this.PaseA.Location = new System.Drawing.Point(25, 286);
+            this.PaseA.Name = "PaseA";
+            this.PaseA.Size = new System.Drawing.Size(121, 21);
+            this.PaseA.TabIndex = 38;
+            // 
+            // PaseB
+            // 
+            this.PaseB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PaseB.FormattingEnabled = true;
+            this.PaseB.Location = new System.Drawing.Point(896, 286);
+            this.PaseB.Name = "PaseB";
+            this.PaseB.Size = new System.Drawing.Size(121, 21);
+            this.PaseB.TabIndex = 39;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(809, 554);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 58);
+            this.button1.TabIndex = 40;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // teambpic
             // 
@@ -255,48 +316,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
             // 
-            // teambbut
-            // 
-            this.teambbut.Location = new System.Drawing.Point(921, 327);
-            this.teambbut.Name = "teambbut";
-            this.teambbut.Size = new System.Drawing.Size(75, 23);
-            this.teambbut.TabIndex = 36;
-            this.teambbut.Text = "Set";
-            this.teambbut.UseVisualStyleBackColor = true;
-            this.teambbut.Click += new System.EventHandler(this.teambbut_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // submitbut
-            // 
-            this.submitbut.Location = new System.Drawing.Point(502, 480);
-            this.submitbut.Name = "submitbut";
-            this.submitbut.Size = new System.Drawing.Size(75, 39);
-            this.submitbut.TabIndex = 37;
-            this.submitbut.Text = "Go";
-            this.submitbut.UseVisualStyleBackColor = true;
-            this.submitbut.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // PaseA
-            // 
-            this.PaseA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.PaseA.FormattingEnabled = true;
-            this.PaseA.Location = new System.Drawing.Point(25, 286);
-            this.PaseA.Name = "PaseA";
-            this.PaseA.Size = new System.Drawing.Size(121, 21);
-            this.PaseA.TabIndex = 38;
-            // 
-            // PaseB
-            // 
-            this.PaseB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.PaseB.FormattingEnabled = true;
-            this.PaseB.Location = new System.Drawing.Point(896, 286);
-            this.PaseB.Name = "PaseB";
-            this.PaseB.Size = new System.Drawing.Size(121, 21);
-            this.PaseB.TabIndex = 39;
-            // 
             // bindingSource1
             // 
             this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
@@ -305,7 +324,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1031, 643);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.PaseB);
             this.Controls.Add(this.PaseA);
             this.Controls.Add(this.submitbut);
@@ -368,5 +389,6 @@
         private System.Windows.Forms.ComboBox PaseA;
         private System.Windows.Forms.ComboBox PaseB;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Button button1;
     }
 }

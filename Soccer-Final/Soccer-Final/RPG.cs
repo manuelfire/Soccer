@@ -456,5 +456,12 @@ namespace Soccer_Final
         {
             player2.controls.play();
         }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            Form2 newForm = new Form2();
+            newForm.Show();
+            this.Close();
+        }
     }
 }

@@ -33,7 +33,7 @@ namespace Soccer_Final
             sw.Write(sw.NewLine);
             // Escribir Celdas.
             foreach (DataRow dr in dt.Rows)
-            {
+            {//*
                 for (int i = 0; i < iColCount; i++)
                 {
                     if (!Convert.IsDBNull(dr[i]))

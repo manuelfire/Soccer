@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Soccer_Final
 {
     class RPG_Players
-    {
+    { //*
         private string name;
         private int attack;
         private int defense;

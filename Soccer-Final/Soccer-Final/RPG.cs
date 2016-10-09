@@ -87,7 +87,7 @@ namespace Soccer_Final
             int ran;
             int player = r.Next(0, 10);
 
-           
+           //*
             teams[equipo].players[player].getball();
         }
 

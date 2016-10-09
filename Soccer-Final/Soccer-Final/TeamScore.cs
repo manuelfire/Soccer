@@ -9,7 +9,7 @@ namespace Soccer_Final
 {
     
    public class TeamScore : WritePlay
-    {
+    {//*
         int teamA;
         int teamB;
        

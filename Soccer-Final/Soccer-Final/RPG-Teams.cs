@@ -9,7 +9,7 @@ using System.Windows.Forms;
 namespace Soccer_Final
 {
     class RPG_Teams
-    {
+    {//*
         string teamname;
       public  RPG_Players[] players = new RPG_Players[11];
         int teamsize = 0;

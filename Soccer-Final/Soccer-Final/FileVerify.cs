@@ -15,7 +15,7 @@ namespace Soccer_Final
         
         public FileInfo Nuevo(string ruta)
         {
-            
+            //*
             string dir = Path.GetDirectoryName(ruta);
             string fileName = Path.GetFileNameWithoutExtension(ruta);
             string ext = Path.GetExtension(ruta);

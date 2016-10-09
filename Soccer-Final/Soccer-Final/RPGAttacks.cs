@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Soccer_Final
 {
     class RPGAttacks
-    {
+    {//*
         int attack;
         int defense;
         int defense2;

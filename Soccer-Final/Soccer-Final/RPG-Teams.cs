@@ -89,14 +89,7 @@ namespace Soccer_Final
             {
             int index = 0;
             List<RPG_Players> l = new List<RPG_Players>();
-            foreach (RPG_Players p in players)
-            {
-                if (p.Expulsado)
-                {
-                    players[index] = null;
-                }
-                index++;
-            }
+            
             l.AddRange(players);
             
 

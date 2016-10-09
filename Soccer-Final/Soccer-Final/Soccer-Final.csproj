@@ -142,9 +142,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Rade8-Snow-E2-Aqua-Games-Soccer.ico" />
-    <Content Include="Resources\Champions.mp3" />
-    <Content Include="Resources\SuperCampeones.mp3" />
-    <Content Include="Resources\Waka-Waka.mp3" />
+    <None Include="Resources\Champions.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="Resources\SuperCampeones.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Waka-Waka.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="Resources\iniesta9.png" />
     <None Include="Resources\Zone Soccer Player_Thomas Müller_3.png" />
     <None Include="Resources\soccer-field.jpg" />

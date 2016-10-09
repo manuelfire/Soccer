@@ -19,7 +19,7 @@ namespace Soccer_Final
         public MainForm()
         {
             InitializeComponent();
-            player1.URL = "Waka-Waka.mp3";
+            player1.URL = "Resources\\Waka-Waka.mp3";
             r.MdiParent = this;
             f.MdiParent = this;
             

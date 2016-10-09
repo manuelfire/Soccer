@@ -133,4 +133,13 @@
   <data name="iniesta9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iniesta9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Champions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Champions.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SuperCampeones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SuperCampeones.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Waka_Waka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Waka-Waka.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

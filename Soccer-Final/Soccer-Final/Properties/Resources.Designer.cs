@@ -61,6 +61,16 @@ namespace Soccer_Final.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Champions {
+            get {
+                object obj = ResourceManager.GetObject("Champions", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap gray_lines_wallpaper_1812_1907_hd_wallpapers {
@@ -97,6 +107,26 @@ namespace Soccer_Final.Properties {
             get {
                 object obj = ResourceManager.GetObject("soccer-field", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] SuperCampeones {
+            get {
+                object obj = ResourceManager.GetObject("SuperCampeones", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Waka_Waka {
+            get {
+                object obj = ResourceManager.GetObject("Waka_Waka", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

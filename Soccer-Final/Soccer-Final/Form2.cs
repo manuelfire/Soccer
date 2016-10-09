@@ -18,6 +18,7 @@ namespace Soccer_Final
         {
             InitializeComponent();
             player4.URL = "Resources\\Waka-Waka.mp3";
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

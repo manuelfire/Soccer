@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WMPLib;
+
 
 namespace Soccer_Final
 {
     public partial class RPG : Form
     {
-        WindowsMediaPlayer player3 = new WindowsMediaPlayer();
+      
         RPG_Teams[] teams = new RPG_Teams[3];
         RPG_Players play = new RPG_Players();
         RPGAttacks action = new RPGAttacks();
@@ -56,7 +56,7 @@ namespace Soccer_Final
 
         private void RPG_Load(object sender, EventArgs e)
         {
-            player3.controls.play();
+           
         }
     }
 }

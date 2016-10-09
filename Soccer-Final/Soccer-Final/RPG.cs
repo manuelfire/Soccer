@@ -459,7 +459,7 @@ namespace Soccer_Final
 
         private void teamatxt_Click(object sender, EventArgs e)
         {
-            Form2 klk = new Form2(teams[0].getname());
+            Form4 klk = new Form4(teams[0].getname());
             klk.Show();
 
         }

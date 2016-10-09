@@ -125,6 +125,7 @@
             this.teamatxt.Size = new System.Drawing.Size(37, 13);
             this.teamatxt.TabIndex = 6;
             this.teamatxt.Text = "Team:";
+            this.teamatxt.Click += new System.EventHandler(this.teamatxt_Click);
             // 
             // teambtxt
             // 

@@ -456,5 +456,12 @@ namespace Soccer_Final
         {
             player2.controls.play();
         }
+
+        private void teamatxt_Click(object sender, EventArgs e)
+        {
+            Form2 klk = new Form2(teams[0].getname());
+            klk.Show();
+
+        }
     }
 }

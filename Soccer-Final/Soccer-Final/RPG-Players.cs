@@ -17,7 +17,7 @@ namespace Soccer_Final
         private int dribble;
         private int faltas;
         private bool expulsado = false;
-
+        
 
 
         public void getball()

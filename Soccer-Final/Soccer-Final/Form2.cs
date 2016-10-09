@@ -26,6 +26,7 @@ namespace Soccer_Final
             Form1 newForm = new Form1();
             newForm.Show();
             this.Hide();
+            player4.controls.stop();
             
 
         }
@@ -35,11 +36,14 @@ namespace Soccer_Final
             RPG newForm = new RPG();
             newForm.Show();
             this.Hide();
+            player4.controls.stop();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            player4.controls.stop();
             Close();
+            
         }
 
         private void bindingSource1_CurrentChanged(object sender, EventArgs e)

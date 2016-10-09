@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
-
+//lklkl
 namespace Soccer_Final
 {
     public partial class Form2 : Form
@@ -25,6 +25,8 @@ namespace Soccer_Final
             Form1 newForm = new Form1();
             newForm.Show();
             this.Hide();
+            
+
         }
 
         private void button2_Click(object sender, EventArgs e)

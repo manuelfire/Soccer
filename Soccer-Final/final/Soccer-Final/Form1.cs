@@ -8,13 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using WMPLib;
 
 namespace Soccer_Final
 {
     public partial class Form1 : Form
     {
-        WindowsMediaPlayer player3 = new WindowsMediaPlayer();
         DateTime startTime = DateTime.Now;
 
         Timer timer = new Timer() { Interval = 1000 };
@@ -30,7 +28,6 @@ namespace Soccer_Final
         {
             
             InitializeComponent();
-            player3.URL = "Champions.mp3";
             textBox1.Text = TimeSpan.FromMinutes(45).ToString();
             this.Text = title;
             data.Columns.Add("Equipo");
@@ -226,16 +223,6 @@ namespace Soccer_Final
         private void nosotrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Integrantes:\n Brian Salomon  \n Christopher Curiel   \n Manuel Nuñez  ");
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            player3.controls.play();
-        }
-
-        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
-
         }
     }
 

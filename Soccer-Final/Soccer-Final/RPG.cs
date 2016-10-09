@@ -463,5 +463,12 @@ namespace Soccer_Final
             newForm.Show();
             this.Close();
         }
+
+        private void teamatxt_Click(object sender, EventArgs e)
+        {
+            Form4 klk = new Form4(teams[0].getname());
+            klk.Show();
+
+        }
     }
 }

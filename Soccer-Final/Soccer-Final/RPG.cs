@@ -7,17 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace Soccer_Final
 {
     public partial class RPG : Form
     {
+        WindowsMediaPlayer player3 = new WindowsMediaPlayer();
         RPG_Teams[] teams = new RPG_Teams[3];
         RPG_Players play = new RPG_Players();
         RPGAttacks action = new RPGAttacks();
         public RPG()
         {
             InitializeComponent();
+            player3.URL = "SuperCampeones.mp3";
             teams[0] = new RPG_Teams("Konoha team");
             teams[1] = new RPG_Teams("El Real Dragon");
             teams[2] = new RPG_Teams("Los Brayans");
@@ -44,6 +47,16 @@ namespace Soccer_Final
                 MessageBox.Show("fracaso");
             }
 
+        }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RPG_Load(object sender, EventArgs e)
+        {
+            player3.controls.play();
         }
     }
 }

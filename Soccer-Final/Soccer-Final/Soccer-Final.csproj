@@ -89,6 +89,7 @@
       <DependentUpon>RPG.cs</DependentUpon>
     </Compile>
     <Compile Include="RPGAttacks.cs" />
+    <Compile Include="RPGLogic.cs" />
     <Compile Include="TeamScore.cs" />
     <Compile Include="WritePlay.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -143,6 +144,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Rade8-Snow-E2-Aqua-Games-Soccer.ico" />
+    <None Include="Resources\iniesta9.png" />
+    <None Include="Resources\Zone Soccer Player_Thomas Müller_3.png" />
+    <None Include="Resources\soccer-field.jpg" />
+    <None Include="Resources\soccer1.png" />
+    <EmbeddedResource Include="Resources\soccer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

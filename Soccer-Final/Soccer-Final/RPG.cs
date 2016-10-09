@@ -76,11 +76,7 @@ namespace Soccer_Final
         {
 
 
-            comboBox1.Enabled = false;
-            comboBox3.Enabled = false;
-            teamabut.Enabled = false;
-            PaseA.Enabled = false;
-
+            
 
 
         }
@@ -151,7 +147,7 @@ namespace Soccer_Final
         {
             
             comboBox3.Enabled = true;
-            teamabut.Enabled = true;
+            teamabut1.Enabled = true;
 
             
             comboBox4.Enabled = true;
@@ -161,16 +157,16 @@ namespace Soccer_Final
         }
         public void gotime()
         {
-            if (teamabut.Enabled == false && teambbut.Enabled == false)
+            if (teamabut1.Enabled == false && teambbut.Enabled == false)
             {
 
                 comboBox1.Enabled = false;
                 comboBox3.Enabled = false;
-                teamabut.Enabled = false;
+                teamabut1.Enabled = false;
 
                 comboBox1.Enabled = false;
                 comboBox3.Enabled = false;
-                teamabut.Enabled = false;
+                teamabut1.Enabled = false;
                 submitbut.Enabled = true;
             }
         }
@@ -468,6 +464,20 @@ namespace Soccer_Final
         {
             Form4 klk = new Form4(teams[0].getname());
             klk.Show();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void teamabut1_Click(object sender, EventArgs e)
+        {
+            comboBox1.Enabled = false;
+            comboBox3.Enabled = false;
+            teamabut1.Enabled = false;
+            PaseA.Enabled = false;
 
         }
     }

@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RPG));
-            this.teamabut = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.log = new System.Windows.Forms.RichTextBox();
@@ -55,6 +54,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.teamabut1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.teambpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamapic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soccerfield)).BeginInit();
@@ -62,17 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // teamabut
-            // 
-            this.teamabut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("teamabut.BackgroundImage")));
-            this.teamabut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.teamabut.Location = new System.Drawing.Point(47, 327);
-            this.teamabut.Name = "teamabut";
-            this.teamabut.Size = new System.Drawing.Size(75, 65);
-            this.teamabut.TabIndex = 0;
-            this.teamabut.UseVisualStyleBackColor = true;
-            this.teamabut.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox1
             // 
@@ -206,7 +195,7 @@
             // 
             // teambbut
             // 
-            this.teambbut.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.teambbut.BackColor = System.Drawing.Color.Transparent;
             this.teambbut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("teambbut.BackgroundImage")));
             this.teambbut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.teambbut.Location = new System.Drawing.Point(921, 327);
@@ -321,12 +310,23 @@
             // 
             this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
             // 
+            // teamabut1
+            // 
+            this.teamabut1.Location = new System.Drawing.Point(47, 327);
+            this.teamabut1.Name = "teamabut1";
+            this.teamabut1.Size = new System.Drawing.Size(75, 58);
+            this.teamabut1.TabIndex = 41;
+            this.teamabut1.Text = "Set";
+            this.teamabut1.UseVisualStyleBackColor = true;
+            this.teamabut1.Click += new System.EventHandler(this.teamabut1_Click);
+            // 
             // RPG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1031, 643);
+            this.Controls.Add(this.teamabut1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PaseB);
             this.Controls.Add(this.PaseA);
@@ -349,7 +349,6 @@
             this.Controls.Add(this.log);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.teamabut);
             this.Name = "RPG";
             this.Text = "RPG";
             this.Load += new System.EventHandler(this.RPG_Load);
@@ -365,8 +364,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button teamabut;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.RichTextBox log;
@@ -391,5 +388,6 @@
         private System.Windows.Forms.ComboBox PaseB;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button teamabut1;
     }
 }

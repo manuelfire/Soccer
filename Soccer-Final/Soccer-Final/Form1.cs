@@ -257,6 +257,7 @@ namespace Soccer_Final
             Form2 newForm = new Form2();
             newForm.Show();
             this.Close();
+            player3.controls.stop();
         }
     }
 

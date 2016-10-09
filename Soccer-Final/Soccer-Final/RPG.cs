@@ -458,6 +458,7 @@ namespace Soccer_Final
             Form2 newForm = new Form2();
             newForm.Show();
             this.Close();
+            player2.controls.stop();
         }
 
         private void teamatxt_Click(object sender, EventArgs e)

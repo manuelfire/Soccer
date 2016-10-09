@@ -23,6 +23,7 @@ namespace Soccer_Final
             if (!File.Exists("Equipos\\" + teamname + ".csv"))
             {
                 File.Create("Equipos\\" + teamname + ".csv").Dispose();
+                fillplayer();
             }
             
         } 

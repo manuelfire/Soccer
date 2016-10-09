@@ -52,11 +52,13 @@
             this.submitbut = new System.Windows.Forms.Button();
             this.PaseA = new System.Windows.Forms.ComboBox();
             this.PaseB = new System.Windows.Forms.ComboBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.teambpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamapic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soccerfield)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // teamabut
@@ -295,6 +297,10 @@
             this.PaseB.Size = new System.Drawing.Size(121, 21);
             this.PaseB.TabIndex = 39;
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
+            // 
             // RPG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,11 +330,13 @@
             this.Controls.Add(this.teamabut);
             this.Name = "RPG";
             this.Text = "RPG";
+            this.Load += new System.EventHandler(this.RPG_Load);
             ((System.ComponentModel.ISupportInitialize)(this.teambpic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamapic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soccerfield)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,5 +367,6 @@
         private System.Windows.Forms.Button submitbut;
         private System.Windows.Forms.ComboBox PaseA;
         private System.Windows.Forms.ComboBox PaseB;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

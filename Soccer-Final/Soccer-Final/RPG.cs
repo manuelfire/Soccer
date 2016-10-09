@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace Soccer_Final
 {
     public partial class RPG : Form
     {
+        WindowsMediaPlayer player2 = new WindowsMediaPlayer();
         RPG_Teams[] teams = new RPG_Teams[2];
         RPG_Players play = new RPG_Players();
         RPGAttacks action = new RPGAttacks();
@@ -36,6 +38,7 @@ namespace Soccer_Final
         {
             string kl;
             InitializeComponent();
+            player2.URL = " Resources\\SuperCampeones.mp3";
             timer1.Interval = 1000;
             soccerfield.Controls.Add(teamapic);
             soccerfield.Controls.Add(teambpic);
@@ -442,6 +445,16 @@ namespace Soccer_Final
             {
                 PaseB.Enabled = false;
             }
+        }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RPG_Load(object sender, EventArgs e)
+        {
+            player2.controls.play();
         }
     }
 }

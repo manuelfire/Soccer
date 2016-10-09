@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using WMPLib;
 
 
 
@@ -17,7 +18,7 @@ namespace Soccer_Final
     public partial class Form1 : Form
         
     {
-    
+        WindowsMediaPlayer player3 = new WindowsMediaPlayer();
         DateTime startTime = DateTime.Now;
 
         Timer timer = new Timer() { Interval = 1000 };
@@ -33,7 +34,7 @@ namespace Soccer_Final
         {
             
             InitializeComponent();
-           
+           player3.URL = "Resources\\Champions.mp3";
             textBox1.Text = TimeSpan.FromMinutes(45).ToString();
             this.Text = title;
             data.Columns.Add("Equipo");
@@ -238,10 +239,15 @@ namespace Soccer_Final
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            player3.controls.play();
         }
 
         private void bindingSource1_CurrentChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingSource1_CurrentChanged_2(object sender, EventArgs e)
         {
 
         }

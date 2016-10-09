@@ -34,7 +34,7 @@ namespace Soccer_Final
         String[] d = {"Robo", "Carga","Intercepcion" };
         public RPG()
         {
-            
+            string kl;
             InitializeComponent();
             timer1.Interval = 1000;
             soccerfield.Controls.Add(teamapic);

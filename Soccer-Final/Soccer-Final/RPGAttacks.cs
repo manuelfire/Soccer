@@ -10,63 +10,102 @@ namespace Soccer_Final
     {
         int attack;
         int defense;
+        int defense2;
         int goal;
 
-        public bool Attack(RPG_Players player1, RPG_Players player2)
+        public bool Robo(RPG_Players player1, RPG_Players player2)
+        {
+
+
+            //Verificamos la diferencia de attaque y defensa entre los jugadores
+            Random r = new Random((int)DateTime.Now.Ticks);
+            attack = player2.Attack;
+            defense = player1.Defense;
+
+            double prob = attack / (attack + defense);
+            if (r.NextDouble() <= prob)
+            {
+                return true;
+
+            }
+
+            return false;
+        }
+        public bool Dribleo(RPG_Players player1, RPG_Players player2)
         {
             //Verificamos la diferencia de attaque y defensa entre los jugadores
-            Random r= new Random((int)DateTime.Now.Ticks);
+            Random r = new Random((int)DateTime.Now.Ticks);
+            attack = player1.Attack;
+            defense = player2.Attack;
+            
+            double prob = (double)defense / (double)(attack + defense);
+            if (r.NextDouble() <= prob)
+            {
+                return true;
+
+            }
+
+            return false;
+        }
+        public bool Goal(RPG_Players player1, RPG_Players player2, RPG_Players arquero, double ball)
+        {
+            //Verificamos la diferencia de attaque y defensa entre los jugadores
+            Random r = new Random((int)DateTime.Now.Ticks);
+            
+            attack = player1.Goal;
+            defense = player2.Defense;
+            defense2 = arquero.Defense;
+            double prob = (double)(attack+ball)/ (double)(attack+defense+defense2);
+            if(r.NextDouble() <= prob)
+            {
+                return true;
+                
+            }
+           
+            return false;
+        }
+        public bool Intercepcion(RPG_Players player1, RPG_Players player2)
+        {
+            //Verificamos la diferencia de attaque y defensa entre los jugadores
+            Random r = new Random((int)DateTime.Now.Ticks);
             attack = player1.Attack;
             defense = player2.Defense;
-            int res = attack - defense;
-            if (res < 0)
-            {
 
-                if (r.NextDouble() < 0.1)//prob 5%
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-                if (res<=5 && res >= 0)
+            double prob = (double)attack / (double)(attack + defense);
+            if (r.NextDouble() <= prob)
             {
-                
-                if(r.NextDouble() <0.25)//prob 25%
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return true;
 
             }
-            if (res >5 && res <= 10)
+            return false;
+        }
+        public bool Pase(RPG_Players player1, RPG_Players player2,RPG_Players player3)
+        {
+            //Verificamos la diferencia de attaque y defensa entre los jugadores
+            Random r = new Random((int)DateTime.Now.Ticks);
+            attack = player1.Attack;
+            defense = player2.Defense;
+            defense2 = player3.Defense;
+
+            double prob = (double)attack +defense2 / (double)(attack + defense+defense2);
+            if (r.NextDouble() <= prob)
             {
-               
-                if (r.NextDouble() < 0.50)//prob 50%
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return true;
 
             }
-            if (res > 10)
+            return false;
+        }
+        public bool Carga(RPG_Players player1, RPG_Players player2)
+        {
+            //Verificamos la diferencia de attaque y defensa entre los jugadores
+            Random r = new Random((int)DateTime.Now.Ticks);
+            attack = player1.Attack+20;
+            defense = player2.Attack;
+
+            double prob = (double)attack / (double)(attack + defense);
+            if (r.NextDouble() <= prob)
             {
-                if (r.NextDouble() < 0.90)//prob 90%
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return true;
 
             }
             return false;

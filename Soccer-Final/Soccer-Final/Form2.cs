@@ -42,8 +42,9 @@ namespace Soccer_Final
         private void button3_Click(object sender, EventArgs e)
         {
             player4.controls.stop();
-            Close();
-            
+            Application.Exit();
+
+
         }
 
         private void bindingSource1_CurrentChanged(object sender, EventArgs e)

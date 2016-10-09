@@ -23,7 +23,7 @@ namespace Soccer_Final
             r.MdiParent = this;
             f.MdiParent = this;
             
-            
+            //klk
         }
 
         private void MainForm_Load(object sender, EventArgs e)

@@ -111,6 +111,19 @@ namespace Soccer_Final
             }
         }
 
+        public bool Expulsado
+        {
+            get
+            {
+                return expulsado;
+            }
+
+            set
+            {
+                expulsado = value;
+            }
+        }
+
         public void NewPlayer(string names, int a, int b, int c, int d, int f)
         {
             name = names;
@@ -122,14 +135,14 @@ namespace Soccer_Final
         }
         public void Expulsar()
         {
-            expulsado = true;
+            Expulsado = true;
         }
         public void falta()
         {
             faltas++;
             if (faltas >= 2)
             {
-                expulsado = true;
+                Expulsado = true;
             }
 
         }

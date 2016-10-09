@@ -47,14 +47,15 @@ namespace Soccer_Final
 
             return false;
         }
-        public bool Goal(RPG_Players player1, RPG_Players player2,RPG_Players arquero)
+        public bool Goal(RPG_Players player1, RPG_Players player2, RPG_Players arquero, double ball)
         {
             //Verificamos la diferencia de attaque y defensa entre los jugadores
             Random r = new Random((int)DateTime.Now.Ticks);
+            
             attack = player1.Goal;
             defense = player2.Defense;
             defense2 = arquero.Defense;
-            double prob = attack/(attack+defense+defense2);
+            double prob = (attack+ball)/(attack+defense+defense2);
             if(r.NextDouble() <= prob)
             {
                 return true;

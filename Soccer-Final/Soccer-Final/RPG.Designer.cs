@@ -201,7 +201,7 @@
             // 
             this.teambpic.BackColor = System.Drawing.Color.Transparent;
             this.teambpic.Image = global::Soccer_Final.Properties.Resources.iniesta9;
-            this.teambpic.Location = new System.Drawing.Point(786, 368);
+            this.teambpic.Location = new System.Drawing.Point(781, 384);
             this.teambpic.Name = "teambpic";
             this.teambpic.Size = new System.Drawing.Size(63, 56);
             this.teambpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

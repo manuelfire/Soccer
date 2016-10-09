@@ -26,7 +26,8 @@ namespace Soccer_Final
         StringBuilder textlog = new StringBuilder();
         int turnos = 0;
         TeamScore score = new TeamScore();
-        int bolapos = 0;
+        int ballApos = 0;
+        int ballBpos = 620;
 
 
         String[] F = {"Goal", "Dribble","Pase"};
@@ -38,8 +39,8 @@ namespace Soccer_Final
             timer1.Interval = 1000;
             soccerfield.Controls.Add(teamapic);
             soccerfield.Controls.Add(teambpic);
-            teamapic.Location=new Point(0, 0);
-            teambpic.Location = new Point(450, 200);
+            teamapic.Location=new Point(ballApos, 0);
+            teambpic.Location = new Point(ballBpos, 250);
             textBox1.Text = TimeSpan.FromMinutes(5).ToString();
             plays.AddRange(F);
             plays2.AddRange(F);
@@ -72,9 +73,12 @@ namespace Soccer_Final
         {
 
 
-            turnoB();
-            
-           
+            comboBox1.Enabled = false;
+            comboBox3.Enabled = false;
+            teamabut.Enabled = false;
+            PaseA.Enabled = false;
+
+
 
         }
 
@@ -95,21 +99,31 @@ namespace Soccer_Final
             teams[ran].players[player].getball();
             if (teams[0].teamhasball())
             {
-                comboBox1.SelectedIndex = player;
+
                 comboBox3.DataSource = plays;
                 comboBox4.DataSource = Defense2;
                 pictureBox1.Visible = true;
                 pictureBox2.Visible = false;
-                PaseALista.RemoveAt(player);
+              int  index = teams[0].playerwithball();
+                PaseALista = teams[0].lista();
+                PaseALista.RemoveAt(index);
+                comboBox1.SelectedIndex = index;
+                comboBox1.Enabled = false;
+                comboBox2.Enabled = true;
             }
             else
             {
-                comboBox2.SelectedIndex = player;
+
                 comboBox3.DataSource = Defense;
                 comboBox4.DataSource = plays2;
                 pictureBox1.Visible = false;
                 pictureBox2.Visible = true;
-                PaseBLista.RemoveAt(player);
+              int  index = teams[1].playerwithball();
+                comboBox2.SelectedIndex = index;
+                PaseBLista = teams[1].lista();
+                PaseBLista.RemoveAt(index);
+                comboBox2.Enabled = false;
+                comboBox1.Enabled = true;
             }
             PaseA.DataSource = PaseALista;
             PaseB.DataSource = PaseBLista;
@@ -120,42 +134,45 @@ namespace Soccer_Final
 
             timer1.Enabled = true;
         }
-        public void turnoA()
+        public void turno()
         {
             comboBox1.Enabled = true;
             comboBox3.Enabled = true;
             teamabut.Enabled = true;
 
-            comboBox2.Enabled = false;
-            comboBox4.Enabled = false;
-            teambbut.Enabled = false;
+            comboBox2.Enabled = true;
+            comboBox4.Enabled = true;
+            teambbut.Enabled = true;
+            turnos++;
 
         }
-        public void turnoB()
+        public void gotime()
         {
-            comboBox1.Enabled = true;
-            comboBox3.Enabled = true;
-            teamabut.Enabled = true;
+            if (teamabut.Enabled == false && teambbut.Enabled == false)
+            {
 
-            comboBox1.Enabled = false;
-            comboBox3.Enabled = false;
-            teamabut.Enabled = false;
+                comboBox1.Enabled = false;
+                comboBox3.Enabled = false;
+                teamabut.Enabled = false;
 
+                comboBox1.Enabled = false;
+                comboBox3.Enabled = false;
+                teamabut.Enabled = false;
+                submitbut.Enabled = true;
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
+            gotime();
            
         }
 
         private void teambbut_Click(object sender, EventArgs e)
         {
-            submitbut.Enabled = true;
-            comboBox1.Enabled = false;
-            comboBox3.Enabled = false;
-            teamabut.Enabled = false;
+            
 
+            PaseB.Enabled = true;
             comboBox2.Enabled = false;
             comboBox4.Enabled = false;
             teambbut.Enabled = false;
@@ -174,7 +191,8 @@ namespace Soccer_Final
 
             if (actionA == "Goal")
             {
-                if(action.Goal(player1,player2,(RPG_Players)comboBox2.Items[10]))
+                double goalprob = ballApos / 20;
+                if(action.Goal(player1,player2,(RPG_Players)comboBox2.Items[10],goalprob))
                 {
                     score.Score(0);
                     scoreA.Text = score.GetScore(0).ToString();
@@ -195,7 +213,13 @@ namespace Soccer_Final
             {
                 if (actionB == "Goal")
                 {
-                    if (action.Goal(player2,player1, (RPG_Players)comboBox1.Items[10]))
+
+                    double goalprob = ballBpos/50;
+                    if(ballBpos<100)
+                    {
+                        goalprob = goalprob * 10;
+                    }
+                    if (action.Goal(player2,player1, (RPG_Players)comboBox1.Items[10],goalprob))
                     {
                         score.Score(1);
                         scoreB.Text = score.GetScore(1).ToString();
@@ -217,14 +241,17 @@ namespace Soccer_Final
                     {
                        if(action.Dribleo(player1, player2))
                         {
-                            textlog.AppendLine("El jugador " + player1.Name + "del equipo " + teams[0].getname() + " se fue adelante :" + textBox1.Text);
-                            
+                            textlog.AppendLine("El jugador " + player1.Name + " del equipo " + teams[0].getname() + " se fue adelante :" + textBox1.Text);
+                            ballApos += Convert.ToInt32(teams[0].players[comboBox1.SelectedIndex].Passmt * 1.5);
+                            ballBpos = ballApos;
+
                         }
                         else
                         {
                             textlog.AppendLine("El jugador " + player1.Name + "del equipo " + teams[0].getname() + " perdio el balon:" + textBox1.Text);
                             teams[0].players[comboBox1.SelectedIndex].loseball();
                             teams[1].players[comboBox2.SelectedIndex].hasbal();
+                            ballBpos = ballApos;
                         }
                     }
                     if (actionB == "Dribble" && actionA == "Robo")
@@ -232,8 +259,10 @@ namespace Soccer_Final
                        if( action.Dribleo(player2, player1))
                         {
                             textlog.AppendLine("El jugador " + player2.Name + "del equipo " + teams[1].getname() + " se fue adelante :" + textBox1.Text);
-                            log.Text = textlog.ToString();
-                        }else
+                            ballBpos -= Convert.ToInt32(teams[1].players[comboBox2.SelectedIndex].Passmt * 1.5);
+                            ballApos = ballBpos;
+                        }
+                        else
                         {
                             textlog.AppendLine("El jugador " + player2.Name + "del equipo " + teams[1].getname() + " perdio el balon:" + textBox1.Text);
                             teams[1].players[comboBox2.SelectedIndex].loseball();
@@ -246,11 +275,13 @@ namespace Soccer_Final
                         {
                             textlog.AppendLine("El jugador " + player2.Name + "del equipo " + teams[0].getname() + " robo el balon :" + textBox1.Text);
                             log.Text = textlog.ToString();
+                            ballApos += Convert.ToInt32(teams[0].players[comboBox1.SelectedIndex].Passmt * 1.5);
                         }
                         else
                         {
                             teams[1].players[comboBox2.SelectedIndex].falta();
                             textlog.AppendLine("El jugador " + player2.Name + "del equipo " + teams[0].getname() + " acumula 1 falta :" + textBox1.Text);
+                            ballBpos = ballApos;
                         }
                     }
                     if (actionB == "Dribble" && actionA == "Carga")
@@ -269,10 +300,12 @@ namespace Soccer_Final
                     if (actionA == "Dribble" && actionB == "Intercepcion")
                     {
                         textlog.AppendLine("Que esta haciendo " + player2.Name + "del equipo " + teams[1].getname() + " no entiendo. :" + textBox1.Text);
+                        ballApos += Convert.ToInt32(teams[0].players[comboBox1.SelectedIndex].Passmt * 1.5);
                     }
                     if (actionB == "Dribble" && actionA == "Intercepcion")
                     {
                         textlog.AppendLine("Que esta haciendo " + player1.Name + "del equipo " + teams[0].getname() + " no entiendo. :" + textBox1.Text);
+                        ballBpos -= Convert.ToInt32(teams[1].players[comboBox2.SelectedIndex].Passmt * 1.5);
                     }
                     if (actionA == "Pase" && actionB == "Intercepcion")
                     {
@@ -281,43 +314,45 @@ namespace Soccer_Final
                             textlog.AppendLine("El jugador " + player1.Name + "del equipo " + teams[0].getname() + " paso el balon a :" + textBox1.Text);
                             teams[0].players[comboBox1.SelectedIndex].loseball();
                             teams[0].players[PaseA.SelectedIndex].hasbal();
-
+                            ballApos += Convert.ToInt32(teams[0].players[comboBox1.SelectedIndex].Passmt * 1.5);
                         }
                         else
                         {
                             textlog.AppendLine("El jugador " + player1.Name + "del equipo " + teams[0].getname() + " perdio el balon :" + textBox1.Text);
                             teams[0].players[comboBox1.SelectedIndex].loseball();
                             teams[1].players[comboBox2.SelectedIndex].hasbal();
+                            ballBpos = ballApos;
                         }
                     }
                     if (actionB == "Pase" && actionA == "Intercepcion")
                     {
                         if (action.Pase(player2, player1, paseB))
                         {
-                            textlog.AppendLine("El jugador " + player1.Name + "del equipo " + teams[1].getname() + " paso el balon a :" + textBox1.Text);
+                            textlog.AppendLine("El jugador " + player2.Name + "del equipo " + teams[1].getname() + " paso el balon a :" + textBox1.Text);
                             teams[1].players[comboBox2.SelectedIndex].loseball();
                             teams[1].players[PaseB.SelectedIndex].hasbal();
+                            ballBpos -= teams[1].players[comboBox2.SelectedIndex].Passmt*2;
 
                         }
                         else
                         {
-                            textlog.AppendLine("El jugador " + player1.Name + "del equipo " + teams[1].getname() + " perdio el balon :" + textBox1.Text);
+                            textlog.AppendLine("El jugador " + player2.Name + "del equipo " + teams[1].getname() + " perdio el balon :" + textBox1.Text);
                             teams[1].players[comboBox2.SelectedIndex].loseball();
                             teams[0].players[comboBox1.SelectedIndex].hasbal();
+                            ballApos = ballBpos;
                         }
                     }
                 }
             }
+            comboBox1.DataSource = teams[0].lista();
+            comboBox1.DisplayMember = "Name";
+            teams[1].getplayers();
+            comboBox2.DataSource = teams[1].lista();
+            comboBox2.DisplayMember = "Name";
             log.Text = textlog.ToString();
-            int index;
-            if (teams[0].teamhasball())
-            {
-                index = teams[0].playerwithball();
-            }
-            else
-            {
-                index = teams[1].playerwithball();
-            }
+            int index=0;
+            teamapic.Location = new Point(ballApos, 0);
+            teambpic.Location = new Point(ballBpos, 200);
             if (teams[0].teamhasball())
             {
                 
@@ -325,6 +360,12 @@ namespace Soccer_Final
                 comboBox4.DataSource = Defense2;
                 pictureBox1.Visible = true;
                 pictureBox2.Visible = false;
+                index = teams[0].playerwithball();
+                PaseALista = teams[0].lista();
+                PaseALista.RemoveAt(index);
+                comboBox1.SelectedIndex = index;
+                comboBox1.Enabled = false;
+                comboBox2.Enabled = true;
             }
             else
             {
@@ -333,8 +374,15 @@ namespace Soccer_Final
                 comboBox4.DataSource = plays2;
                 pictureBox1.Visible = false;
                 pictureBox2.Visible = true;
+                index = teams[1].playerwithball();
+                comboBox2.SelectedIndex = index;
+                PaseBLista = teams[1].lista();
+                PaseBLista.RemoveAt(index);
+                comboBox2.Enabled = false;
+                comboBox1.Enabled = true;
             }
-           
+            turno();
+
 
         }
 

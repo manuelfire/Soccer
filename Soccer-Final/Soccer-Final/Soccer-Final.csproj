@@ -89,7 +89,6 @@
       <DependentUpon>RPG.cs</DependentUpon>
     </Compile>
     <Compile Include="RPGAttacks.cs" />
-    <Compile Include="RPGLogic.cs" />
     <Compile Include="TeamScore.cs" />
     <Compile Include="WritePlay.cs" />
     <EmbeddedResource Include="Form1.resx">

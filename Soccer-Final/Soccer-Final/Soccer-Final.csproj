@@ -77,6 +77,12 @@
     <Compile Include="Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,9 +110,6 @@
     <Compile Include="WritePlay.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -160,6 +163,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Rade8-Snow-E2-Aqua-Games-Soccer.ico" />
+    <Content Include="Resources\15.png" />
+    <Content Include="Resources\1927195.jpg" />
+    <Content Include="Resources\2.png" />
+    <Content Include="Resources\close.png" />
+    <Content Include="Resources\football-background-images-18.jpg" />
+    <Content Include="Resources\icon_go.png" />
+    <Content Include="Resources\nike-football-the-last-game-animated-film-0.jpg" />
+    <Content Include="Resources\Soccer-Legends.jpg" />
+    <Content Include="Resources\start nuevo.png" />
+    <Content Include="Resources\Start.ico" />
+    <Content Include="Resources\stopp.png" />
     <None Include="Resources\Champions.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

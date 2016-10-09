@@ -38,7 +38,7 @@ namespace Soccer_Final
             attack = player1.Attack;
             defense = player2.Attack;
             
-            double prob = defense / (attack + defense);
+            double prob = (double)defense / (double)(attack + defense);
             if (r.NextDouble() <= prob)
             {
                 return true;
@@ -55,7 +55,7 @@ namespace Soccer_Final
             attack = player1.Goal;
             defense = player2.Defense;
             defense2 = arquero.Defense;
-            double prob = (attack+ball)/(attack+defense+defense2);
+            double prob = (double)(attack+ball)/ (double)(attack+defense+defense2);
             if(r.NextDouble() <= prob)
             {
                 return true;
@@ -71,7 +71,7 @@ namespace Soccer_Final
             attack = player1.Attack;
             defense = player2.Defense;
 
-            double prob = attack / (attack + defense);
+            double prob = (double)attack / (double)(attack + defense);
             if (r.NextDouble() <= prob)
             {
                 return true;
@@ -87,7 +87,7 @@ namespace Soccer_Final
             defense = player2.Defense;
             defense2 = player3.Defense;
 
-            double prob = attack+defense2 / (attack + defense+defense2);
+            double prob = (double)attack +defense2 / (double)(attack + defense+defense2);
             if (r.NextDouble() <= prob)
             {
                 return true;
@@ -102,7 +102,7 @@ namespace Soccer_Final
             attack = player1.Attack+20;
             defense = player2.Attack;
 
-            double prob = attack / (attack + defense);
+            double prob = (double)attack / (double)(attack + defense);
             if (r.NextDouble() <= prob)
             {
                 return true;

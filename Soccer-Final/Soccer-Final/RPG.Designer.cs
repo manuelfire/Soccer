@@ -116,6 +116,7 @@
             // teamatxt
             // 
             this.teamatxt.AutoSize = true;
+            this.teamatxt.BackColor = System.Drawing.Color.Transparent;
             this.teamatxt.Location = new System.Drawing.Point(46, 45);
             this.teamatxt.Name = "teamatxt";
             this.teamatxt.Size = new System.Drawing.Size(37, 13);
@@ -126,6 +127,7 @@
             // teambtxt
             // 
             this.teambtxt.AutoSize = true;
+            this.teambtxt.BackColor = System.Drawing.Color.Transparent;
             this.teambtxt.Location = new System.Drawing.Point(903, 45);
             this.teambtxt.Name = "teambtxt";
             this.teambtxt.Size = new System.Drawing.Size(37, 13);
@@ -331,6 +333,7 @@
             // play1
             // 
             this.play1.AutoSize = true;
+            this.play1.BackColor = System.Drawing.Color.Transparent;
             this.play1.Location = new System.Drawing.Point(200, 86);
             this.play1.Name = "play1";
             this.play1.Size = new System.Drawing.Size(35, 13);
@@ -340,6 +343,7 @@
             // play2
             // 
             this.play2.AutoSize = true;
+            this.play2.BackColor = System.Drawing.Color.Transparent;
             this.play2.Location = new System.Drawing.Point(843, 86);
             this.play2.Name = "play2";
             this.play2.Size = new System.Drawing.Size(35, 13);

@@ -22,22 +22,29 @@ namespace Soccer_Final
         DateTime startTime = DateTime.Now;
 
         Timer timer = new Timer() { Interval = 1000 };
-       
+        DateTime tempopaso;
       public TeamScore score = new TeamScore();
-        
+        Teams[] teams = new Teams[2];
+        string teamatext="team A", teambtext="team B";
         public String ruta;
         bool gamestarted = false;
         DataTable data = new DataTable();
-        string title = "Soccer Manager v1";
+        string title = "Soccer Manager v2.0";
+        List<Players> playerAlist = new List<Players>();
+        List<Players> playerBlist = new List<Players>();
+        private int indexA;
+        private int indexB;
 
         public Form1()
         {
             
             InitializeComponent();
-           player3.URL = "Resources\\Champions.mp3";
+           player3.URL = "Resources\\SOCCERCHEER.WAV";
             textBox1.Text = TimeSpan.FromMinutes(45).ToString();
             this.Text = title;
+
             data.Columns.Add("Equipo");
+            data.Columns.Add("Jugador");
             data.Columns.Add("Jugada");
             data.Columns.Add("Puntos");
             data.Columns.Add("Tiempo");
@@ -52,8 +59,9 @@ namespace Soccer_Final
             DefensaB.SelectedIndex = 0;
           openFileDialog1.InitialDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             
-            
-            
+
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,7 +75,19 @@ namespace Soccer_Final
                 ruta = juegoarch.ToString();
                 this.Text = title +"-"+ juegoarch.Name.ToString();
                 gamestarted = true;
+                teams[0] = new Teams(teamatext);
+                teams[1] = new Teams(teambtext);
+                playerAlist = teams[0].lista();
+                playerBlist = teams[1].lista();
             }
+            teamaname.Text = teamatext;
+            teambname.Text = teambtext;
+            playersA.DataSource = playerAlist;
+            playesB.DataSource = playerBlist;
+            playersA.DisplayMember = "Name";
+            playesB.DisplayMember = "Name";
+            settextA(0);
+            settextB(0);
             EnableStart();
             timer.Tick += (obj, args) =>
                 textBox1.Text =
@@ -90,15 +110,17 @@ namespace Soccer_Final
         private void Goal_A_Click(object sender, EventArgs e)
         {
             score.Score(0);
-            textBox2.Text = Convert.ToString(score.GetScore(0)); 
-           data.Rows.Add("Team A","GOAL",score.GetScore(0), textBox1.Text);
+            textBox2.Text = Convert.ToString(score.GetScore(0));
+            teams[0].players[playersA.SelectedIndex].Goals += 1;
+           data.Rows.Add("Team A",playersA.Text,"GOAL",score.GetScore(0), textBox1.Text);
         }
 
         private void Goal_B_Click(object sender, EventArgs e)
         {
             score.Score(1);
+            teams[1].players[playesB.SelectedIndex].Goals += 1;
             textBox3.Text = Convert.ToString(score.GetScore(1));
-            data.Rows.Add("Team B", "GOAL", score.GetScore(1), textBox1.Text);
+            data.Rows.Add("Team B",playesB.Text, "GOAL", score.GetScore(1), textBox1.Text);
         }
         public void DisableAll()
         {
@@ -147,52 +169,61 @@ namespace Soccer_Final
 
         }
 
-        private void Anotar_A_Click(object sender, EventArgs e)
-        {
-            
-            data.Rows.Add("Team A",DefensaA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
-            
-        }
-
-        private void Anotar_B_Click(object sender, EventArgs e)
-        {
-            
-            data.Rows.Add("Team B", DefensaA.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
-        }
+     
         
 
         private void GoalA_Anotar_Click(object sender, EventArgs e)
         {
             score.Score(0);
             textBox2.Text = Convert.ToString(score.GetScore(0));
-            data.Rows.Add("Team A", GoalA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
+            teams[0].players[playersA.SelectedIndex].Goals += 1;
+            data.Rows.Add(teamatext,playersA.Text,GoalA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
         }
 
         private void GoalB_Anotar_Click(object sender, EventArgs e)
         {
             score.Score(1);
             textBox3.Text = Convert.ToString(score.GetScore(1));
-            data.Rows.Add("Team B", GoalB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
+            teams[1].players[playesB.SelectedIndex].Goals += 1;
+            data.Rows.Add(teambtext,playesB.Text, GoalB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
         }
 
         private void DefensaA_Defensa_Click(object sender, EventArgs e)
         {
-            data.Rows.Add("Team A", DefensaA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
+            String def = DefensaA.SelectedItem.ToString();
+            if (def == "Robo de Balon" || def == "Intercepcion" || def == "Carga" || def == "Anticipacion")
+            {
+                teams[0].players[playersA.SelectedIndex].Robos += 1;
+            }
+            if (def == "Pase")
+            {
+                teams[0].players[playersA.SelectedIndex].Pases += 1;
+            }
+            data.Rows.Add(teamatext,playersA.Text, DefensaA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
         }
 
         private void DefensaB_Anotar_Click(object sender, EventArgs e)
         {
-            data.Rows.Add("Team B", DefensaB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
+            String def = DefensaA.SelectedItem.ToString();
+            if (def == "Robo de Balon" || def == "Intercepcion" || def == "Carga" || def == "Anticipacion")
+            {
+                teams[1].players[playesB.SelectedIndex].Robos += 1;
+            }
+            if (def == "Pase")
+            {
+                teams[1].players[playesB.SelectedIndex].Pases += 1;
+            }
+            data.Rows.Add(teambtext,playesB.Text, DefensaB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
         }
 
         private void SaqueA_Anotar_Click(object sender, EventArgs e)
         {
-            data.Rows.Add("Team A","Saque de "+ SaqueA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
+            data.Rows.Add(teamatext,playersA.Text,"Saque de "+ SaqueA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
         }
 
         private void SaqueB_Anotar_Click(object sender, EventArgs e)
         {
-            data.Rows.Add("Team B", "Saque de " + SaqueB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
+            data.Rows.Add(teambtext,playesB.Text,"Saque de " + SaqueB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
         }
 
         
@@ -250,6 +281,78 @@ namespace Soccer_Final
         private void bindingSource1_CurrentChanged_2(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            indexA++;
+            if (indexA <= 10)
+            {
+                settextA(indexA);
+
+            }
+            else
+            {
+                indexA = 0;
+                settextA(indexA);
+            }
+        }
+        public void settextA(int indexS)
+        {
+            playernameA.Text = "Name: " + teams[0].players[indexS].Name;
+            pasesA.Text = "Pases " + teams[0].players[indexS].Pases.ToString();
+            faltasA.Text = "Faltas: " + teams[0].players[indexS].Faltas.ToString();
+            golAplayer.Text = "Goles: " + teams[0].players[indexS].Goals.ToString();
+            robosA.Text="Robos" + teams[0].players[indexS].Robos.ToString();
+
+            pasestotA.Text = "Pases Totales: " + teams[0].players[indexS].Pasestot.ToString();
+            faltastotA.Text= "Faltas Totales: " + teams[0].players[indexS].Faltastot.ToString();
+            goltotA.Text= "Goles Totales: " + teams[0].players[indexS].Goalstot.ToString();
+            robostotA.Text= "Robos Totales" + teams[0].players[indexS].Robostot.ToString();
+        }
+        public void settextB(int indexS)
+        {
+            playernameB.Text = "Name: " + teams[1].players[indexS].Name;
+            pasesB.Text = "Pases " + teams[1].players[indexS].Pases.ToString();
+            faltasB.Text = "Faltas: " + teams[1].players[indexS].Faltas.ToString();
+            golBplayer.Text = "Goles: " + teams[1].players[indexS].Goals.ToString();
+            robosB.Text = "Robos" + teams[1].players[indexS].Robos.ToString();
+
+            pasestotB.Text = "Pases Totales: " + teams[1].players[indexS].Pasestot.ToString();
+            faltastotB.Text = "Faltas Totales: " + teams[1].players[indexS].Faltastot.ToString();
+            goltotB.Text = "Goles Totales: " + teams[1].players[indexS].Goalstot.ToString();
+            robostotB.Text = "Robos Totales" + teams[1].players[indexS].Robostot.ToString();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            indexA--;
+            if (indexA >= 0)
+            {
+                settextA(indexA);
+
+            }
+            else
+            {
+                indexA = 10;
+                settextA(indexA);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            indexB++;
+            if (indexB <= 10)
+            {
+                settextB(indexB);
+
+            }
+            else
+            {
+                indexB = 0;
+                settextB(indexB);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

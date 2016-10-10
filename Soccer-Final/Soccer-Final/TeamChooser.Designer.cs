@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeamChooser));
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -86,12 +87,14 @@
             // 
             // addteam
             // 
+            this.addteam.BackColor = System.Drawing.Color.Transparent;
+            this.addteam.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addteam.BackgroundImage")));
+            this.addteam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.addteam.Location = new System.Drawing.Point(593, 241);
             this.addteam.Name = "addteam";
-            this.addteam.Size = new System.Drawing.Size(75, 23);
+            this.addteam.Size = new System.Drawing.Size(75, 63);
             this.addteam.TabIndex = 8;
-            this.addteam.Text = "Add Team";
-            this.addteam.UseVisualStyleBackColor = true;
+            this.addteam.UseVisualStyleBackColor = false;
             this.addteam.Click += new System.EventHandler(this.addteam_Click);
             // 
             // comboBox2
@@ -136,7 +139,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 276);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(697, 316);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboBox2);

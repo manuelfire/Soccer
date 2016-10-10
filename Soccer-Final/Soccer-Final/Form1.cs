@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using WMPLib;
@@ -14,7 +9,7 @@ using WMPLib;
 
 namespace Soccer_Final
 {
-   
+
     public partial class Form1 : Form
         
     {
@@ -34,14 +29,14 @@ namespace Soccer_Final
         List<Players> playerBlist = new List<Players>();
         private int indexA;
         private int indexB;
-        InputBoxClass tmp = new InputBoxClass();
+        int time = 45;
 
         public Form1()
         {
             
             InitializeComponent();
            player3.URL = "Resources\\SOCCERCHEER.WAV";
-            textBox1.Text = TimeSpan.FromMinutes(45).ToString();
+            textBox1.Text = TimeSpan.FromMinutes(time).ToString();
             this.Text = title;
 
             data.Columns.Add("Equipo");
@@ -93,7 +88,7 @@ namespace Soccer_Final
 
             timer.Tick += (obj, args) =>
                textBox1.Text =
-                   (TimeSpan.FromMinutes(45) - (DateTime.Now - startTime))
+                   (TimeSpan.FromMinutes(time) - (DateTime.Now - startTime))
                    .ToString("hh\\:mm\\:ss");
 
 
@@ -381,10 +376,10 @@ namespace Soccer_Final
         {
             String titulo = "Ingresar Nombre de Equipo";
             String promptext = "Nuevo Nombre";
-            String value = teamatext;
-            tmp.InputBox(titulo, promptext, ref value);
-            label2.Text = value;
-            teamatext = value;
+            
+            string val = Microsoft.VisualBasic.Interaction.InputBox(promptext, titulo, "Default", -1, -1);
+            label2.Text = val;
+            teamatext = val;
        
             
         }
@@ -403,10 +398,11 @@ namespace Soccer_Final
         {
             String titulo = "Ingresar Nombre de Equipo";
             String promptext = "Nuevo Nombre";
-            String value3 = teambtext;
-            tmp.InputBox(titulo, promptext, ref value3);
-            label3.Text = value3;
-            teambtext = value3;
+           
+            string input = Microsoft.VisualBasic.Interaction.InputBox(promptext,titulo, "Default", -1, -1);
+
+            label3.Text = input;
+            teambtext = input;
 
         }
 
@@ -414,16 +410,12 @@ namespace Soccer_Final
         {
             String titulo = "Ingresar un Nuevo Tiempo";
             String promptext = "Tiempo en Minutos";
-            Double value1 = 0.0 ;
-            tmp.InputBox2(titulo, promptext, ref value1);
+            
+            string val =Microsoft.VisualBasic.Interaction.InputBox(promptext, titulo, "Default", -1, -1);
+            time = Convert.ToInt32(val);
+            textBox1.Text = TimeSpan.FromMinutes(time).ToString();
 
-            timer.Tick += (obj, args) =>
-                textBox1.Text =
-                    (TimeSpan.FromMinutes(value1) - (DateTime.Now - startTime))
-                    .ToString("hh\\:mm\\:ss");
-
-
-            timer.Enabled = true;
+            
         }
 
         private void playersA_SelectedIndexChanged(object sender, EventArgs e)

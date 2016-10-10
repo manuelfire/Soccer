@@ -355,6 +355,7 @@
             this.stop.Size = new System.Drawing.Size(40, 42);
             this.stop.TabIndex = 44;
             this.stop.UseVisualStyleBackColor = true;
+            this.stop.Click += new System.EventHandler(this.stop_Click);
             // 
             // RPG
             // 

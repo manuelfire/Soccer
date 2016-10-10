@@ -88,6 +88,7 @@
             this.log.Size = new System.Drawing.Size(439, 72);
             this.log.TabIndex = 3;
             this.log.Text = "";
+            this.log.TextChanged += new System.EventHandler(this.log_TextChanged);
             // 
             // comboBox3
             // 
@@ -127,6 +128,7 @@
             this.teambtxt.Size = new System.Drawing.Size(37, 13);
             this.teambtxt.TabIndex = 8;
             this.teambtxt.Text = "Team:";
+            this.teambtxt.Click += new System.EventHandler(this.teambtxt_Click);
             // 
             // label1
             // 

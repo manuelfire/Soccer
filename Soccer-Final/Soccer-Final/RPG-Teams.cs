@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Soccer_Final
 {
@@ -13,8 +14,10 @@ namespace Soccer_Final
         string teamname;
       public  RPG_Players[] players = new RPG_Players[11];
         int teamsize = 0;
-        Random rand = new Random((int)DateTime.Now.Ticks);
         
+        Random rand = new Random((int)DateTime.Now.Ticks);
+        private RNGCryptoServiceProvider Rand =
+    new RNGCryptoServiceProvider();
         StringBuilder playertext=new StringBuilder();
         public RPG_Teams(string teamname)
         {
@@ -33,15 +36,16 @@ namespace Soccer_Final
         }
         public void newplayer(string name)
         {
-            
+           
 
             if (teamsize < 11)
             {
-                int attack = rand.Next(50, 100);
-                int defense = rand.Next(50, 100);
-                int goal = rand.Next(50, 100);
-                int pass = rand.Next(10, 50);
-                int dribble = rand.Next(10, 30);
+                int attack = RandomInteger(50,100);
+                
+                int defense = RandomInteger(50, 100);
+                int goal = RandomInteger(50, 100);
+                int pass = RandomInteger(10, 50);
+                int dribble = RandomInteger(10, 30);
 
                 
                 playertext.AppendLine(name+","+attack.ToString()+","+defense.ToString()+","+goal.ToString() + "," +pass.ToString()+","+dribble.ToString());
@@ -126,8 +130,26 @@ namespace Soccer_Final
         {
 
         }
-        
-       
+        private int RandomInteger(int min, int max)
+        {
+            uint scale = uint.MaxValue;
+            while (scale == uint.MaxValue)
+            {
+                
+                byte[] four_bytes = new byte[4];
+                Rand.GetBytes(four_bytes);
+
+                
+                scale = BitConverter.ToUInt32(four_bytes, 0);
+            }
+
+            
+            int seed= (int)(min + (max - min) *
+                (scale / (double)uint.MaxValue));
+            Random rand2 = new Random(seed);
+            return rand2.Next(min, max);
+        }
+
 
     }
 }

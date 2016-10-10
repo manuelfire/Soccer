@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,20 +24,20 @@ namespace Soccer_Final
         List<String> Defense2 = new List<string>();
         List<RPG_Players> PaseALista= new List<RPG_Players>();
         List<RPG_Players> PaseBLista = new List<RPG_Players>();
-
+        FileVerify check = new FileVerify();
         DateTime startTime = DateTime.Now;
         StringBuilder textlog = new StringBuilder();
         int turnos = 0;
         TeamScore score = new TeamScore();
         int ballApos = 0;
         int ballBpos = 620;
-
+        FileInfo juegoarch;
 
         String[] F = {"Goal", "Dribble","Pase"};
         String[] d = {"Robo", "Carga","Intercepcion" };
         public RPG()
         {
-            string kl;
+            
             InitializeComponent();
             player2.URL = " Resources\\SuperCampeones.mp3";
             timer1.Interval = 1000;
@@ -69,7 +70,8 @@ namespace Soccer_Final
             PaseA.DisplayMember = "Name";
             PaseBLista = teams[1].lista();
             PaseB.DisplayMember = "Name";
-
+            Directory.CreateDirectory("Juegos");
+            juegoarch = check.Nuevo("Juegos\\juegoRPG.txt");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -92,7 +94,7 @@ namespace Soccer_Final
 
         private void start_Click(object sender, EventArgs e)
         {
-
+            
             Random r = new Random((int)DateTime.Now.Ticks);
             int ran;
             int player = r.Next(0, 10);
@@ -409,6 +411,7 @@ namespace Soccer_Final
                 comboBox2.Enabled = false;
                 comboBox1.Enabled = true;
             }
+            File.WriteAllText(juegoarch.ToString(), textlog.ToString());
             turno();
 
 
@@ -463,8 +466,8 @@ namespace Soccer_Final
 
         private void teamatxt_Click(object sender, EventArgs e)
         {
-            Form4 klk = new Form4(teams[0].getname());
-            klk.Show();
+            Form4 team1players = new Form4(teams[0].getname());
+            team1players.Show();
 
         }
 
@@ -479,6 +482,17 @@ namespace Soccer_Final
             comboBox3.Enabled = false;
             teamabut1.Enabled = false;
             PaseA.Enabled = false;
+
+        }
+
+        private void teambtxt_Click(object sender, EventArgs e)
+        {
+            Form4 klk = new Form4(teams[1].getname());
+            klk.Show();
+        }
+
+        private void log_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

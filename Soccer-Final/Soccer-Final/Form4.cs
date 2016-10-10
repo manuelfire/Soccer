@@ -19,6 +19,7 @@ namespace Soccer_Final
             InitializeComponent();
             team = new RPG_Teams(teamname);
             team.getplayers();
+            settext(0);
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace Soccer_Final
         private void button2_Click(object sender, EventArgs e)
         {
             index++;
-            if (index > 10)
+            if (index <= 10)
             {
                 settext(index);
                 
@@ -42,19 +43,19 @@ namespace Soccer_Final
         }
         public void settext(int index)
         {
-            nameplayer.Text += team.players[index].Name;
-            attack.Text += team.players[index].Goal.ToString();
-            defense.Text += team.players[index].Defense.ToString();
-            goal.Text += team.players[index].Goal.ToString();
+            nameplayer.Text ="Name: "+team.players[index].Name;
+            attack.Text = "Attack " + team.players[index].Attack.ToString();
+            defense.Text = "Defense: " + team.players[index].Defense.ToString();
+            goal.Text = "Goal: " + team.players[index].Goal.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             index--;
-            if (index > 0)
+            if (index >= 0)
             {
                 settext(index);
-                index--;
+                
             }
             else
             {

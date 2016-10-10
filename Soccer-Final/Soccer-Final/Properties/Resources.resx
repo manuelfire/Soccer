@@ -118,7 +118,73 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="soccer-field" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soccer-field.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="soccer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soccer1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SuperCampeones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SuperCampeones.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Waka_Waka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Waka-Waka.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="next2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nike-football-the-last-game-animated-film-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nike-football-the-last-game-animated-film-0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="football-background-images-18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\football-background-images-18.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="next3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="next5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="gray-lines-wallpaper-1812-1907-hd-wallpapers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gray-lines-wallpaper-1812-1907-hd-wallpapers.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iniesta9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iniesta9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Champions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Champions.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SOCCERCHEER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SOCCERCHEER.WAV;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="soccer_fans-wallpaper-1920x1080" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soccer_fans-wallpaper-1920x1080.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stopp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stopp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zone Soccer Player_Thomas Müller_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zone Soccer Player_Thomas Müller_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chalkboard_texture_mc2015_by_mattiamc-d8dbnac" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chalkboard_texture_mc2015_by_mattiamc-d8dbnac.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

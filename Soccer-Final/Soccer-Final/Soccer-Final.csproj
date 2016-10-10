@@ -72,12 +72,66 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputBoxClass.cs" />
+    <Compile Include="NewTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewTeam.Designer.cs">
+      <DependentUpon>NewTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Players.cs" />
+    <Compile Include="PlayerViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlayerViewer.Designer.cs">
+      <DependentUpon>PlayerViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPG-Players.cs" />
+    <Compile Include="RPG-Teams.cs" />
+    <Compile Include="RPG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPG.Designer.cs">
+      <DependentUpon>RPG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPGAttacks.cs" />
+    <Compile Include="TeamChooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeamChooser.Designer.cs">
+      <DependentUpon>TeamChooser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teams.cs" />
     <Compile Include="TeamScore.cs" />
     <Compile Include="WritePlay.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewTeam.resx">
+      <DependentUpon>NewTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerViewer.resx">
+      <DependentUpon>PlayerViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,6 +143,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RPG.resx">
+      <DependentUpon>RPG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamChooser.resx">
+      <DependentUpon>TeamChooser.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -122,6 +182,62 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Rade8-Snow-E2-Aqua-Games-Soccer.ico" />
+    <Content Include="Resources\15.png" />
+    <Content Include="Resources\1927195.jpg" />
+    <Content Include="Resources\2.png" />
+    <None Include="Resources\chalkboard_texture_mc2015_by_mattiamc-d8dbnac.jpg" />
+    <Content Include="Resources\choose_your_team__by_tabby_kitsune.jpg" />
+    <Content Include="Resources\close.png" />
+    <None Include="Resources\fist.png" />
+    <Content Include="Resources\football-background-images-18.jpg" />
+    <Content Include="Resources\icon_go.png" />
+    <None Include="Resources\next2.png" />
+    <None Include="Resources\next3.png" />
+    <None Include="Resources\next5.png" />
+    <None Include="Resources\next.png" />
+    <Content Include="Resources\nike-football-the-last-game-animated-film-0.jpg" />
+    <None Include="Resources\SOCCERCHEER.WAV">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="Resources\Soccer-Legends.jpg" />
+    <None Include="Resources\soccer_fans-wallpaper-1920x1080.jpg" />
+    <Content Include="Resources\start nuevo.png" />
+    <Content Include="Resources\Start.ico" />
+    <None Include="Resources\stop.png" />
+    <Content Include="Resources\stopp.png" />
+    <None Include="Resources\Champions.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="Resources\SuperCampeones.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Waka-Waka.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Resources\iniesta9.png" />
+    <None Include="Resources\Zone Soccer Player_Thomas Müller_3.png" />
+    <None Include="Resources\soccer-field.jpg" />
+    <None Include="Resources\soccer1.png" />
+    <EmbeddedResource Include="Resources\soccer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

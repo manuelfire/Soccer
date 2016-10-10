@@ -20,6 +20,7 @@ namespace Soccer_Final
             
             
             stats();
+            
         }
 
         StringBuilder playerwrite = new StringBuilder();
@@ -42,17 +43,29 @@ namespace Soccer_Final
         public void getplayers()
         {
             int i = 0;
+            int lineindex = 0;
             string[] player = File.ReadAllLines("Stadisticas\\" + teamname + ".csv");
             foreach (string line in player)
             {
-                if (i < 11)
-                {
-                    string[] att = line.Split(',');
-                    players[i] = new Players(att[0], teamname, i);
+                if (lineindex != 0)
+                    {
+                    if (i < 11)
+                    {
+                        string[] att = line.Split(',');
+                        players[i] = new Players(att[0], teamname, i);
+                        players[i].Goals = Convert.ToInt32(att[1]);
+                        players[i].Pases = Convert.ToInt32(att[2]);
+                        players[i].Robos = Convert.ToInt32(att[3]);
+                        players[i].Faltas = Convert.ToInt32(att[4]);
+                        players[i].Goalstot = Convert.ToInt32(att[5]);
+                        players[i].Pasestot = Convert.ToInt32(att[6]);
+                        players[i].Faltastot = Convert.ToInt32(att[7]);
+                        players[i].Robostot = Convert.ToInt32(att[8]);
 
-
-                    i++;
+                        i++;
+                    }
                 }
+                lineindex++;
             }
 
 
@@ -70,10 +83,16 @@ namespace Soccer_Final
         public void stats()
         {
             Directory.CreateDirectory("Stadisticas");
-            if(!File.Exists("Stadisticas\\" + teamname + ".csv"))
-            fillplayer();
-            File.AppendAllText("Stadisticas\\" + teamname + ".csv", "Nombre,Goals,Pases,Robos,Faltas,GoalTotales,PasesTotales,FaltasTotales,RobosTotales");
-            File.AppendAllText("Stadisticas\\" + teamname + ".csv", playerwrite.ToString());
+            if (!File.Exists("Stadisticas\\" + teamname + ".csv"))
+            {
+                fillplayer();
+                File.AppendAllText("Stadisticas\\" + teamname + ".csv", "Nombre,Goals,Pases,Robos,Faltas,GoalTotales,PasesTotales,FaltasTotales,RobosTotales");
+                File.AppendAllText("Stadisticas\\" + teamname + ".csv", playerwrite.ToString());
+            }
+            else
+            {
+                getplayers();
+            }
         }
         public void writeplayers()
         {

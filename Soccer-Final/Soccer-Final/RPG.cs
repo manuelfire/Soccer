@@ -503,5 +503,10 @@ namespace Soccer_Final
         {
 
         }
+
+        private void stop_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

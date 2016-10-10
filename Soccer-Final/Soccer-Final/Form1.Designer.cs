@@ -32,6 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.timeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.teamNamesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.bToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.nosotrosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,16 +91,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.teamaname = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.playernameA = new System.Windows.Forms.Label();
-            this.pasesA = new System.Windows.Forms.Label();
-            this.faltasA = new System.Windows.Forms.Label();
-            this.robosA = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.robostotA = new System.Windows.Forms.Label();
-            this.faltastotA = new System.Windows.Forms.Label();
-            this.pasestotA = new System.Windows.Forms.Label();
+            this.goltotB = new System.Windows.Forms.Label();
+            this.goltotA = new System.Windows.Forms.Label();
+            this.golBplayer = new System.Windows.Forms.Label();
+            this.golAplayer = new System.Windows.Forms.Label();
             this.robostotB = new System.Windows.Forms.Label();
             this.faltastotB = new System.Windows.Forms.Label();
             this.pasestotB = new System.Windows.Forms.Label();
@@ -102,19 +105,16 @@
             this.pasesB = new System.Windows.Forms.Label();
             this.playernameB = new System.Windows.Forms.Label();
             this.teambname = new System.Windows.Forms.Label();
-            this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.timeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.teamNamesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.aToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.bToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.nosotrosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.golAplayer = new System.Windows.Forms.Label();
-            this.golBplayer = new System.Windows.Forms.Label();
-            this.goltotA = new System.Windows.Forms.Label();
-            this.goltotB = new System.Windows.Forms.Label();
+            this.robostotA = new System.Windows.Forms.Label();
+            this.faltastotA = new System.Windows.Forms.Label();
+            this.pasestotA = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.robosA = new System.Windows.Forms.Label();
+            this.faltasA = new System.Windows.Forms.Label();
+            this.pasesA = new System.Windows.Forms.Label();
+            this.playernameA = new System.Windows.Forms.Label();
+            this.teamaname = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -137,6 +137,73 @@
             this.menuStrip1.Size = new System.Drawing.Size(694, 24);
             this.menuStrip1.TabIndex = 55;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem1
+            // 
+            this.fileToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadToolStripMenuItem1,
+            this.saveToolStripMenuItem1,
+            this.optionsToolStripMenuItem1});
+            this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
+            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem1.Text = "File";
+            // 
+            // loadToolStripMenuItem1
+            // 
+            this.loadToolStripMenuItem1.Name = "loadToolStripMenuItem1";
+            this.loadToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.loadToolStripMenuItem1.Text = "Load";
+            this.loadToolStripMenuItem1.Click += new System.EventHandler(this.Cargar_Click);
+            // 
+            // saveToolStripMenuItem1
+            // 
+            this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
+            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem1.Text = "Save";
+            this.saveToolStripMenuItem1.Click += new System.EventHandler(this.Grabar_Click);
+            // 
+            // optionsToolStripMenuItem1
+            // 
+            this.optionsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.timeToolStripMenuItem1,
+            this.teamNamesToolStripMenuItem1});
+            this.optionsToolStripMenuItem1.Name = "optionsToolStripMenuItem1";
+            this.optionsToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem1.Text = "Options";
+            // 
+            // timeToolStripMenuItem1
+            // 
+            this.timeToolStripMenuItem1.Name = "timeToolStripMenuItem1";
+            this.timeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.timeToolStripMenuItem1.Text = "Time";
+            this.timeToolStripMenuItem1.Click += new System.EventHandler(this.timeToolStripMenuItem1_Click);
+            // 
+            // teamNamesToolStripMenuItem1
+            // 
+            this.teamNamesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aToolStripMenuItem1,
+            this.bToolStripMenuItem1});
+            this.teamNamesToolStripMenuItem1.Name = "teamNamesToolStripMenuItem1";
+            this.teamNamesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.teamNamesToolStripMenuItem1.Text = "Team Names";
+            // 
+            // aToolStripMenuItem1
+            // 
+            this.aToolStripMenuItem1.Name = "aToolStripMenuItem1";
+            this.aToolStripMenuItem1.Size = new System.Drawing.Size(82, 22);
+            this.aToolStripMenuItem1.Text = "A";
+            // 
+            // bToolStripMenuItem1
+            // 
+            this.bToolStripMenuItem1.Name = "bToolStripMenuItem1";
+            this.bToolStripMenuItem1.Size = new System.Drawing.Size(82, 22);
+            this.bToolStripMenuItem1.Text = "B";
+            // 
+            // nosotrosToolStripMenuItem1
+            // 
+            this.nosotrosToolStripMenuItem1.Name = "nosotrosToolStripMenuItem1";
+            this.nosotrosToolStripMenuItem1.Size = new System.Drawing.Size(67, 20);
+            this.nosotrosToolStripMenuItem1.Text = "Nosotros";
             // 
             // fileToolStripMenuItem
             // 
@@ -748,121 +815,49 @@
             this.tabPage2.Text = "Estadisticas";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // teamaname
+            // goltotB
             // 
-            this.teamaname.AutoSize = true;
-            this.teamaname.Font = new System.Drawing.Font("chalkboard", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teamaname.ForeColor = System.Drawing.Color.White;
-            this.teamaname.Location = new System.Drawing.Point(30, 63);
-            this.teamaname.Name = "teamaname";
-            this.teamaname.Size = new System.Drawing.Size(88, 20);
-            this.teamaname.TabIndex = 0;
-            this.teamaname.Text = "Team A";
+            this.goltotB.AutoSize = true;
+            this.goltotB.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.goltotB.ForeColor = System.Drawing.Color.White;
+            this.goltotB.Location = new System.Drawing.Point(421, 329);
+            this.goltotB.Name = "goltotB";
+            this.goltotB.Size = new System.Drawing.Size(119, 13);
+            this.goltotB.TabIndex = 46;
+            this.goltotB.Text = "Goles Totales:";
             // 
-            // button2
+            // goltotA
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("chalkboard", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(34, 86);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(36, 23);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "<";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.goltotA.AutoSize = true;
+            this.goltotA.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.goltotA.ForeColor = System.Drawing.Color.White;
+            this.goltotA.Location = new System.Drawing.Point(29, 329);
+            this.goltotA.Name = "goltotA";
+            this.goltotA.Size = new System.Drawing.Size(119, 13);
+            this.goltotA.TabIndex = 45;
+            this.goltotA.Text = "Goles Totales:";
             // 
-            // playernameA
+            // golBplayer
             // 
-            this.playernameA.AutoSize = true;
-            this.playernameA.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playernameA.ForeColor = System.Drawing.Color.White;
-            this.playernameA.Location = new System.Drawing.Point(31, 126);
-            this.playernameA.Name = "playernameA";
-            this.playernameA.Size = new System.Drawing.Size(54, 13);
-            this.playernameA.TabIndex = 24;
-            this.playernameA.Text = "Name: ";
+            this.golBplayer.AutoSize = true;
+            this.golBplayer.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.golBplayer.ForeColor = System.Drawing.Color.White;
+            this.golBplayer.Location = new System.Drawing.Point(421, 157);
+            this.golBplayer.Name = "golBplayer";
+            this.golBplayer.Size = new System.Drawing.Size(60, 13);
+            this.golBplayer.TabIndex = 44;
+            this.golBplayer.Text = "Goles: ";
             // 
-            // pasesA
+            // golAplayer
             // 
-            this.pasesA.AutoSize = true;
-            this.pasesA.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pasesA.ForeColor = System.Drawing.Color.White;
-            this.pasesA.Location = new System.Drawing.Point(29, 182);
-            this.pasesA.Name = "pasesA";
-            this.pasesA.Size = new System.Drawing.Size(56, 13);
-            this.pasesA.TabIndex = 25;
-            this.pasesA.Text = "Pases:";
-            // 
-            // faltasA
-            // 
-            this.faltasA.AutoSize = true;
-            this.faltasA.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.faltasA.ForeColor = System.Drawing.Color.White;
-            this.faltasA.Location = new System.Drawing.Point(29, 210);
-            this.faltasA.Name = "faltasA";
-            this.faltasA.Size = new System.Drawing.Size(55, 13);
-            this.faltasA.TabIndex = 26;
-            this.faltasA.Text = "Faltas:";
-            // 
-            // robosA
-            // 
-            this.robosA.AutoSize = true;
-            this.robosA.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.robosA.ForeColor = System.Drawing.Color.White;
-            this.robosA.Location = new System.Drawing.Point(29, 239);
-            this.robosA.Name = "robosA";
-            this.robosA.Size = new System.Drawing.Size(58, 13);
-            this.robosA.TabIndex = 27;
-            this.robosA.Text = "Robos:";
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("chalkboard", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(76, 86);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(36, 23);
-            this.button3.TabIndex = 28;
-            this.button3.Text = ">";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // robostotA
-            // 
-            this.robostotA.AutoSize = true;
-            this.robostotA.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.robostotA.ForeColor = System.Drawing.Color.White;
-            this.robostotA.Location = new System.Drawing.Point(27, 409);
-            this.robostotA.Name = "robostotA";
-            this.robostotA.Size = new System.Drawing.Size(121, 13);
-            this.robostotA.TabIndex = 32;
-            this.robostotA.Text = "Robos Totales:";
-            // 
-            // faltastotA
-            // 
-            this.faltastotA.AutoSize = true;
-            this.faltastotA.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.faltastotA.ForeColor = System.Drawing.Color.White;
-            this.faltastotA.Location = new System.Drawing.Point(27, 380);
-            this.faltastotA.Name = "faltastotA";
-            this.faltastotA.Size = new System.Drawing.Size(118, 13);
-            this.faltastotA.TabIndex = 31;
-            this.faltastotA.Text = "Faltas Totales:";
-            // 
-            // pasestotA
-            // 
-            this.pasestotA.AutoSize = true;
-            this.pasestotA.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pasestotA.ForeColor = System.Drawing.Color.White;
-            this.pasestotA.Location = new System.Drawing.Point(27, 352);
-            this.pasestotA.Name = "pasestotA";
-            this.pasestotA.Size = new System.Drawing.Size(119, 13);
-            this.pasestotA.TabIndex = 30;
-            this.pasestotA.Text = "Pases Totales:";
+            this.golAplayer.AutoSize = true;
+            this.golAplayer.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.golAplayer.ForeColor = System.Drawing.Color.White;
+            this.golAplayer.Location = new System.Drawing.Point(30, 157);
+            this.golAplayer.Name = "golAplayer";
+            this.golAplayer.Size = new System.Drawing.Size(60, 13);
+            this.golAplayer.TabIndex = 43;
+            this.golAplayer.Text = "Goles: ";
             // 
             // robostotB
             // 
@@ -979,115 +974,121 @@
             this.teambname.TabIndex = 33;
             this.teambname.Text = "Team B";
             // 
-            // fileToolStripMenuItem1
+            // robostotA
             // 
-            this.fileToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loadToolStripMenuItem1,
-            this.saveToolStripMenuItem1,
-            this.optionsToolStripMenuItem1});
-            this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem1.Text = "File";
+            this.robostotA.AutoSize = true;
+            this.robostotA.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.robostotA.ForeColor = System.Drawing.Color.White;
+            this.robostotA.Location = new System.Drawing.Point(27, 409);
+            this.robostotA.Name = "robostotA";
+            this.robostotA.Size = new System.Drawing.Size(121, 13);
+            this.robostotA.TabIndex = 32;
+            this.robostotA.Text = "Robos Totales:";
             // 
-            // loadToolStripMenuItem1
+            // faltastotA
             // 
-            this.loadToolStripMenuItem1.Name = "loadToolStripMenuItem1";
-            this.loadToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.loadToolStripMenuItem1.Text = "Load";
-            this.loadToolStripMenuItem1.Click += new System.EventHandler(this.Cargar_Click);
+            this.faltastotA.AutoSize = true;
+            this.faltastotA.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.faltastotA.ForeColor = System.Drawing.Color.White;
+            this.faltastotA.Location = new System.Drawing.Point(27, 380);
+            this.faltastotA.Name = "faltastotA";
+            this.faltastotA.Size = new System.Drawing.Size(118, 13);
+            this.faltastotA.TabIndex = 31;
+            this.faltastotA.Text = "Faltas Totales:";
             // 
-            // saveToolStripMenuItem1
+            // pasestotA
             // 
-            this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.saveToolStripMenuItem1.Text = "Save";
-            this.saveToolStripMenuItem1.Click += new System.EventHandler(this.Grabar_Click);
+            this.pasestotA.AutoSize = true;
+            this.pasestotA.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pasestotA.ForeColor = System.Drawing.Color.White;
+            this.pasestotA.Location = new System.Drawing.Point(27, 352);
+            this.pasestotA.Name = "pasestotA";
+            this.pasestotA.Size = new System.Drawing.Size(119, 13);
+            this.pasestotA.TabIndex = 30;
+            this.pasestotA.Text = "Pases Totales:";
             // 
-            // optionsToolStripMenuItem1
+            // button2
             // 
-            this.optionsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.timeToolStripMenuItem1,
-            this.teamNamesToolStripMenuItem1});
-            this.optionsToolStripMenuItem1.Name = "optionsToolStripMenuItem1";
-            this.optionsToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.optionsToolStripMenuItem1.Text = "Options";
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("chalkboard", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(34, 86);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(36, 23);
+            this.button2.TabIndex = 29;
+            this.button2.Text = "<";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // timeToolStripMenuItem1
+            // button3
             // 
-            this.timeToolStripMenuItem1.Name = "timeToolStripMenuItem1";
-            this.timeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.timeToolStripMenuItem1.Text = "Time";
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("chalkboard", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(76, 86);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(36, 23);
+            this.button3.TabIndex = 28;
+            this.button3.Text = ">";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // teamNamesToolStripMenuItem1
+            // robosA
             // 
-            this.teamNamesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aToolStripMenuItem1,
-            this.bToolStripMenuItem1});
-            this.teamNamesToolStripMenuItem1.Name = "teamNamesToolStripMenuItem1";
-            this.teamNamesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.teamNamesToolStripMenuItem1.Text = "Team Names";
+            this.robosA.AutoSize = true;
+            this.robosA.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.robosA.ForeColor = System.Drawing.Color.White;
+            this.robosA.Location = new System.Drawing.Point(29, 239);
+            this.robosA.Name = "robosA";
+            this.robosA.Size = new System.Drawing.Size(58, 13);
+            this.robosA.TabIndex = 27;
+            this.robosA.Text = "Robos:";
             // 
-            // aToolStripMenuItem1
+            // faltasA
             // 
-            this.aToolStripMenuItem1.Name = "aToolStripMenuItem1";
-            this.aToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.aToolStripMenuItem1.Text = "A";
+            this.faltasA.AutoSize = true;
+            this.faltasA.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.faltasA.ForeColor = System.Drawing.Color.White;
+            this.faltasA.Location = new System.Drawing.Point(29, 210);
+            this.faltasA.Name = "faltasA";
+            this.faltasA.Size = new System.Drawing.Size(55, 13);
+            this.faltasA.TabIndex = 26;
+            this.faltasA.Text = "Faltas:";
             // 
-            // bToolStripMenuItem1
+            // pasesA
             // 
-            this.bToolStripMenuItem1.Name = "bToolStripMenuItem1";
-            this.bToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.bToolStripMenuItem1.Text = "B";
+            this.pasesA.AutoSize = true;
+            this.pasesA.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pasesA.ForeColor = System.Drawing.Color.White;
+            this.pasesA.Location = new System.Drawing.Point(29, 182);
+            this.pasesA.Name = "pasesA";
+            this.pasesA.Size = new System.Drawing.Size(56, 13);
+            this.pasesA.TabIndex = 25;
+            this.pasesA.Text = "Pases:";
             // 
-            // nosotrosToolStripMenuItem1
+            // playernameA
             // 
-            this.nosotrosToolStripMenuItem1.Name = "nosotrosToolStripMenuItem1";
-            this.nosotrosToolStripMenuItem1.Size = new System.Drawing.Size(67, 20);
-            this.nosotrosToolStripMenuItem1.Text = "Nosotros";
+            this.playernameA.AutoSize = true;
+            this.playernameA.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playernameA.ForeColor = System.Drawing.Color.White;
+            this.playernameA.Location = new System.Drawing.Point(31, 126);
+            this.playernameA.Name = "playernameA";
+            this.playernameA.Size = new System.Drawing.Size(54, 13);
+            this.playernameA.TabIndex = 24;
+            this.playernameA.Text = "Name: ";
             // 
-            // golAplayer
+            // teamaname
             // 
-            this.golAplayer.AutoSize = true;
-            this.golAplayer.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.golAplayer.ForeColor = System.Drawing.Color.White;
-            this.golAplayer.Location = new System.Drawing.Point(30, 157);
-            this.golAplayer.Name = "golAplayer";
-            this.golAplayer.Size = new System.Drawing.Size(60, 13);
-            this.golAplayer.TabIndex = 43;
-            this.golAplayer.Text = "Goles: ";
-            // 
-            // golBplayer
-            // 
-            this.golBplayer.AutoSize = true;
-            this.golBplayer.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.golBplayer.ForeColor = System.Drawing.Color.White;
-            this.golBplayer.Location = new System.Drawing.Point(421, 157);
-            this.golBplayer.Name = "golBplayer";
-            this.golBplayer.Size = new System.Drawing.Size(60, 13);
-            this.golBplayer.TabIndex = 44;
-            this.golBplayer.Text = "Goles: ";
-            // 
-            // goltotA
-            // 
-            this.goltotA.AutoSize = true;
-            this.goltotA.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.goltotA.ForeColor = System.Drawing.Color.White;
-            this.goltotA.Location = new System.Drawing.Point(29, 329);
-            this.goltotA.Name = "goltotA";
-            this.goltotA.Size = new System.Drawing.Size(119, 13);
-            this.goltotA.TabIndex = 45;
-            this.goltotA.Text = "Goles Totales:";
-            // 
-            // goltotB
-            // 
-            this.goltotB.AutoSize = true;
-            this.goltotB.Font = new System.Drawing.Font("chalkboard", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.goltotB.ForeColor = System.Drawing.Color.White;
-            this.goltotB.Location = new System.Drawing.Point(421, 329);
-            this.goltotB.Name = "goltotB";
-            this.goltotB.Size = new System.Drawing.Size(119, 13);
-            this.goltotB.TabIndex = 46;
-            this.goltotB.Text = "Goles Totales:";
+            this.teamaname.AutoSize = true;
+            this.teamaname.Font = new System.Drawing.Font("chalkboard", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teamaname.ForeColor = System.Drawing.Color.White;
+            this.teamaname.Location = new System.Drawing.Point(30, 63);
+            this.teamaname.Name = "teamaname";
+            this.teamaname.Size = new System.Drawing.Size(88, 20);
+            this.teamaname.TabIndex = 0;
+            this.teamaname.Text = "Team A";
             // 
             // Form1
             // 

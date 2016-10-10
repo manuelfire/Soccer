@@ -85,8 +85,8 @@ namespace Soccer_Final
             Directory.CreateDirectory("Stadisticas");
             if (!File.Exists("Stadisticas\\" + teamname + ".csv"))
             {
+                playerwrite.AppendLine("Nombre,Goals,Pases,Robos,Faltas,GoalTotales,PasesTotales,FaltasTotales,RobosTotales");
                 fillplayer();
-                File.AppendAllText("Stadisticas\\" + teamname + ".csv", "Nombre,Goals,Pases,Robos,Faltas,GoalTotales,PasesTotales,FaltasTotales,RobosTotales");
                 File.AppendAllText("Stadisticas\\" + teamname + ".csv", playerwrite.ToString());
             }
             else

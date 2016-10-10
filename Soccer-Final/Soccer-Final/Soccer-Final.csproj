@@ -181,9 +181,12 @@
     <Content Include="Resources\15.png" />
     <Content Include="Resources\1927195.jpg" />
     <Content Include="Resources\2.png" />
+    <Content Include="Resources\483.jpg" />
     <Content Include="Resources\choose_your_team__by_tabby_kitsune.jpg" />
     <Content Include="Resources\close.png" />
     <None Include="Resources\fist.png" />
+    <Content Include="Resources\dreamteamlolero.v2.thumb_.png" />
+    <Content Include="Resources\estadio-azteca-santa-ursula-mexico.jpg" />
     <Content Include="Resources\football-background-images-18.jpg" />
     <Content Include="Resources\icon_go.png" />
     <None Include="Resources\next2.png" />
@@ -191,6 +194,7 @@
     <None Include="Resources\next5.png" />
     <None Include="Resources\next.png" />
     <Content Include="Resources\nike-football-the-last-game-animated-film-0.jpg" />
+    <Content Include="Resources\SHTT-Lead-Image-Costumes.jpg" />
     <Content Include="Resources\Soccer-Legends.jpg" />
     <Content Include="Resources\start nuevo.png" />
     <Content Include="Resources\Start.ico" />

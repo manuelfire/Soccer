@@ -115,5 +115,10 @@ namespace Soccer_Final
         {
             this.Close();
         }
+
+        private void NewTeam_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

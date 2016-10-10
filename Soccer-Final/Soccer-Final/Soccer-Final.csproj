@@ -83,6 +83,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewTeam.Designer.cs">
+      <DependentUpon>NewTeam.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlayerViewer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -100,6 +106,12 @@
       <DependentUpon>RPG.cs</DependentUpon>
     </Compile>
     <Compile Include="RPGAttacks.cs" />
+    <Compile Include="TeamChooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeamChooser.Designer.cs">
+      <DependentUpon>TeamChooser.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeamScore.cs" />
     <Compile Include="WritePlay.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -107,6 +119,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewTeam.resx">
+      <DependentUpon>NewTeam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerViewer.resx">
       <DependentUpon>PlayerViewer.cs</DependentUpon>
@@ -123,6 +141,9 @@
     </Compile>
     <EmbeddedResource Include="RPG.resx">
       <DependentUpon>RPG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamChooser.resx">
+      <DependentUpon>TeamChooser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -161,12 +182,18 @@
     <Content Include="Resources\1927195.jpg" />
     <Content Include="Resources\2.png" />
     <Content Include="Resources\close.png" />
+    <None Include="Resources\fist.png" />
     <Content Include="Resources\football-background-images-18.jpg" />
     <Content Include="Resources\icon_go.png" />
+    <None Include="Resources\next2.png" />
+    <None Include="Resources\next3.png" />
+    <None Include="Resources\next5.png" />
+    <None Include="Resources\next.png" />
     <Content Include="Resources\nike-football-the-last-game-animated-film-0.jpg" />
     <Content Include="Resources\Soccer-Legends.jpg" />
     <Content Include="Resources\start nuevo.png" />
     <Content Include="Resources\Start.ico" />
+    <None Include="Resources\stop.png" />
     <Content Include="Resources\stopp.png" />
     <None Include="Resources\Champions.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -103,6 +103,16 @@ namespace Soccer_Final.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fist {
+            get {
+                object obj = ResourceManager.GetObject("fist", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gray_lines_wallpaper_1812_1907_hd_wallpapers {
             get {
                 object obj = ResourceManager.GetObject("gray-lines-wallpaper-1812-1907-hd-wallpapers", resourceCulture);
@@ -116,6 +126,46 @@ namespace Soccer_Final.Properties {
         internal static System.Drawing.Bitmap iniesta9 {
             get {
                 object obj = ResourceManager.GetObject("iniesta9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap next {
+            get {
+                object obj = ResourceManager.GetObject("next", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap next2 {
+            get {
+                object obj = ResourceManager.GetObject("next2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap next3 {
+            get {
+                object obj = ResourceManager.GetObject("next3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap next5 {
+            get {
+                object obj = ResourceManager.GetObject("next5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +196,26 @@ namespace Soccer_Final.Properties {
         internal static System.Drawing.Bitmap soccer_field {
             get {
                 object obj = ResourceManager.GetObject("soccer-field", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stop {
+            get {
+                object obj = ResourceManager.GetObject("stop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stopp {
+            get {
+                object obj = ResourceManager.GetObject("stopp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

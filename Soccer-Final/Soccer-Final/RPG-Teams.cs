@@ -71,6 +71,19 @@ namespace Soccer_Final
             }
             wrpl();
         }
+        public void fillplayernames(string[] names)
+        {
+            int counter = 0;
+            foreach(string n in names)
+            {
+                if (counter <= 11)
+                {
+                    newplayer(n);
+                }
+                
+            }
+            wrpl();
+        }
         public void getplayers()
         {
             int i = 0;

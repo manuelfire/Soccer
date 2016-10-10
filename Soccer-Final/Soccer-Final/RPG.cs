@@ -35,11 +35,11 @@ namespace Soccer_Final
 
         String[] F = {"Goal", "Dribble","Pase"};
         String[] d = {"Robo", "Carga","Intercepcion" };
-        public RPG()
+        public RPG(string team1,string team2,string players1,string players2)
         {
             
             InitializeComponent();
-            player2.URL = " Resources\\SuperCampeones.mp3";
+            player2.URL = "Resources\\SuperCampeones.mp3";
             timer1.Interval = 1000;
             soccerfield.Controls.Add(teamapic);
             soccerfield.Controls.Add(teambpic);
@@ -50,10 +50,12 @@ namespace Soccer_Final
             plays2.AddRange(F);
             Defense.AddRange(d);
             Defense2.AddRange(d);
-            teams[0] = new RPG_Teams("Konoha team");
-            teams[1] = new RPG_Teams("El Real Dragon");
+            teams[0] = new RPG_Teams(team1);
+            teams[1] = new RPG_Teams(team2);
             PaseA.Enabled = false;
             PaseB.Enabled = false;
+            play1.Text = players1;
+            play2.Text = players2;
             submitbut.Enabled = false;
             comboBox3.DataSource = plays;
             comboBox4.DataSource = plays2;
@@ -71,7 +73,7 @@ namespace Soccer_Final
             PaseBLista = teams[1].lista();
             PaseB.DisplayMember = "Name";
             Directory.CreateDirectory("Juegos");
-            juegoarch = check.Nuevo("Juegos\\juegoRPG.txt");
+            juegoarch = check.Nuevo("Juegos\\"+players1+"-VS-"+players2+"-JuegoRPG.txt");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -341,7 +343,7 @@ namespace Soccer_Final
                     {
                       if(action.Pase(player1,player2,paseA))
                         {
-                            textlog.AppendLine("El jugador " + player1.Name + "del equipo " + teams[0].getname() + " paso el balon a :" + textBox1.Text);
+                            textlog.AppendLine("El jugador " + player1.Name + "del equipo " + teams[0].getname() + " paso el balon. :" + textBox1.Text);
                             teams[0].players[comboBox1.SelectedIndex].loseball();
                             teams[0].players[PaseA.SelectedIndex].getball();
                             ballApos += Convert.ToInt32(teams[0].players[comboBox1.SelectedIndex].Passmt * 1.5);
@@ -358,7 +360,7 @@ namespace Soccer_Final
                     {
                         if (action.Pase(player2, player1, paseB))
                         {
-                            textlog.AppendLine("El jugador " + player2.Name + "del equipo " + teams[1].getname() + " paso el balon a :" + textBox1.Text);
+                            textlog.AppendLine("El jugador " + player2.Name + " del equipo " + teams[1].getname() + " paso el balon a :" + textBox1.Text);
                             teams[1].players[comboBox2.SelectedIndex].loseball();
                             teams[1].players[PaseB.SelectedIndex].getball();
                             ballBpos -= teams[1].players[comboBox2.SelectedIndex].Passmt*2;
@@ -454,6 +456,12 @@ namespace Soccer_Final
         private void RPG_Load(object sender, EventArgs e)
         {
             player2.controls.play();
+            stop.BackColor = Color.Transparent;
+            stop.FlatStyle = FlatStyle.Flat;
+            stop.FlatAppearance.BorderSize = 0;
+            stop.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            stop.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            stop.ForeColor = System.Drawing.Color.White;
         }
 
         private void button1_Click_2(object sender, EventArgs e)

@@ -70,6 +70,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -101,7 +105,7 @@
             this.START.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.START.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("START.BackgroundImage")));
             this.START.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.START.Location = new System.Drawing.Point(283, 119);
+            this.START.Location = new System.Drawing.Point(292, 161);
             this.START.Name = "START";
             this.START.Size = new System.Drawing.Size(75, 54);
             this.START.TabIndex = 11;
@@ -128,7 +132,7 @@
             // 
             this.stop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("stop.BackgroundImage")));
             this.stop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.stop.Location = new System.Drawing.Point(283, 179);
+            this.stop.Location = new System.Drawing.Point(292, 221);
             this.stop.Name = "stop";
             this.stop.Size = new System.Drawing.Size(75, 61);
             this.stop.TabIndex = 20;
@@ -188,7 +192,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Location = new System.Drawing.Point(73, 204);
+            this.label9.Location = new System.Drawing.Point(82, 246);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(38, 13);
             this.label9.TabIndex = 41;
@@ -198,7 +202,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Location = new System.Drawing.Point(73, 165);
+            this.label8.Location = new System.Drawing.Point(82, 207);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 13);
             this.label8.TabIndex = 40;
@@ -209,7 +213,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(88, 124);
+            this.label6.Location = new System.Drawing.Point(97, 166);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(23, 13);
             this.label6.TabIndex = 39;
@@ -224,7 +228,7 @@
             "De banda",
             "De porteria",
             "De esquina"});
-            this.SaqueA.Location = new System.Drawing.Point(36, 219);
+            this.SaqueA.Location = new System.Drawing.Point(45, 261);
             this.SaqueA.Name = "SaqueA";
             this.SaqueA.Size = new System.Drawing.Size(121, 21);
             this.SaqueA.TabIndex = 38;
@@ -239,7 +243,7 @@
             "Autogol",
             "Gol Olimpico",
             "Libre directo"});
-            this.GoalA.Location = new System.Drawing.Point(37, 141);
+            this.GoalA.Location = new System.Drawing.Point(46, 183);
             this.GoalA.Name = "GoalA";
             this.GoalA.Size = new System.Drawing.Size(121, 21);
             this.GoalA.TabIndex = 37;
@@ -263,7 +267,7 @@
             "Anticipación",
             "Interceptación",
             "Presión"});
-            this.DefensaA.Location = new System.Drawing.Point(36, 179);
+            this.DefensaA.Location = new System.Drawing.Point(45, 221);
             this.DefensaA.Name = "DefensaA";
             this.DefensaA.Size = new System.Drawing.Size(121, 21);
             this.DefensaA.TabIndex = 36;
@@ -272,7 +276,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(518, 204);
+            this.label4.Location = new System.Drawing.Point(527, 246);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 47;
@@ -282,7 +286,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(518, 165);
+            this.label5.Location = new System.Drawing.Point(527, 207);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 46;
@@ -292,7 +296,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(533, 125);
+            this.label7.Location = new System.Drawing.Point(542, 167);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(23, 13);
             this.label7.TabIndex = 45;
@@ -307,7 +311,7 @@
             "De banda",
             "De porteria",
             "De esquina"});
-            this.SaqueB.Location = new System.Drawing.Point(481, 219);
+            this.SaqueB.Location = new System.Drawing.Point(490, 261);
             this.SaqueB.Name = "SaqueB";
             this.SaqueB.Size = new System.Drawing.Size(121, 21);
             this.SaqueB.TabIndex = 44;
@@ -322,7 +326,7 @@
             "Autogol",
             "Gol Olimpico",
             "Libre directo"});
-            this.GoalB.Location = new System.Drawing.Point(482, 141);
+            this.GoalB.Location = new System.Drawing.Point(491, 183);
             this.GoalB.Name = "GoalB";
             this.GoalB.Size = new System.Drawing.Size(121, 21);
             this.GoalB.TabIndex = 43;
@@ -346,14 +350,14 @@
             "Anticipación",
             "Interceptación",
             "Presión"});
-            this.DefensaB.Location = new System.Drawing.Point(481, 179);
+            this.DefensaB.Location = new System.Drawing.Point(490, 221);
             this.DefensaB.Name = "DefensaB";
             this.DefensaB.Size = new System.Drawing.Size(121, 21);
             this.DefensaB.TabIndex = 42;
             // 
             // GoalB_Anotar
             // 
-            this.GoalB_Anotar.Location = new System.Drawing.Point(401, 139);
+            this.GoalB_Anotar.Location = new System.Drawing.Point(410, 181);
             this.GoalB_Anotar.Name = "GoalB_Anotar";
             this.GoalB_Anotar.Size = new System.Drawing.Size(75, 23);
             this.GoalB_Anotar.TabIndex = 48;
@@ -363,7 +367,7 @@
             // 
             // DefensaB_Anotar
             // 
-            this.DefensaB_Anotar.Location = new System.Drawing.Point(400, 177);
+            this.DefensaB_Anotar.Location = new System.Drawing.Point(409, 219);
             this.DefensaB_Anotar.Name = "DefensaB_Anotar";
             this.DefensaB_Anotar.Size = new System.Drawing.Size(75, 23);
             this.DefensaB_Anotar.TabIndex = 49;
@@ -373,7 +377,7 @@
             // 
             // SaqueB_Anotar
             // 
-            this.SaqueB_Anotar.Location = new System.Drawing.Point(400, 219);
+            this.SaqueB_Anotar.Location = new System.Drawing.Point(409, 261);
             this.SaqueB_Anotar.Name = "SaqueB_Anotar";
             this.SaqueB_Anotar.Size = new System.Drawing.Size(75, 23);
             this.SaqueB_Anotar.TabIndex = 50;
@@ -383,7 +387,7 @@
             // 
             // GoalA_Anotar
             // 
-            this.GoalA_Anotar.Location = new System.Drawing.Point(164, 139);
+            this.GoalA_Anotar.Location = new System.Drawing.Point(173, 181);
             this.GoalA_Anotar.Name = "GoalA_Anotar";
             this.GoalA_Anotar.Size = new System.Drawing.Size(75, 23);
             this.GoalA_Anotar.TabIndex = 51;
@@ -393,7 +397,7 @@
             // 
             // DefensaA_Anotar
             // 
-            this.DefensaA_Anotar.Location = new System.Drawing.Point(163, 177);
+            this.DefensaA_Anotar.Location = new System.Drawing.Point(172, 219);
             this.DefensaA_Anotar.Name = "DefensaA_Anotar";
             this.DefensaA_Anotar.Size = new System.Drawing.Size(75, 23);
             this.DefensaA_Anotar.TabIndex = 52;
@@ -403,7 +407,7 @@
             // 
             // SaqueA_Anotar
             // 
-            this.SaqueA_Anotar.Location = new System.Drawing.Point(163, 217);
+            this.SaqueA_Anotar.Location = new System.Drawing.Point(172, 259);
             this.SaqueA_Anotar.Name = "SaqueA_Anotar";
             this.SaqueA_Anotar.Size = new System.Drawing.Size(75, 23);
             this.SaqueA_Anotar.TabIndex = 53;
@@ -486,7 +490,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Tarjeta Amarilla",
             "Tarjeta Roja"});
-            this.comboBox1.Location = new System.Drawing.Point(481, 258);
+            this.comboBox1.Location = new System.Drawing.Point(490, 300);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 57;
@@ -495,7 +499,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Location = new System.Drawing.Point(516, 242);
+            this.label10.Location = new System.Drawing.Point(525, 284);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 13);
             this.label10.TabIndex = 58;
@@ -508,7 +512,7 @@
             this.comboBox2.Items.AddRange(new object[] {
             "Tarjeta Amarilla",
             "Tarjeta Roja"});
-            this.comboBox2.Location = new System.Drawing.Point(36, 258);
+            this.comboBox2.Location = new System.Drawing.Point(45, 300);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 59;
@@ -517,11 +521,51 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Location = new System.Drawing.Point(73, 243);
+            this.label11.Location = new System.Drawing.Point(82, 285);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(40, 13);
             this.label11.TabIndex = 60;
             this.label11.Text = "Tarjeta";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(46, 142);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 61;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(490, 143);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 21);
+            this.comboBox4.TabIndex = 62;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(82, 126);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(36, 13);
+            this.label12.TabIndex = 63;
+            this.label12.Text = "Player";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(527, 126);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(36, 13);
+            this.label13.TabIndex = 64;
+            this.label13.Text = "Player";
             // 
             // Form1
             // 
@@ -531,6 +575,10 @@
             this.BackgroundImage = global::Soccer_Final.Properties.Resources.gray_lines_wallpaper_1812_1907_hd_wallpapers;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(694, 591);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label10);
@@ -619,6 +667,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
 

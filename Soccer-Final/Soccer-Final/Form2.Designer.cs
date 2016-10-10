@@ -41,7 +41,7 @@
             this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Image = global::Soccer_Final.Properties.Resources.close;
-            this.button3.Location = new System.Drawing.Point(314, 275);
+            this.button3.Location = new System.Drawing.Point(315, 288);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(138, 67);
             this.button3.TabIndex = 2;
@@ -51,9 +51,9 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = global::Soccer_Final.Properties.Resources._2;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Image = global::Soccer_Final.Properties.Resources._2;
-            this.button2.Location = new System.Drawing.Point(594, 144);
+            this.button2.Location = new System.Drawing.Point(593, 144);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 88);
             this.button2.TabIndex = 1;
@@ -64,8 +64,8 @@
             // 
             this.button1.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
             this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::Soccer_Final.Properties.Resources._15;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Image = global::Soccer_Final.Properties.Resources._15;
             this.button1.Location = new System.Drawing.Point(90, 144);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 88);

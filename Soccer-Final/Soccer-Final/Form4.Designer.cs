@@ -46,6 +46,7 @@
             this.nameplayer.Size = new System.Drawing.Size(41, 13);
             this.nameplayer.TabIndex = 1;
             this.nameplayer.Text = "Name: ";
+            this.nameplayer.Click += new System.EventHandler(this.nameplayer_Click);
             // 
             // attack
             // 
@@ -55,6 +56,7 @@
             this.attack.Size = new System.Drawing.Size(44, 13);
             this.attack.TabIndex = 2;
             this.attack.Text = "Attack: ";
+            this.attack.Click += new System.EventHandler(this.attack_Click);
             // 
             // defense
             // 
@@ -64,6 +66,7 @@
             this.defense.Size = new System.Drawing.Size(53, 13);
             this.defense.TabIndex = 3;
             this.defense.Text = "Defense: ";
+            this.defense.Click += new System.EventHandler(this.defense_Click);
             // 
             // goal
             // 
@@ -73,6 +76,7 @@
             this.goal.Size = new System.Drawing.Size(35, 13);
             this.goal.TabIndex = 4;
             this.goal.Text = "Goal: ";
+            this.goal.Click += new System.EventHandler(this.goal_Click);
             // 
             // button2
             // 
@@ -101,8 +105,9 @@
             this.pictureBox1.Size = new System.Drawing.Size(111, 113);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // Form2
+            // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -114,7 +119,7 @@
             this.Controls.Add(this.attack);
             this.Controls.Add(this.nameplayer);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Form2";
+            this.Name = "Form4";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

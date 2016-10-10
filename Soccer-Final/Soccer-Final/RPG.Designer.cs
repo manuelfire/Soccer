@@ -55,6 +55,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.teamabut1 = new System.Windows.Forms.Button();
+            this.play1 = new System.Windows.Forms.Label();
+            this.play2 = new System.Windows.Forms.Label();
+            this.stop = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.teambpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamapic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soccerfield)).BeginInit();
@@ -188,9 +191,9 @@
             // 
             this.start.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("start.BackgroundImage")));
             this.start.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.start.Location = new System.Drawing.Point(521, 58);
+            this.start.Location = new System.Drawing.Point(486, 58);
             this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(39, 42);
+            this.start.Size = new System.Drawing.Size(44, 42);
             this.start.TabIndex = 30;
             this.start.UseVisualStyleBackColor = true;
             this.start.Click += new System.EventHandler(this.start_Click);
@@ -213,12 +216,13 @@
             // 
             // submitbut
             // 
-            this.submitbut.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.submitbut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("submitbut.BackgroundImage")));
+            this.submitbut.BackColor = System.Drawing.Color.Transparent;
+            this.submitbut.BackgroundImage = global::Soccer_Final.Properties.Resources.fist;
             this.submitbut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.submitbut.ForeColor = System.Drawing.Color.Transparent;
             this.submitbut.Location = new System.Drawing.Point(502, 480);
             this.submitbut.Name = "submitbut";
-            this.submitbut.Size = new System.Drawing.Size(75, 54);
+            this.submitbut.Size = new System.Drawing.Size(58, 54);
             this.submitbut.TabIndex = 37;
             this.submitbut.UseVisualStyleBackColor = false;
             this.submitbut.Click += new System.EventHandler(this.button1_Click_1);
@@ -286,6 +290,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Image = global::Soccer_Final.Properties.Resources.soccer;
             this.pictureBox2.Location = new System.Drawing.Point(906, 159);
@@ -298,6 +303,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = global::Soccer_Final.Properties.Resources.soccer;
             this.pictureBox1.Location = new System.Drawing.Point(35, 159);
@@ -322,12 +328,43 @@
             this.teamabut1.UseVisualStyleBackColor = true;
             this.teamabut1.Click += new System.EventHandler(this.teamabut1_Click);
             // 
+            // play1
+            // 
+            this.play1.AutoSize = true;
+            this.play1.Location = new System.Drawing.Point(200, 86);
+            this.play1.Name = "play1";
+            this.play1.Size = new System.Drawing.Size(35, 13);
+            this.play1.TabIndex = 42;
+            this.play1.Text = "label2";
+            // 
+            // play2
+            // 
+            this.play2.AutoSize = true;
+            this.play2.Location = new System.Drawing.Point(843, 86);
+            this.play2.Name = "play2";
+            this.play2.Size = new System.Drawing.Size(35, 13);
+            this.play2.TabIndex = 43;
+            this.play2.Text = "label3";
+            // 
+            // stop
+            // 
+            this.stop.BackgroundImage = global::Soccer_Final.Properties.Resources.stop;
+            this.stop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.stop.Location = new System.Drawing.Point(563, 58);
+            this.stop.Name = "stop";
+            this.stop.Size = new System.Drawing.Size(40, 42);
+            this.stop.TabIndex = 44;
+            this.stop.UseVisualStyleBackColor = true;
+            // 
             // RPG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1031, 643);
+            this.Controls.Add(this.stop);
+            this.Controls.Add(this.play2);
+            this.Controls.Add(this.play1);
             this.Controls.Add(this.teamabut1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PaseB);
@@ -391,5 +428,8 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button teamabut1;
+        private System.Windows.Forms.Label play1;
+        private System.Windows.Forms.Label play2;
+        private System.Windows.Forms.Button stop;
     }
 }

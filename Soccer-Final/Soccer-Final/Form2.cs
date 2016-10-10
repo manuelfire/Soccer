@@ -33,7 +33,7 @@ namespace Soccer_Final
 
         private void button2_Click(object sender, EventArgs e)
         {
-            RPG newForm = new RPG();
+            TeamChooser newForm = new TeamChooser();
             newForm.Show();
             this.Hide();
             player4.controls.stop();

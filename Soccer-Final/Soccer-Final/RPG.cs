@@ -462,6 +462,12 @@ namespace Soccer_Final
             stop.FlatAppearance.MouseDownBackColor = Color.Transparent;
             stop.FlatAppearance.MouseOverBackColor = Color.Transparent;
             stop.ForeColor = System.Drawing.Color.White;
+            submitbut.BackColor = Color.Transparent;
+            submitbut.FlatStyle = FlatStyle.Flat;
+            submitbut.FlatAppearance.BorderSize = 0;
+            submitbut.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            submitbut.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            submitbut.ForeColor = System.Drawing.Color.White;
         }
 
         private void button1_Click_2(object sender, EventArgs e)

@@ -26,7 +26,7 @@ namespace Soccer_Final
             if (!File.Exists("Equipos\\" + teamname + ".csv"))
             {
                 File.Create("Equipos\\" + teamname + ".csv").Dispose();
-                fillplayer();
+                
             }
             
         } 
@@ -76,11 +76,11 @@ namespace Soccer_Final
             int counter = 0;
             foreach(string n in names)
             {
-                if (counter <= 11)
+                if (counter < 11)
                 {
                     newplayer(n);
                 }
-                
+                counter++;
             }
             wrpl();
         }

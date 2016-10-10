@@ -184,7 +184,7 @@ namespace Soccer_Final
             score.Score(0);
             textBox2.Text = Convert.ToString(score.GetScore(0));
             teams[0].players[playersA.SelectedIndex].Goals += 1;
-            data.Rows.Add(teamatext,playersA.Text,GoalA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
+            data.Rows.Add("Team 1",playersA.Text,GoalA.SelectedItem.ToString(), score.GetScore(0), textBox1.Text);
         }
 
         private void GoalB_Anotar_Click(object sender, EventArgs e)
@@ -192,7 +192,7 @@ namespace Soccer_Final
             score.Score(1);
             textBox3.Text = Convert.ToString(score.GetScore(1));
             teams[1].players[playesB.SelectedIndex].Goals += 1;
-            data.Rows.Add(teambtext,playesB.Text, GoalB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
+            data.Rows.Add("Team 2",playesB.Text, GoalB.SelectedItem.ToString(), score.GetScore(1), textBox1.Text);
         }
 
         private void DefensaA_Defensa_Click(object sender, EventArgs e)
@@ -424,6 +424,11 @@ namespace Soccer_Final
 
 
             timer.Enabled = true;
+        }
+
+        private void playersA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)

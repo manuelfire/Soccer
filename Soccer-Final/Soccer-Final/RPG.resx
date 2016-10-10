@@ -121,7 +121,7 @@
   <data name="start.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        xAAADsQBlSsOGwAAEw1JREFUaENtmQl0VFWexl9VApgEWYSwJAQCgZAEw6IBFzQioIgtAgqNJiCOiva0
+        wwAADsMBx2+oZAAAEw1JREFUaENtmQl0VFWexl9VApgEWYSwJAQCgZAEw6IBFzQioIgtAgqNJiCOiva0
         eKbnqOCc8YwznPacWYBp03TbKhq7Jzi2rd0sgsgiArKFLJWlUpWtkqrUXqklCwmBwDff/1a96khPHS7v
         vnffu/d3v/vd/73vRbtx4wYkXb9+HYODgyrp57eW6dfAf/Lru9KH8+7zKGsuw5YLW1D4QyHmnZqHrBMz
         kH08GzOOzUD+qXw8eOpBbDm/BWXWMnW/PKf/pM6bN2/i2rVrqm6dQW/v1jI5V9ADAwOqQIfr7+9XR7l2
@@ -252,7 +252,7 @@
         XTesb3QPLh88M+QwdP6m681Lt7xuXbu94vbgcOjwnZHokdE77DtTd1PuvriXeW/h/sYH6AdFD6UeVjxS
         fNTws+7PbaOWo6fHXMf6Hwc/vj/OGn/2S8Yv7ycKnpCfVEyqTDZPmU2dmnafvvF05dOJZ+nPFmYKf5X+
         tfa5zvMffnP8rX82YnbiBf/Fp99LXsq/PPRq2aueuYC5R69TXy/MF72Rf3P4LeNt37vwd5MLWe+x7ys/
-        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALEwAACxMBAJqcGAAAaGtJREFUeF7tvQeUFdW2
+        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALEgAACxIB0t1+/AAAaGtJREFUeF7tvQeUFdW2
         tn3vPccTzdmjohhQDJgzIkZERILkoCCoiAEFVFBUBAXBgKIgRhQFAcmxyamh6Zxzzk2Ts+d8d/zzf961
         qzbFpjEd9XrHuD3GO2r3DhXWfNY751pVu/Z/lJWVmVT+v0AV5eVWU11t1VVVVlpSYtlZWbZ61Sr7ZsoU
         e+/dd23IkCHWu1cva9Gihd3cuLHdeOONdv3119s111xjV155pV1xxRVuedVVVx0iPe+/R/9fe+217rM3
@@ -707,7 +707,7 @@
   <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIoAAABACAYAAADF9O+2AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        xAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAVdEVYdFRpdGxl
+        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAVdEVYdFRpdGxl
         AEJhY2tfQnV0dG9uLnBuZyrGXBAAABo2SURBVHhe7Z0HVFTX1scnasyX5stLYkxMTPISE6PPNE2i0cRo
         VOzG3nvDEmNvqCBIF5AiCgIiHQXpvYNIE0SKogioiKBSVDoi/r997sAdBi44Ul7Mcljrty7cvc8+Zf/v
         KTN3LURo8nPrVhGCw9IRFJomE4EhjFQEBKdw+Aclwy8oEX4BCfD2i4OXTyy8vGLg6R0Nd6+z8PASX+W0
@@ -825,6 +825,9 @@
   </data>
   <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>104, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -34,6 +34,7 @@ namespace Soccer_Final
         List<Players> playerBlist = new List<Players>();
         private int indexA;
         private int indexB;
+        InputBoxClass tmp = new InputBoxClass();
 
         public Form1()
         {
@@ -89,12 +90,18 @@ namespace Soccer_Final
             settextA(0);
             settextB(0);
             EnableStart();
+
             timer.Tick += (obj, args) =>
-                textBox1.Text =
-                    (TimeSpan.FromMinutes(45) - (DateTime.Now - startTime))
-                    .ToString("hh\\:mm\\:ss");
+               textBox1.Text =
+                   (TimeSpan.FromMinutes(45) - (DateTime.Now - startTime))
+                   .ToString("hh\\:mm\\:ss");
+
 
             timer.Enabled = true;
+
+            bToolStripMenuItem1.Enabled = false;
+            aToolStripMenuItem1.Enabled = false;
+           
             
         }
 
@@ -112,7 +119,7 @@ namespace Soccer_Final
             score.Score(0);
             textBox2.Text = Convert.ToString(score.GetScore(0));
             teams[0].players[playersA.SelectedIndex].Goals += 1;
-           data.Rows.Add("Team A",playersA.Text,"GOAL",score.GetScore(0), textBox1.Text);
+           data.Rows.Add(teamatext,playersA.Text,"GOAL",score.GetScore(0), textBox1.Text);
         }
 
         private void Goal_B_Click(object sender, EventArgs e)
@@ -120,7 +127,7 @@ namespace Soccer_Final
             score.Score(1);
             teams[1].players[playesB.SelectedIndex].Goals += 1;
             textBox3.Text = Convert.ToString(score.GetScore(1));
-            data.Rows.Add("Team B",playesB.Text, "GOAL", score.GetScore(1), textBox1.Text);
+            data.Rows.Add(teambtext,playesB.Text, "GOAL", score.GetScore(1), textBox1.Text);
         }
         public void DisableAll()
         {
@@ -353,6 +360,70 @@ namespace Soccer_Final
                 indexB = 0;
                 settextB(indexB);
             }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void DefensaA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            String titulo = "Ingresar Nombre de Equipo";
+            String promptext = "Nuevo Nombre";
+            String value = teamatext;
+            tmp.InputBox(titulo, promptext, ref value);
+            label2.Text = value;
+            teamatext = value;
+       
+            
+        }
+
+        private void teamNamesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void bToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            String titulo = "Ingresar Nombre de Equipo";
+            String promptext = "Nuevo Nombre";
+            String value = teambtext;
+            tmp.InputBox(titulo, promptext, ref value);
+            label3.Text = value;
+            teambtext = value;
+
+        }
+
+        private void timeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            String titulo = "Ingresar un Nuevo Tiempo";
+            String promptext = "Tiempo en Minutos";
+            Double value1 = 0.0 ;
+            tmp.InputBox2(titulo, promptext, ref value1);
+
+            timer.Tick += (obj, args) =>
+                textBox1.Text =
+                    (TimeSpan.FromMinutes(value1) - (DateTime.Now - startTime))
+                    .ToString("hh\\:mm\\:ss");
+
+
+            timer.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)

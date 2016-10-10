@@ -18,7 +18,7 @@ namespace Soccer_Final
         public NewTeam()
         {
             InitializeComponent();
-            button3.Enabled = false;
+            button4.Enabled = false;
         }
 
         private void playerViewer1_Load(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace Soccer_Final
             teamname.Enabled = false;
             team.fillplayernames(names);
             team.getplayers();
-            button3.Enabled = true;
+            button4.Enabled = true;
             gen.Enabled = false;
             settext(0);
 

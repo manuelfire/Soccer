@@ -39,11 +39,29 @@ namespace Soccer_Final
             names[8] = player9.Text;
             names[9] = player10.Text;
             names[10] = player11.Text;
-            
-            
-            team = new RPG_Teams(teamname.Text);
+            player1.Enabled = false;
+            player2.Enabled = false;
+            player3.Enabled = false;
+            player4.Enabled = false;
+            player5.Enabled = false;
+            player6.Enabled = false;
+            player7.Enabled = false;
+            player8.Enabled = false;
+            player9.Enabled = false;
+            player10.Enabled = false;
+            player11.Enabled = false;
+
+            try
+            {
+                team = new RPG_Teams(teamname.Text);
+            }
+            catch(Exception d)
+            {
+                
+            }
             teamname.Enabled = false;
             team.fillplayernames(names);
+            team.getplayers();
             button3.Enabled = true;
             gen.Enabled = false;
             settext(0);
@@ -55,12 +73,12 @@ namespace Soccer_Final
             team.fillplayernames(names);
             settext(0);
         }
-        public void settext(int index)
+        public void settext(int indexS)
         {
-            nameplayer.Text = "Name: " + team.players[index].Name;
-            attack.Text = "Attack " + team.players[index].Attack.ToString();
-            defense.Text = "Defense: " + team.players[index].Defense.ToString();
-            goal.Text = "Goal: " + team.players[index].Goal.ToString();
+            nameplayer.Text = "Name: " + team.players[indexS].Name;
+            attack.Text = "Attack " + team.players[indexS].Attack.ToString();
+            defense.Text = "Defense: " + team.players[indexS].Defense.ToString();
+            goal.Text = "Goal: " + team.players[indexS].Goal.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -91,6 +109,11 @@ namespace Soccer_Final
                 index = 10;
                 settext(index);
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

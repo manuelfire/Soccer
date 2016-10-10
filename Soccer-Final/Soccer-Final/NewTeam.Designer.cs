@@ -47,9 +47,9 @@
             this.defense = new System.Windows.Forms.Label();
             this.attack = new System.Windows.Forms.Label();
             this.nameplayer = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,11 +141,11 @@
             // 
             // gen
             // 
-            this.gen.Location = new System.Drawing.Point(127, 200);
+            this.gen.Location = new System.Drawing.Point(118, 200);
             this.gen.Name = "gen";
             this.gen.Size = new System.Drawing.Size(75, 23);
             this.gen.TabIndex = 14;
-            this.gen.Text = "Save";
+            this.gen.Text = "Set";
             this.gen.UseVisualStyleBackColor = true;
             this.gen.Click += new System.EventHandler(this.gen_Click);
             // 
@@ -202,16 +202,6 @@
             this.nameplayer.TabIndex = 17;
             this.nameplayer.Text = "Name: ";
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(138, 261);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Randomize";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // button2
             // 
             this.button2.BackgroundImage = global::Soccer_Final.Properties.Resources.next;
@@ -231,12 +221,22 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(143, 464);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "Save";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // NewTeam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(227, 499);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.goal);
@@ -289,6 +289,6 @@
         private System.Windows.Forms.Label attack;
         private System.Windows.Forms.Label nameplayer;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

@@ -475,7 +475,7 @@
             this.GoalA_Anotar.Name = "GoalA_Anotar";
             this.GoalA_Anotar.Size = new System.Drawing.Size(75, 23);
             this.GoalA_Anotar.TabIndex = 89;
-            this.GoalA_Anotar.Text = "GOLASO";
+            this.GoalA_Anotar.Text = "GOLAZO";
             this.GoalA_Anotar.UseVisualStyleBackColor = true;
             this.GoalA_Anotar.Click += new System.EventHandler(this.Goal_A_Click);
             // 
@@ -505,7 +505,7 @@
             this.GoalB_Anotar.Name = "GoalB_Anotar";
             this.GoalB_Anotar.Size = new System.Drawing.Size(75, 23);
             this.GoalB_Anotar.TabIndex = 86;
-            this.GoalB_Anotar.Text = "GOLASO";
+            this.GoalB_Anotar.Text = "GOLAZO";
             this.GoalB_Anotar.UseVisualStyleBackColor = true;
             this.GoalB_Anotar.Click += new System.EventHandler(this.Goal_B_Click);
             // 

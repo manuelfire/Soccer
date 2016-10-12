@@ -120,5 +120,30 @@ namespace Soccer_Final
         {
 
         }
+
+        private void goal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void defense_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void attack_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nameplayer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

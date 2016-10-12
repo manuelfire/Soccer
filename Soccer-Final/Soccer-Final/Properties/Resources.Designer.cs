@@ -81,6 +81,16 @@ namespace Soccer_Final.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chalkboard_texture_mc2015_by_mattiamc_d8dbnac {
+            get {
+                object obj = ResourceManager.GetObject("chalkboard_texture_mc2015_by_mattiamc-d8dbnac", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] Champions {
@@ -106,6 +116,16 @@ namespace Soccer_Final.Properties {
         internal static System.Drawing.Bitmap fist {
             get {
                 object obj = ResourceManager.GetObject("fist", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap football_background_images_18 {
+            get {
+                object obj = ResourceManager.GetObject("football-background-images-18", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,10 +213,29 @@ namespace Soccer_Final.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap soccer_fans_wallpaper_1920x1080 {
+            get {
+                object obj = ResourceManager.GetObject("soccer_fans-wallpaper-1920x1080", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap soccer_field {
             get {
                 object obj = ResourceManager.GetObject("soccer-field", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream SOCCERCHEER {
+            get {
+                return ResourceManager.GetStream("SOCCERCHEER", resourceCulture);
             }
         }
         

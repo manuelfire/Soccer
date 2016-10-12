@@ -266,6 +266,8 @@
             this.Controls.Add(this.player3);
             this.Controls.Add(this.player2);
             this.Controls.Add(this.player1);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewTeam";
             this.Text = "NewTeam";
             this.Load += new System.EventHandler(this.NewTeam_Load);

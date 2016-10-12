@@ -423,6 +423,7 @@
             this.Controls.Add(this.log);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RPG";
             this.Text = "RPG";
             this.Load += new System.EventHandler(this.RPG_Load);

@@ -434,7 +434,10 @@ namespace Soccer_Final
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           
+            if(textBox1.Text=="00:00:00")
+            {
+                endgame();
+            }
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
@@ -523,6 +526,23 @@ namespace Soccer_Final
         private void button4_Click(object sender, EventArgs e)
         {
             player2.controls.pause();
+        }
+        public void endgame()
+        {
+            if(score.GetScore(0)>score.GetScore(1))
+            {
+                MessageBox.Show("Gano el equipo"+teams[0].getname());
+               TeamChooser n = new TeamChooser();
+                n.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Gano el equipo" + teams[1].getname());
+                TeamChooser n = new TeamChooser();
+                n.Show();
+                this.Close();
+            }
         }
     }
 }

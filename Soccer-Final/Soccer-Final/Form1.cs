@@ -369,7 +369,10 @@ namespace Soccer_Final
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            if (textBox1.Text == "00:00:00")
+            {
+                endgame();
+            }
         }
 
         private void aToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -449,6 +452,23 @@ namespace Soccer_Final
             newForm.Show();
             this.Close();
             player3.controls.stop();
+        }
+        public void endgame()
+        {
+            if (score.GetScore(0) > score.GetScore(1))
+            {
+                MessageBox.Show("Gano el equipo" + teamaname.Text);
+                Form2 n = new Form2();
+                n.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Gano el equipo" + teambname.Text);
+                Form2 n = new Form2();
+                n.Show();
+                this.Close();
+            }
         }
     }
 

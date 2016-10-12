@@ -328,7 +328,7 @@
             this.teamabut1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.teamabut1.Location = new System.Drawing.Point(47, 327);
             this.teamabut1.Name = "teamabut1";
-            this.teamabut1.Size = new System.Drawing.Size(75, 58);
+            this.teamabut1.Size = new System.Drawing.Size(75, 65);
             this.teamabut1.TabIndex = 41;
             this.teamabut1.UseVisualStyleBackColor = true;
             this.teamabut1.Click += new System.EventHandler(this.teamabut1_Click);

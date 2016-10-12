@@ -109,6 +109,10 @@
             this.pasesA = new System.Windows.Forms.Label();
             this.playernameA = new System.Windows.Forms.Label();
             this.teamaname = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.playesB = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.playersA = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -298,6 +302,10 @@
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.button7);
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.playesB);
+            this.tabPage1.Controls.Add(this.playersA);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.SaqueA_Anotar);
             this.tabPage1.Controls.Add(this.DefensaA_Anotar);
@@ -1023,6 +1031,47 @@
             this.teamaname.TabIndex = 0;
             this.teamaname.Text = "Team A";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.ForeColor = System.Drawing.SystemColors.Control;
+            this.label13.Location = new System.Drawing.Point(533, 79);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(36, 13);
+            this.label13.TabIndex = 100;
+            this.label13.Text = "Player";
+            // 
+            // playesB
+            // 
+            this.playesB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.playesB.FormattingEnabled = true;
+            this.playesB.Location = new System.Drawing.Point(496, 96);
+            this.playesB.Name = "playesB";
+            this.playesB.Size = new System.Drawing.Size(121, 21);
+            this.playesB.TabIndex = 98;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.ForeColor = System.Drawing.SystemColors.Control;
+            this.label12.Location = new System.Drawing.Point(88, 79);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(36, 13);
+            this.label12.TabIndex = 99;
+            this.label12.Text = "Player";
+            // 
+            // playersA
+            // 
+            this.playersA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.playersA.FormattingEnabled = true;
+            this.playersA.Location = new System.Drawing.Point(52, 95);
+            this.playersA.Name = "playersA";
+            this.playersA.Size = new System.Drawing.Size(121, 21);
+            this.playersA.TabIndex = 97;
+            this.playersA.SelectedIndexChanged += new System.EventHandler(this.playersA_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1132,6 +1181,10 @@
         private System.Windows.Forms.Label golAplayer;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox playesB;
+        private System.Windows.Forms.ComboBox playersA;
     }
 }
 

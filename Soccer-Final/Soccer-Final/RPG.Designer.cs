@@ -324,11 +324,12 @@
             // 
             // teamabut1
             // 
+            this.teamabut1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("teamabut1.BackgroundImage")));
+            this.teamabut1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.teamabut1.Location = new System.Drawing.Point(47, 327);
             this.teamabut1.Name = "teamabut1";
             this.teamabut1.Size = new System.Drawing.Size(75, 58);
             this.teamabut1.TabIndex = 41;
-            this.teamabut1.Text = "Set";
             this.teamabut1.UseVisualStyleBackColor = true;
             this.teamabut1.Click += new System.EventHandler(this.teamabut1_Click);
             // 
@@ -368,6 +369,7 @@
             this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.ForeColor = System.Drawing.Color.Transparent;
             this.button5.Location = new System.Drawing.Point(12, 600);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(30, 31);
@@ -391,6 +393,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1031, 643);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);

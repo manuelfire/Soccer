@@ -438,6 +438,11 @@ namespace Soccer_Final
             player3.controls.pause();
         }
 
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 newForm = new Form2();

@@ -57,7 +57,6 @@
             this.teamabut1 = new System.Windows.Forms.Button();
             this.play1 = new System.Windows.Forms.Label();
             this.play2 = new System.Windows.Forms.Label();
-            this.stop = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.teambpic)).BeginInit();
@@ -195,7 +194,7 @@
             // 
             this.start.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("start.BackgroundImage")));
             this.start.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.start.Location = new System.Drawing.Point(486, 58);
+            this.start.Location = new System.Drawing.Point(521, 58);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(44, 42);
             this.start.TabIndex = 30;
@@ -353,17 +352,6 @@
             this.play2.TabIndex = 43;
             this.play2.Text = "label3";
             // 
-            // stop
-            // 
-            this.stop.BackgroundImage = global::Soccer_Final.Properties.Resources.stop;
-            this.stop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.stop.Location = new System.Drawing.Point(563, 58);
-            this.stop.Name = "stop";
-            this.stop.Size = new System.Drawing.Size(40, 42);
-            this.stop.TabIndex = 44;
-            this.stop.UseVisualStyleBackColor = true;
-            this.stop.Click += new System.EventHandler(this.stop_Click);
-            // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Transparent;
@@ -397,7 +385,6 @@
             this.ClientSize = new System.Drawing.Size(1031, 643);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.stop);
             this.Controls.Add(this.play2);
             this.Controls.Add(this.play1);
             this.Controls.Add(this.teamabut1);
@@ -466,7 +453,6 @@
         private System.Windows.Forms.Button teamabut1;
         private System.Windows.Forms.Label play1;
         private System.Windows.Forms.Label play2;
-        private System.Windows.Forms.Button stop;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
     }

@@ -189,6 +189,7 @@
     <Content Include="Resources\close.png" />
     <None Include="Resources\fist.png" />
     <Content Include="Resources\football-background-images-18.jpg" />
+    <Content Include="Resources\Icons8-Ios7-Media-Controls-Mute.ico" />
     <Content Include="Resources\icon_go.png" />
     <None Include="Resources\next2.png" />
     <None Include="Resources\next3.png" />

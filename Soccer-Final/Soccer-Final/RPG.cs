@@ -512,7 +512,17 @@ namespace Soccer_Final
 
         private void stop_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            player2.controls.play();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            player2.controls.pause();
         }
     }
 }

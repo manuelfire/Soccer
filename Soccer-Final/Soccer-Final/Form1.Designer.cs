@@ -115,6 +115,8 @@
             this.pasesA = new System.Windows.Forms.Label();
             this.playernameA = new System.Windows.Forms.Label();
             this.teamaname = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -169,13 +171,13 @@
             this.timeToolStripMenuItem1,
             this.teamNamesToolStripMenuItem1});
             this.optionsToolStripMenuItem1.Name = "optionsToolStripMenuItem1";
-            this.optionsToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.optionsToolStripMenuItem1.Text = "Options";
             // 
             // timeToolStripMenuItem1
             // 
             this.timeToolStripMenuItem1.Name = "timeToolStripMenuItem1";
-            this.timeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.timeToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
             this.timeToolStripMenuItem1.Text = "Time";
             this.timeToolStripMenuItem1.Click += new System.EventHandler(this.timeToolStripMenuItem1_Click);
             // 
@@ -185,21 +187,21 @@
             this.aToolStripMenuItem1,
             this.bToolStripMenuItem1});
             this.teamNamesToolStripMenuItem1.Name = "teamNamesToolStripMenuItem1";
-            this.teamNamesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.teamNamesToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
             this.teamNamesToolStripMenuItem1.Text = "Team Names";
             this.teamNamesToolStripMenuItem1.Click += new System.EventHandler(this.teamNamesToolStripMenuItem1_Click);
             // 
             // aToolStripMenuItem1
             // 
             this.aToolStripMenuItem1.Name = "aToolStripMenuItem1";
-            this.aToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aToolStripMenuItem1.Size = new System.Drawing.Size(82, 22);
             this.aToolStripMenuItem1.Text = "A";
             this.aToolStripMenuItem1.Click += new System.EventHandler(this.aToolStripMenuItem1_Click);
             // 
             // bToolStripMenuItem1
             // 
             this.bToolStripMenuItem1.Name = "bToolStripMenuItem1";
-            this.bToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.bToolStripMenuItem1.Size = new System.Drawing.Size(82, 22);
             this.bToolStripMenuItem1.Text = "B";
             this.bToolStripMenuItem1.Click += new System.EventHandler(this.bToolStripMenuItem1_Click);
             // 
@@ -245,7 +247,7 @@
             // timeToolStripMenuItem
             // 
             this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
-            this.timeToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.timeToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.timeToolStripMenuItem.Text = "Time";
             // 
             // teamNamesToolStripMenuItem
@@ -254,7 +256,7 @@
             this.aToolStripMenuItem,
             this.bToolStripMenuItem});
             this.teamNamesToolStripMenuItem.Name = "teamNamesToolStripMenuItem";
-            this.teamNamesToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.teamNamesToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.teamNamesToolStripMenuItem.Text = "TeamNames";
             // 
             // aToolStripMenuItem
@@ -302,6 +304,8 @@
             // 
             this.tabPage1.BackgroundImage = global::Soccer_Final.Properties.Resources.soccer_fans_wallpaper_1920x1080;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.button6);
+            this.tabPage1.Controls.Add(this.button7);
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.playesB);
@@ -1099,6 +1103,29 @@
             this.teamaname.TabIndex = 0;
             this.teamaname.Text = "Team A";
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.Location = new System.Drawing.Point(17, 480);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(30, 31);
+            this.button6.TabIndex = 102;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button7.Location = new System.Drawing.Point(53, 481);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(31, 30);
+            this.button7.TabIndex = 101;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1214,6 +1241,8 @@
         private System.Windows.Forms.Label goltotA;
         private System.Windows.Forms.Label golBplayer;
         private System.Windows.Forms.Label golAplayer;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
 

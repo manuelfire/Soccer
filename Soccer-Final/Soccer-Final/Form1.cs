@@ -428,6 +428,16 @@ namespace Soccer_Final
 
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            player3.controls.play();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            player3.controls.pause();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 newForm = new Form2();

@@ -56,5 +56,16 @@ namespace Soccer_Final
         {
             player4.controls.play();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            player4.controls.pause();
+           
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            player4.controls.play();
+        }
     }
 }

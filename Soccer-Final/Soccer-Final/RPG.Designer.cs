@@ -58,6 +58,8 @@
             this.play1 = new System.Windows.Forms.Label();
             this.play2 = new System.Windows.Forms.Label();
             this.stop = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.teambpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamapic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soccerfield)).BeginInit();
@@ -361,12 +363,37 @@
             this.stop.UseVisualStyleBackColor = true;
             this.stop.Click += new System.EventHandler(this.stop_Click);
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Location = new System.Drawing.Point(12, 600);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(30, 31);
+            this.button5.TabIndex = 46;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Location = new System.Drawing.Point(48, 601);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(31, 30);
+            this.button4.TabIndex = 45;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // RPG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1031, 643);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.stop);
             this.Controls.Add(this.play2);
             this.Controls.Add(this.play1);
@@ -436,5 +463,7 @@
         private System.Windows.Forms.Label play1;
         private System.Windows.Forms.Label play2;
         private System.Windows.Forms.Button stop;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
     }
 }
